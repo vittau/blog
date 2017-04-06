@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Trying out f.lux"
-date:   2017-04-05 23:50:00
+date:   2017-04-05 23:55:00
 categories: software
 location: Rio de Janeiro, Brazil
 tags: software, color-calibration, white-balance
@@ -15,5 +15,7 @@ It's a neat little software that adjusts the <a href="https://en.wikipedia.org/w
     <img src="{{ site.baseurl }}/img/posts/flux-shot.png"/>
     <p class="post-image-caption">f.lux</p>
 </div>
+
+Installation was very straightforward, and so are the options.
 
 It does thake some getting used to, but after awhile if you look back at how it was you'll squint your eyes in agony. So I'm guessing it's doing its job.
