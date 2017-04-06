@@ -11,7 +11,7 @@ instagram_username: "vitor.p.mach"
 
 # Build settings
 markdown: kramdown
-permalink: /:year/:month/:day/:title.html
+permalink: /:year/:month/:day/:title
 
 # Pagination
 paginate: 5
