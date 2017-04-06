@@ -57,7 +57,7 @@
     .post-header-date {
         font-family: $caption-font;
         font-style: italic;
-        font-weight: normal;
+        font-weight: 300;
         color: #444;
         letter-spacing: 1px;
     }
@@ -118,6 +118,7 @@
         vertical-align: middle;
         font-size: 14px;
         font-family: $caption-font;
+        font-weight: 300;
         font-style: italic;
         color: $caption-colour;
         background: #f6f6f6;
@@ -199,7 +200,7 @@
 
     .post-footer-tag {
         font-family: $title-font;
-        font-weight: bold;
+        font-weight: 700;
         display: inline;
         text-transform: uppercase;
         font-size: $caption-text-size;
@@ -209,7 +210,7 @@
 
     .post-footer-location {
         font-family: $title-font;
-        font-weight: bold;
+        font-weight: 700;
         font-size: $caption-text-size;
         color: $caption-colour;
         float: right;
