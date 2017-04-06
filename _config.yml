@@ -1,8 +1,8 @@
 # Site settings
 title: Vitor Machado's blog
-subtitle: "Ramblings of a software developer"
+subtitle: "The random ramblings of a software developer"
 email: vmachado@cos.ufrj.br
-description: "Artificial Intelligence graduate at the Federal University of Rio de Janeiro, and software tester at CAPGov/COPPE."
+description: "Artificial Intelligence graduate from the Federal University of Rio de Janeiro, and software developer at CAPGov/COPPE. Photographer as a hobby, music lover and gamer since I was a little kid."
 baseurl: "/blog"
 url: "http://vitormachado.me"
 twitter_username: "VittauMach"
