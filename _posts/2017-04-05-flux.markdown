@@ -7,9 +7,9 @@ location: Rio de Janeiro, Brazil
 tags: software, color-calibration, white-balance
 ---
 
-I decided to try [f.lux](https://justgetflux.com) today. What is it you might wonder?
+I decided to try <a href="https://justgetflux.com" target="_blank">f.lux</a> today. What is it you might wonder?
 
-It's a neat little software that adjusts the [white balance](https://en.wikipedia.org/wiki/Color_balance) of your monitor automatically according to your location and the time of the day. As such, you don't get that harsh blue tint that keeps you awake at night (seriously, it can affect your sleep).
+It's a neat little software that adjusts the <a href="https://en.wikipedia.org/wiki/Color_balance" target="_blank">white balance</a> of your monitor automatically according to your location and the time of the day. As such, you don't get that harsh blue tint that keeps you awake at night (seriously, it can affect your sleep).
 
 <div class="post-image">
     <img src="{{ site.baseurl }}/img/posts/flux-shot.png"/>
