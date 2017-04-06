@@ -1,0 +1,19 @@
+---
+layout: post
+title:  "Trying out f.lux"
+date:   2017-04-05 23:50:00
+categories: software
+location: Rio de Janeiro, Brazil
+tags: software, color-calibration, white-balance
+---
+
+I decided to try [f.lux](https://justgetflux.com) today. What is it you might wonder?
+
+It's a neat little software that adjusts the [white balance](https://en.wikipedia.org/wiki/Color_balance) of your monitor automatically according to your location and the time of the day. As such, you don't get that harsh blue tint that keeps you awake at night (seriously, it can affect your sleep).
+
+<div class="post-image">
+    <img src="{{ site.baseurl }}/img/posts/flux-shot.png"/>
+    <p class="post-image-caption">f.lux</p>
+</div>
+
+It does thake some getting used to, but after awhile if you look back at how it was you'll squint your eyes in agony. So I'm guessing it's doing its job.
