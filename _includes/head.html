@@ -10,6 +10,18 @@
     <meta property="fb:app_id" content="{{site.fb_app_id}}" />
     <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
 
+    <meta content="{{ site.title }}" property="og:site_name">
+    {% if page.title %}
+      <meta content="{{ page.title }}" property="og:title">
+    {% else %}
+      <meta content="{{ site.title }}" property="og:title">
+    {% endif %}
+      <meta content="website" property="og:type">
+      <meta content="{{ site.description }}" property="og:description">
+    {% if page.url %}
+      <meta content="{{ page.url | prepend: site.url }}" property="og:url">
+    {% endif %}
+
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{{ "/css/screen.css" | prepend: site.baseurl }}">
 </head>
