@@ -2,7 +2,7 @@
     <div class="post-header post-header--dw">
         <a href="{{ site.baseurl }}{{ include.post.url }}"><h3 class="post-header-title">{{ include.post.title }}</h3></a>
         <h4 class="post-header-date"><span class="ordinal">{{ include.post.date | date: "%e" }}</span> {{ include.post.date | date: "%B &#8217;%y" }}</h4>
-        {% if include.ignore_social %}
+        {% if !include.ignore_social %}
         <div class="fb-like" data-href="{{site.url}}{{ site.baseurl }}{{ include.post.url }}" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
         {% endif %}
     </div>
@@ -17,7 +17,7 @@
         </ul>
         <a href="https://www.google.com/maps/search/{{ include.post.location }}" target="_blank" class="post-footer-location">{{ include.post.location }}</a>
     </div>
-    {% if include.ignore_social %}
+    {% if !include.ignore_social %}
     <div id="disqus_thread"></div>
     <script>
         var disqus_config = function () {
