@@ -11,8 +11,8 @@
     <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
 
     <meta content="{{ site.title }}" property="og:site_name">
-    {% if post.title %}
-      <meta content="{{ post.title }}" property="og:title">
+    {% if page.title %}
+      <meta content="{{ page.title }}" property="og:title">
     {% else %}
       <meta content="{{ site.title }}" property="og:title">
     {% endif %}
