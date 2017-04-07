@@ -14,4 +14,18 @@
         </ul>
         <a href="https://www.google.com/maps/search/{{ include.post.location }}" target="_blank" class="post-footer-location">{{ include.post.location }}</a>
     </div>
+    <div id="disqus_thread"></div>
+    <script>
+        var disqus_config = function () {
+            this.page.url = "{{ site.baseurl }}{{ include.post.url }}";
+            this.page.identifier = "{{ include.post.url }}";
+        };
+        (function() {
+            var d = document, s = d.createElement('script');
+            s.src = 'https://vitor-machados-blog.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 </section>
