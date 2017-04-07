@@ -17,7 +17,7 @@
     <div id="disqus_thread"></div>
     <script>
         var disqus_config = function () {
-            this.page.url = "{{ site.baseurl }}{{ include.post.url }}";
+            this.page.url = "{{site.url}}{{ site.baseurl }}{{ include.post.url }}";
             this.page.identifier = "{{ include.post.url }}";
         };
         (function() {
