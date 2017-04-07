@@ -1,4 +1,7 @@
 <header>
     <a href="{{ site.baseurl }}/"><h1>{{ site.title }}</h1></a>
     <h2>{{ site.subtitle }}</h2>
+    {% if include.ignore_social == true %}
+    <div class="fb-like" data-href="{{site.url}}{{ site.baseurl }}" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
+    {% endif %}
 </header>
