@@ -46,6 +46,7 @@
         font-size: 20px;
         font-weight: 500;
         text-transform: uppercase;
+        text-align: left;
         letter-spacing: 1px;
 
         // Force default text colour [as post-header is wrapped by a link]
@@ -61,7 +62,6 @@
         font-weight: 300;
         color: #444;
         letter-spacing: 1px;
-        text-align: left;
     }
 
     .post-image {
