@@ -12,7 +12,7 @@ I decided to try <a href="https://justgetflux.com" target="_blank">f.lux</a> tod
 It's a neat little software that adjusts the <a href="https://en.wikipedia.org/wiki/Color_balance" target="_blank">white balance</a> of your monitor automatically according to your location and the time of the day. As such, you don't get that harsh blue tint that keeps you awake at night (seriously, it can affect your sleep).
 
 <div class="post-image">
-    <img src="{{ site.baseurl }}/img/posts/flux-shot.png"/>
+    <a href="{{ site.baseurl }}/img/posts/flux-shot.png" target="_blank"><img src="{{ site.baseurl }}/img/posts/flux-shot.png"/></a>
     <p class="post-image-caption">f.lux screenshot</p>
 </div>
 

@@ -32,6 +32,6 @@ So, what am I using right now? I'm currently testing this font called <a href="h
 Well, at least until next week...
 
 <div class="post-image">
-    <img src="{{ site.baseurl }}/img/posts/iosevka.png"/>
+    <a href="{{ site.baseurl }}/img/posts/iosevka.png" target="_blank"><img src="{{ site.baseurl }}/img/posts/iosevka.png"/></a>
     <p class="post-image-caption">Hopscotch + Iosevka in Visual Studio Code</p>
 </div>
