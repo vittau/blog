@@ -29,7 +29,7 @@ At this moment I felt like I've seen it all. As if I had mastered the <a href="h
 
 So, what am I using right now? I'm currently testing this font called <a href="https://be5invis.github.io/Iosevka/" target="_blank">Iosevka</a>. It's a beautiful and readable font, and a pretty narrow one. Maybe a little bit TOO narrow, but I like it. Oh yes, it has ligatures too. Currently pairing it with the <a href="https://marketplace.visualstudio.com/items?itemName=idleberg.hopscotch" target="_blank">Hopscotch</a> theme for <a href="https://code.visualstudio.com/" target="_blank">Visual Studio Code</a> (Yes, I think it's better than Sublime Text and Atom. No, it's not a bloated mess like Visual Studio). I think it's one of the most readable and pleasant-looking combos I've come up with so far.
 
-Well, at least until next week...
+My conclusion to this topic is that there's no conclusion. Fonts are a very personal thing, people have different priorities and different aesthetics standards. So I encourage you to try out all these fonts and more to find the one that suits you the best. If you do, please report back in the comments!
 
 <div class="post-image">
     <a href="{{ site.baseurl }}/img/posts/iosevka.png" target="_blank"><img src="{{ site.baseurl }}/img/posts/iosevka.png"/></a>
