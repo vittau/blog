@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "Starting out"
-date:   2017-04-05 23:10:00
+title: "Starting out"
+date: 2017-04-05 23:10:00
 categories: blog
 location: Rio de Janeiro, Brazil
 tags: blog

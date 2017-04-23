@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "Trying out f.lux"
-date:   2017-04-05 23:55:00
+title: "Trying out f.lux"
+date: 2017-04-05 23:55:00
 categories: software
 location: Rio de Janeiro, Brazil
 tags: software, color-calibration, white-balance

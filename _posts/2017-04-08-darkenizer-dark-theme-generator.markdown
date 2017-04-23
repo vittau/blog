@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "Darkenizer - Dark theme generator"
-date:   2017-04-08 13:45:00
+title: "Darkenizer - Dark theme generator"
+date: 2017-04-08 13:45:00
 categories: software
 location: Rio de Janeiro, Brazil
 tags: css, scss, dark-theme, utility
