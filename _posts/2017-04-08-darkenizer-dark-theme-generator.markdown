@@ -7,14 +7,14 @@ location: Rio de Janeiro, Brazil
 tags: css, scss, dark-theme, utility
 ---
 
-One of these days while I was preparing a dark version of a SCSS, I noticed this process could probably be automated with decent results. So I had to idea to make <a href="https://www.vitormachado.me/darkenizer" target="_blank">darkenizer</a>.
-
-<!--more-->
+One of these days while I was preparing a dark version of a SCSS, I noticed this process could probably be automated with decent results. So I had the idea to make <a href="https://www.vitormachado.me/darkenizer" target="_blank">darkenizer</a>.
 
 <div class="post-image">
     <img src="{{ site.baseurl }}/img/posts/darkenizer.png"/>
     <p class="post-image-caption">darkenizer screenshot</p>
 </div>
+
+<!--more-->
 
 It works by parsing the CSS/SCSS file searching for hex colors, and then transforms these colors into <a href="https://en.wikipedia.org/wiki/HSL_and_HSV" target="_blank">HSL color space</a>. After that, it's only a matter of inverting the "lightness" (L) channel to create a darker version of the color while preserving its original hue and saturation.
 
