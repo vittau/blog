@@ -5,7 +5,6 @@ layout: default
 <!-- This loops through the paginated posts -->
 {% for post in paginator.posts %}
   {% include post.html post=post content=post.excerpt ignore_social=true %}
-  <a href="{{ site.baseurl }}{{ post.url }}">[Read more]</a>
 {% endfor %}
 
 {% if paginator.total_pages > 1 %}

@@ -8,6 +8,9 @@
     {% endif %}
     <div class="post-body">
         {{ include.content }}
+        {% if include.ignore_social == true %}
+        <a href="{{ site.baseurl }}{{ post.url }}">[Read more]</a>
+        {% endif %}
     </div>
     <div class="post-footer">
         <ul class="post-footer-tags">
