@@ -6,6 +6,7 @@ email: vmachado@cos.ufrj.br
 description: "Artificial Intelligence graduate from the Federal University of Rio de Janeiro, and software developer at CAPGov/COPPE. Photographer as a hobby, music lover and gamer since I was a little kid."
 baseurl: "/blog"
 url: "https://vitormachado.me"
+excerpt_separator: <!--more--> #use this in posts to define how long the excerpt of the post (that is shown on the Blog page) is
 twitter_username: "VittauMach"
 github_username:  "vittau"
 instagram_username: "vitor.p.mach"
