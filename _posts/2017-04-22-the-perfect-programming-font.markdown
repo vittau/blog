@@ -11,6 +11,8 @@ Ok I'll share a secret here: I have a tendency to obsess over little details. A 
 
 So let's talk about one of these little things I can obsess about: fonts.
 
+<!--more-->
+
 After having spent way more time than I probably should searching for the perfect programming font, I have come up with some candidates. My criteria includes first and foremost readability, but also character proportions, slashed/dotted zeros, l vs I, and yes, even beauty.
 
 One of the first fonts I remember using other than the Windows' default <a href="https://en.wikipedia.org/wiki/Consolas" target="_blank">Consolas</a> is <a href="http://nodnod.net/2009/feb/12/adding-straight-single-and-double-quotes-inconsola/" target="_blank">Inconsolata-dz</a> (a variant of <a href="https://fonts.google.com/specimen/Inconsolata" target="_blank">Inconsolata</a>). It is a readable and beautiful font, but one of the little things that annoy me is the width and character spacing, which tends to spread stuff horizontally more than I'd like.
