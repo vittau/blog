@@ -2,7 +2,7 @@
 @mixin travelog-about {
     .about {
         width: $about-width;
-        margin: 0 auto;
+        margin: 10px auto 10px auto;
         // For iOS Safari support
         display: -webkit-flex;
         display: flex;
@@ -10,7 +10,7 @@
         justify-content: center;
         background-color: rgba(0, 0, 0, 0.5);
         border-radius: 10px;
-        padding: 10px;
+        padding: 12px;
     }
 
     .about-wrap {
