@@ -19,7 +19,7 @@ One of the first fonts I remember using other than the Windows' default <a href=
 
 Then I tried <a href="https://en.wikipedia.org/wiki/Monaco_(typeface)" target="_blank">Monaco</a>, a font that ships with macOS (except I put it on Windows). It's a very stylish one, for sure. I used it for quite a while, until I got annoyed by it's, how should I put it, "opinionated" style. I don't know, it's as if it's simply too stylish for a programming font. By the way, check out <a href="http://eurofurence.net/monofur.html" target="_blank">monofur</a> if you DO like your stylish programming fonts.
 
-Then I did try <a href="https://github.com/adobe-fonts/source-code-pro" target="_blank">Source Code Pro</a> for a while, but felt it suffered from the same problem as the Inconsolata family.
+Then I did try <a href="https://adobe-fonts.github.io/source-code-pro/" target="_blank">Source Code Pro</a> for a while, but felt it suffered from the same problem as the Inconsolata family.
 
 I stumbled upon <a href="http://madmalik.github.io/mononoki/">mononoki</a>, an awesome font. I ended up not using it after having <a href="https://github.com/madmalik/mononoki/issues/38#issuecomment-225941213" target="_blank">some problems</a> with JetBrains software, but I still think it's a great font. Readable, good spacing, pleasant to look at.
 
