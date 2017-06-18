@@ -8,14 +8,16 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        background-color: rgba(0, 0, 0, 0.5);
-        border-radius: 10px;
         padding: 12px;
     }
 
     .about-wrap {
         display: table-cell;
         vertical-align: middle;
+        background: -webkit-linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.4));
+        background: -moz-linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.4));
+        background: -o-linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.4));
+        background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.4));
     }
 
     .about-avatar {
