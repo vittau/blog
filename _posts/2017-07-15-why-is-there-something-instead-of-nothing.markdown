@@ -11,7 +11,7 @@ tags: astronomy, universe, entropy, pi
 
 <i><small><strong>pretentious</strong><br>adjective<br>1. "Attempting to impress by affecting greater importance or merit than is actually possessed."<br>2. "Having no factual basis."</small></i>
 
-I'm <a href="https://www.google.com/search?q=why+is+there+everything+instead+of+nothing" target="_blank">not the first one asking this question</a>. Quite possibly one of the oldest questions of mankind, and probably of other species out there as well. It's by no means an easy one to answer, or even think about. What is "nothing", anyway? If you can measure it, it's already "something", and not "nothing". An empty space is "something".
+I'm <a href="https://www.google.com/search?q=why+is+there+something+instead+of+nothing" target="_blank">not the first one asking this question</a>. Quite possibly one of the oldest questions of mankind, and probably of other species out there as well. It's by no means an easy one to answer, or even think about. What is "nothing", anyway? If you can measure it, it's already "something", and not "nothing". An empty space is "something".
 
 <!--more-->
 
