@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Why is there something instead of nothing?"
+date: 2017-07-16 00:27:00
 categories: universe
 location: Rio de Janeiro, Brazil
 tags: astronomy, universe, entropy, pi
