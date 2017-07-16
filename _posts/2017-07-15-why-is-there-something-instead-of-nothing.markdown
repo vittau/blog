@@ -15,7 +15,7 @@ I'm <a href="https://www.google.com/search?q=why+is+there+something+instead+of+n
 
 <!--more-->
 
-While I have completely given up trying to wrap my head around what "nothing" is, I decided to turn my attention to "something". Is "something" finite? That would be rather odd, because that would imply "something" else outside. Or "nothing". I'm a computer science dude after all, so I'll give you my theory, based on <a href="https://en.wikipedia.org/wiki/Entropy_(information_theory)" target="_blank">information entropy</a>, on why I believe infinite "something" is actually possible and quite plausible.
+While I have completely given up trying to wrap my head around what "<a href="https://www.livescience.com/28132-what-is-nothing-physicists-debate.html" target="_blank">nothing</a>" is, I decided to turn my attention to "something". Is "something" finite? That would be rather odd, because that would imply "something" else outside. Or "nothing". I'm a computer science dude after all, so I'll give you my theory, based on <a href="https://en.wikipedia.org/wiki/Entropy_(information_theory)" target="_blank">information entropy</a>, on why I believe infinite "something" is actually possible and quite plausible.
 
 But first, let me digress a little bit, it should be worthwile for my point. Hopefully.
 
