@@ -3,6 +3,9 @@
 # only Main files contain this front matter, not partials.
 ---
 
+$ribbon: '{{ site.baseurl }}/img/ribbon.jpg';
+$ribbon-2x: '{{ site.baseurl }}/img/ribbon@2x.jpg';
+$ribbon-3x: '{{ site.baseurl }}/img/ribbon@3x.jpg';
 $banner: '{{ site.baseurl }}/img/banner.jpg';
 $banner-2x: '{{ site.baseurl }}/img/banner@2x.jpg';
 $banner-3x: '{{ site.baseurl }}/img/banner@3x.jpg';
