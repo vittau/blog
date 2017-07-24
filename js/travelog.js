@@ -18,17 +18,26 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-isDark = false;
+isDark = window.localStorage.getItem("dark") || false;
+if(isDark) {
+    root.setAttribute('class', 'dark');
+    window.localStorage.setItem("dark", true);
+}
+else {
+    window.localStorage.setItem("dark", false);
+}
 
 function switchDark() {
     var root = document.getElementsByTagName( 'html' )[0];
     if(isDark) {
         root.setAttribute('class', '');
         isDark = false;
+        window.localStorage.setItem("dark", false);
     }
     else {
         root.setAttribute('class', 'dark');
         isDark = true;
+        window.localStorage.setItem("dark", true);
     }
 }
 
