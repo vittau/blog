@@ -9,14 +9,9 @@
     // Non-retina device
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url($ribbon);
 
-    // Retina @2x device
+    // Retina device
     @media only screen and (-webkit-min-device-pixel-ratio: 1.2), only screen and (min--moz-device-pixel-ratio: 1.2), only screen and (-o-min-device-pixel-ratio: 5/4), only screen and (min-device-pixel-ratio: 1.2), only screen and (min-resolution: 120dpi), only screen and (min-resolution: 1.2dppx) {
-        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url($ribbon-2x);
-    }
-
-    // Retina @3x device
-    @media only screen and (-webkit-min-device-pixel-ratio: 3), only screen and (min--moz-device-pixel-ratio: 3), only screen and (-o-min-device-pixel-ratio: 3/1), only screen and (min-device-pixel-ratio: 3), only screen and (min-resolution: 288dpi), only screen and (min-resolution: 3dppx) {
-        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url($ribbon-3x);
+        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url($ribbon-retina);
     }
 
     background-position: center;
@@ -87,13 +82,8 @@ footer {
     // Non-retina device
     background-image: url($banner);
 
-    // Retina @2x device
+    // Retina device
     @media only screen and (-webkit-min-device-pixel-ratio: 1.2), only screen and (min--moz-device-pixel-ratio: 1.2), only screen and (-o-min-device-pixel-ratio: 5/4), only screen and (min-device-pixel-ratio: 1.2), only screen and (min-resolution: 120dpi), only screen and (min-resolution: 1.2dppx) {
-        background-image: url($banner-2x);
-    }
-
-    // Retina @3x device
-    @media only screen and (-webkit-min-device-pixel-ratio: 3), only screen and (min--moz-device-pixel-ratio: 3), only screen and (-o-min-device-pixel-ratio: 3/1), only screen and (min-device-pixel-ratio: 3), only screen and (min-resolution: 288dpi), only screen and (min-resolution: 3dppx) {
-        background-image: url($banner-3x);
+        background-image: url($banner-retina);
     }
 }
