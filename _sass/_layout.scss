@@ -57,6 +57,7 @@ h1 {
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 1px;
+    display: inline;
 }
 
 @media only screen and (max-width : 900px) {
@@ -71,6 +72,7 @@ h2 {
     font-weight: 400;
     margin: 0;
     color: $subtitle-colour;
+    display: inline;
 }
 
 footer {
