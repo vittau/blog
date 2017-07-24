@@ -24,6 +24,33 @@
     <meta content="{{ page.url | prepend: site.url }}" property="og:url">
   {% endif %}
 
+  <!-- Dark theme load -->
+  <script type="text/javascript">
+    root = document.getElementsByTagName('html')[0];
+    isDark = window.localStorage.getItem("dark") == "true";
+
+    if(isDark) {
+        root.setAttribute('class', 'dark');
+        window.localStorage.setItem("dark", "true");
+    }
+    else {
+        window.localStorage.setItem("dark", "false");
+    }
+
+    function switchDark() {
+      if(isDark) {
+        root.setAttribute('class', '');
+        isDark = false;
+        window.localStorage.setItem("dark", "false");
+      }
+      else {
+        root.setAttribute('class', 'dark');
+        isDark = true;
+        window.localStorage.setItem("dark", "true");
+      }
+    }
+  </script>
+
   <!-- Custom CSS -->
   <link rel="stylesheet" href="{{ "/css/screen.css" | prepend: site.baseurl }}">
 </head>

@@ -18,31 +18,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-root = document.getElementsByTagName('html')[0];
-
-isDark = window.localStorage.getItem("dark") == "true";
-if(isDark) {
-    root.setAttribute('class', 'dark');
-    window.localStorage.setItem("dark", "true");
-}
-else {
-    window.localStorage.setItem("dark", "false");
-}
-
-function switchDark() {
-    if(isDark) {
-        root.setAttribute('class', '');
-        isDark = false;
-        window.localStorage.setItem("dark", "false");
-    }
-    else {
-        root.setAttribute('class', 'dark');
-        isDark = true;
-        window.localStorage.setItem("dark", "true");
-    }
-}
-
-
 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
 m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
