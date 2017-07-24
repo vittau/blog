@@ -14,9 +14,9 @@
     </script>
     <div id="ribbon">
       {% include header.html %}
+      <a id="bulb-anchor" onclick="switchDark()"><div id="bulb"></div></a>
     </div>
     <div id="wrap">
-      <a id="bulb-anchor" onclick="switchDark()"><div id="bulb"></div></a>
       {{ content }}
     </div>
     {% include footer.html %}
