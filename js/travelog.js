@@ -18,6 +18,20 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+isDark = false;
+
+function switchDark() {
+    var root = document.getElementsByTagName( 'html' )[0];
+    if(isDark) {
+        root.setAttribute('class', '');
+        isDark = false;
+    }
+    else {
+        root.setAttribute('class', 'dark');
+        isDark = false;
+    }
+}
+
 
 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

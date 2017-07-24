@@ -25,6 +25,12 @@ $icon-instagram-3x: '{{ site.baseurl }}/img/icon-instagram@3x.png';
 $icon-world: '{{ site.baseurl }}/img/icon-world.png';
 $icon-world-2x: '{{ site.baseurl }}/img/icon-world@2x.png';
 $icon-world-3x: '{{ site.baseurl }}/img/icon-world@3x.png';
+$bulb: '{{ site.baseurl }}/img/bulb.png';
+$bulb-2x: '{{ site.baseurl }}/img/bulb@2x.png';
+$bulb-3x: '{{ site.baseurl }}/img/bulb@3x.png';
+$dark-bulb: '{{ site.baseurl }}/img/dark-bulb.png';
+$dark-bulb-2x: '{{ site.baseurl }}/img/dark-bulb@2x.png';
+$dark-bulb-3x: '{{ site.baseurl }}/img/dark-bulb@3x.png';
 
 @import "vendor/normalize";
 @import "utils";
