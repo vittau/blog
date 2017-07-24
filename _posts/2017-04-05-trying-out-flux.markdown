@@ -13,7 +13,7 @@ It's a neat little software that adjusts the <a href="https://en.wikipedia.org/w
 
 <div class="post-image">
     <a href="{{ site.baseurl }}/img/posts/flux-shot.png" target="_blank"><img src="{{ site.baseurl }}/img/posts/flux-shot.png"/></a>
-    <p class="post-image-caption">f.lux screenshot</p>
+    <p class="post-image-caption">f.lux beta screenshot</p>
 </div>
 
 <!--more-->
