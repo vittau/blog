@@ -18,6 +18,8 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+root = document.getElementsByTagName('html')[0];
+
 isDark = window.localStorage.getItem("dark") || false;
 if(isDark) {
     root.setAttribute('class', 'dark');
@@ -28,7 +30,6 @@ else {
 }
 
 function switchDark() {
-    var root = document.getElementsByTagName( 'html' )[0];
     if(isDark) {
         root.setAttribute('class', '');
         isDark = false;
