@@ -11,6 +11,7 @@
     $caption-font: 'Raleway', serif !default;
 
     // Colours
+    $background-colour: #fefefe;
     $link-colour: #11ad7f !default;
     $link-colour-over: darken($link-colour, 15%) !default;
     $text-colour: #222 !default;
@@ -21,6 +22,7 @@
     $shadow-color: #222 !default;
 
     //Dark colours
+    $dark-background-colour: #010101;
     $dark-text-colour: #dbdbdb !default;
     $dark-inverse-text-colour: #0f0f0f !default;
     $dark-subtitle-colour: #757575 !default;
