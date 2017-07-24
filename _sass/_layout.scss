@@ -88,3 +88,14 @@ footer {
         background-image: url($banner-retina);
     }
 }
+
+.dark {
+    h1 {
+        color: $dark-inverse-text-colour;
+    }
+
+    h2 {
+        color: $dark-subtitle-colour;
+        display: inline;
+    }
+}

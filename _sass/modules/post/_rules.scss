@@ -245,4 +245,10 @@
         }
     }
     */
+
+    .dark {
+        .post-footer {
+            border-bottom: 1px solid $dark-border-colour;
+        }
+    }
 }

@@ -14,11 +14,19 @@
     $link-colour: #11ad7f !default;
     $link-colour-over: darken($link-colour, 15%) !default;
     $text-colour: #222 !default;
-    $inverse-text-colour: #eee !default; // For use on dark backgrounds
+    $inverse-text-colour: #eee !default;
     $subtitle-colour: #888 !default;
     $caption-colour: #777 !default;
     $border-colour: #e5e5e5 !default;
     $shadow-color: #222 !default;
+
+    //Dark colours
+    $dark-text-colour: #dbdbdb !default;
+    $dark-inverse-text-colour: #0f0f0f !default;
+    $dark-subtitle-colour: #757575 !default;
+    $dark-caption-colour: #878787 !default;
+    $dark-border-colour: #1a1a1a !default;
+    $dark-shadow-color: #dbdbdb !default;
 
     // Sizes
     $regular-text-size: 17px !default;
