@@ -28,7 +28,7 @@ function switchDark() {
     }
     else {
         root.setAttribute('class', 'dark');
-        isDark = false;
+        isDark = true;
     }
 }
 
