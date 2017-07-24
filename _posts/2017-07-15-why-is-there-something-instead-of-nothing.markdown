@@ -13,6 +13,11 @@ tags: astronomy, universe, entropy, pi
 
 I'm <a href="https://www.google.com/search?q=why+is+there+something+instead+of+nothing" target="_blank">not the first one asking this question</a>. Quite possibly one of the oldest questions of mankind, and probably of other species out there as well. It's by no means an easy one to answer, or even think about. What is "nothing", anyway? If you can measure it, it's already "something", and not "nothing". An empty space is "something".
 
+<div class="post-image">
+    <a href="{{ site.baseurl }}/img/posts/space-engine-black-hole.jpg" target="_blank"><img src="{{ site.baseurl }}/img/posts/space-engine-black-hole.jpg"/></a>
+    <p class="post-image-caption">A <a href="https://en.wikipedia.org/wiki/Black_hole" target="_blank">black hole</a> in the <a href="http://spaceengine.org" target="_blank">Space Engine</a> universe simulator</p>
+</div>
+
 <!--more-->
 
 While I have completely given up trying to <a href="https://www.livescience.com/28132-what-is-nothing-physicists-debate.html" target="_blank">wrap my head</a> around what "nothing" is, I decided to turn my attention to "something". Is "something" (our universe) finite? That would be rather odd, because that would imply "something" else outside. Or "nothing". I'm a computer science dude after all, so I'll give you my theory, based on <a href="https://en.wikipedia.org/wiki/Entropy_(information_theory)" target="_blank">information entropy</a>, on why I believe infinite "something" is actually possible and quite plausible.
