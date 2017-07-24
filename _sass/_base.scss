@@ -10,7 +10,7 @@ html {
 
 body {
     background: $background-colour url("/blog/img/noise.png");
-    transition: color 2s ease;
+    transition: color 2s ease-in-out;
 }
 
 body {

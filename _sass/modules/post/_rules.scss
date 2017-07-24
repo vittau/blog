@@ -262,5 +262,21 @@
             color: $dark-caption-colour;
             background: $dark-post-image-background-colour;
         }
+
+        .post-header--dw {
+            background-image: url($dark-binary);
+
+            // Retina @2x device
+            @media only screen and (-webkit-min-device-pixel-ratio: 1.2), only screen and (min--moz-device-pixel-ratio: 1.2), only screen and (-o-min-device-pixel-ratio: 5/4), only screen and (min-device-pixel-ratio: 1.2), only screen and (min-resolution: 120dpi), only screen and (min-resolution: 1.2dppx) {
+                background-image: url($dark-binary-2x);
+                background-size: 25px;
+            }
+
+            // Retina @3x device
+            @media only screen and (-webkit-min-device-pixel-ratio: 3), only screen and (min--moz-device-pixel-ratio: 3), only screen and (-o-min-device-pixel-ratio: 3/1), only screen and (min-device-pixel-ratio: 3), only screen and (min-resolution: 288dpi), only screen and (min-resolution: 3dppx) {
+                background-image: url($dark-binary-3x);
+                background-size: 25px;
+            }
+        }
     }
 }
