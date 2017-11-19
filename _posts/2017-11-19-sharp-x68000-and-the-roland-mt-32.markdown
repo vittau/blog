@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Sharp X68000 and the Roland MT-32"
-date: 2017-11-19 10:56:00
+date: 2017-11-19 11:27:00
 categories: software
 location: Rio de Janeiro, Brazil
 tags: emulator, sharp, roland, games, sound
@@ -27,7 +27,18 @@ Great! First a little bit of motivation (well, at least my motivation). There wa
     <p class="post-image-caption">Front cover of the japanese Sol-Feace for the Sharp X68000</p>
 </div>
 
-Now, we first actually need a Sharp X68000 emulator, which is not of the top priorities in the emulator world, therefore there aren't many quality options to be honest. Or best bet at this is the <a href="http://www.geocities.jp/kugimoto0715/xm6g/" target="_blank">XM6 TypeG</a> emulator (don't worry, the actual emulator GUI is in English). The actual installation is pretty straightforward, just extract the zip and run the appropriate executable for your processor architecture.
+Now, we first actually need a Sharp X68000 emulator, which is not of the top priorities in the emulator world, therefore there aren't many quality options to be honest. Our best bet at this is the <a href="http://www.geocities.jp/kugimoto0715/xm6g/" target="_blank">XM6 TypeG</a> emulator (don't worry, the actual emulator GUI is in English). The installation is pretty straightforward, just extract the .zip you downloaded, and run the appropriate executable for your processor architecture, which are found in distinct directories inside the .zip file.
+
+Trouble, however, comes when you first try to figure out how you're supposed to work with the 3 disks Sol-Feace is composed of. Yes, games spawned multiple disks back then.
+
+<div class="post-image">
+    <a href="{{ site.baseurl }}/img/posts/ys-sharp-x68000-disk.jpg" target="_blank"><img src="{{ site.baseurl }}/img/posts/ys-sharp-x68000-disk.jpg"/></a>
+    <p class="post-image-caption">The X68000 used 5.25" floppy disks, such as this glorious <a href="https://en.wikipedia.org/wiki/Ys_III:_Wanderers_from_Ys" target="_blank">Wanderers from Ys</a> one</p>
+</div>
+
+The fact that most of the game is in japanese doesn't help matters too much. After fiddling with it for a bit, I figured out that you need disk 3 inserted into FDD0, and disk 2 inserted into FDD1 to get to the main menu. Disk 1 contains the intro, which you can skip entirely (if you wanna watch it, just put disk 1 in the FDD0 slot).
+
+At this point, you'll be greeted with FM synth music being modulated by the internal Sharp X68000's Yamaha YM2151 chip.
 
 <div class="post-image">
     <iframe width="560" height="315" src="https://www.youtube.com/embed/uUSEkM6zFUw" frameborder="0" allowfullscreen></iframe>
