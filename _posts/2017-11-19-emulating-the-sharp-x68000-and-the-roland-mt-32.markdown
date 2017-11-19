@@ -50,7 +50,7 @@ You are, obviously, not satisfied. You need Roland MT-32 goodness in your life, 
     <p class="post-image-caption"><a href="https://www.philscomputerlab.com/" target="_blank">PhilsComputerLab</a> posted this comprehensive guide for the installation of the Munt emulator. In our case, finishing step 2 will suffice</p>
 </div>
 
-Now run Munt, and open the emulator settings. There, you'll find a tab for MIDI which you'll have to set up like the screenshot below.
+Now, while running Munt, open the XM6 emulator and go to the settings. There, you'll find a tab for MIDI which you'll have to set up like the screenshot below.
 
 <div class="post-image">
     <a href="{{ site.baseurl }}/img/posts/xm6-settings.png" target="_blank"><img src="{{ site.baseurl }}/img/posts/xm6-settings.png"/></a>
