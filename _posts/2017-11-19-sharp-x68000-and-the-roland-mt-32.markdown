@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Sharp X68000 and the Roland MT-32"
-date: 2017-11-19 11:27:00
+date: 2017-11-19 11:40:00
 categories: software
 location: Rio de Janeiro, Brazil
 tags: emulator, sharp, roland, games, sound
@@ -27,7 +27,7 @@ Great! First a little bit of motivation (well, at least my motivation). There wa
     <p class="post-image-caption">Front cover of the japanese Sol-Feace for the Sharp X68000</p>
 </div>
 
-Now, we first actually need a Sharp X68000 emulator, which is not of the top priorities in the emulator world, therefore there aren't many quality options to be honest. Our best bet at this is the <a href="http://www.geocities.jp/kugimoto0715/xm6g/" target="_blank">XM6 TypeG</a> emulator (don't worry, the actual emulator GUI is in English). The installation is pretty straightforward, just extract the .zip you downloaded, and run the appropriate executable for your processor architecture, which are found in distinct directories inside the .zip file.
+Now, we first actually need a Sharp X68000 emulator, which is not of the top priorities in the emulator world, therefore there aren't many quality options to be honest. Our best bet at this is the <a href="http://www.geocities.jp/kugimoto0715/xm6g/" target="_blank">XM6 TypeG</a> emulator (don't worry, the actual emulator GUI is in English). The installation is pretty straightforward, just extract the .zip you downloaded, and run the appropriate executable for your processor architecture, which are found in distinct directories inside the .zip file. You will also need the actual X68000 BIOS ROM files, which are public domain by now. Just google it, and put the files in the same directory as the emulator executable.
 
 Trouble, however, comes when you first try to figure out how you're supposed to work with the 3 disks Sol-Feace is composed of. Yes, games spawned multiple disks back then.
 
@@ -43,6 +43,13 @@ At this point, you'll be greeted with FM synth music being modulated by the inte
 <div class="post-image">
     <iframe width="560" height="315" src="https://www.youtube.com/embed/uUSEkM6zFUw" frameborder="0" allowfullscreen></iframe>
     <p class="post-image-caption">The Yamaha YM2151 trying its best at "Cosmic Illusion", the first level music</p>
+</div>
+
+You are, obviously, not satisfied. You need Roland MT-32 goodness in your life, right? At this, you have two options: shell out around 80 bucks for a used Roland MT-32, and a USB-to-MIDI cable, both of which you can find on eBay. Or you can use an emulator called <a href="https://github.com/munt/munt" target="_blank">Munt</a>, which closely resembles the sound of the actual device, with some minor inconsistencies. You'll also need the original Roland MT-32 BIOS ROM files, which are also public domain just like the Sharp X68000 ROM.
+
+<div class="post-image">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/j_5RWxHHVvE" frameborder="0" allowfullscreen></iframe>
+    <p class="post-image-caption"><a href="PhilsComputerLab" target="_blank">PhilsComputerLab posted this comprehensive guide for the installation of the Munt emulator. In our case, finishing step 2 will suffice</p>
 </div>
 
 Work in progress...
