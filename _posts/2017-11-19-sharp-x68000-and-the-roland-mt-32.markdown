@@ -20,6 +20,11 @@ Are you ready to embark on an exciting adventure into emulation?!
 
 <!--more-->
 
-Great! First a little bit of motivation (well, at least my motivation). There was this <a href="https://en.wikipedia.org/wiki/Shoot_%27em_up" target="_blank">shmup</a> I used to play in the <a href="https://en.wikipedia.org/wiki/Sol-Feace" target="_blank">Sega Genesis</a> called <a href="https://en.wikipedia.org/wiki/Sol-Feace" target="_blank">Sol-Feace</a> (which was actually known as "Sol-Deace" in the Genesis). While reading about the Roland MIDI devices, I found out that one of my favorite games by Wolf Team, now <a href="https://en.wikipedia.org/wiki/Namco_Tales_Studio" target="_blank">Namco Tales Studio</a>, supported the Roland MT-32 hardware in its Sharp X68000 computer version. I, of course, had to play that.
+Great! First a little bit of motivation (well, at least my motivation). There was this <a href="https://en.wikipedia.org/wiki/Shoot_%27em_up" target="_blank">shmup</a> I used to play in the <a href="https://en.wikipedia.org/wiki/Sega_Genesis" target="_blank">Sega Genesis</a> called <a href="https://en.wikipedia.org/wiki/Sol-Feace" target="_blank">Sol-Feace</a> (which was actually known as "Sol-Deace" in the Genesis. Or as <a href="https://youtu.be/g2eH3vYbdGo?t=9m14s">"Sol-Feaces" by the AVGN</a>, but I digress). While reading about the Roland MIDI devices, I found out that one of my favorite games by Wolf Team, now <a href="https://en.wikipedia.org/wiki/Namco_Tales_Studio" target="_blank">Namco Tales Studio</a>, supported the Roland MT-32 hardware in its Sharp X68000 computer version. I, of course, had to play that.
+
+<div class="post-image">
+    <a href="{{ site.baseurl }}/img/posts/sol-feace-cover.jpg" target="_blank"><img src="{{ site.baseurl }}/img/posts/sol-feace-cover.jpg"/></a>
+    <p class="post-image-caption">Front cover of the japanese Sol-Feace for the Sharp X68000</p>
+</div>
 
 Work in progress...
