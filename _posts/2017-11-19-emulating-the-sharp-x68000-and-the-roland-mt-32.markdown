@@ -72,3 +72,8 @@ Now you can listen to some proper game music!
 </div>
 
 And thus, we have reached the end of our emulation journey, hope you've enjoyed the nostalgia trip, back to this era where stuff we take for granted today, was new and exciting!
+
+<div class="post-image">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/gV9HclMPBRI" frameborder="0" allowfullscreen></iframe>
+    <p class="post-image-caption">As a bonus, here's further motivation with the Secret of the Monkey Island theme!</p>
+</div>
