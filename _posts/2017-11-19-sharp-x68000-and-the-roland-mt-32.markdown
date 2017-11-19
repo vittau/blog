@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Sharp X68000 and the Roland MT-32"
+title: "Emulating the Sharp X68000 and the Roland MT-32"
 date: 2017-11-19 12:05:00
 categories: software
 location: Rio de Janeiro, Brazil
