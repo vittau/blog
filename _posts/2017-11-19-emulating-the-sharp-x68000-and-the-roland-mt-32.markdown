@@ -75,5 +75,5 @@ And thus, we have reached the end of our emulation journey, hope you've enjoyed 
 
 <div class="post-image">
     <iframe width="560" height="315" src="https://www.youtube.com/embed/gV9HclMPBRI" frameborder="0" allowfullscreen></iframe>
-    <p class="post-image-caption">As a bonus, here's further motivation with the Secret of the Monkey Island theme!</p>
+    <p class="post-image-caption">As a bonus, here's further motivation with the <a href="https://en.wikipedia.org/wiki/The_Secret_of_Monkey_Island" target="_blank">Secret of Monkey Island</a> theme!</p>
 </div>
