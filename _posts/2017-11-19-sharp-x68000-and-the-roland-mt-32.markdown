@@ -47,7 +47,7 @@ You are, obviously, not satisfied. You need Roland MT-32 goodness in your life, 
 
 <div class="post-image">
     <iframe width="560" height="315" src="https://www.youtube.com/embed/j_5RWxHHVvE" frameborder="0" allowfullscreen></iframe>
-    <p class="post-image-caption"><a href="PhilsComputerLab" target="_blank">PhilsComputerLab posted this comprehensive guide for the installation of the Munt emulator. In our case, finishing step 2 will suffice</p>
+    <p class="post-image-caption"><a href="PhilsComputerLab" target="_blank">PhilsComputerLab</a> posted this comprehensive guide for the installation of the Munt emulator. In our case, finishing step 2 will suffice</p>
 </div>
 
 Now run Munt, and open the emulator settings. There, you'll find a tab for MIDI which you'll have to set up like the screenshot below.
