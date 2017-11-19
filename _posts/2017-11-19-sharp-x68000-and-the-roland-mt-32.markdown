@@ -27,4 +27,11 @@ Great! First a little bit of motivation (well, at least my motivation). There wa
     <p class="post-image-caption">Front cover of the japanese Sol-Feace for the Sharp X68000</p>
 </div>
 
+Now, we first actually need a Sharp X68000 emulator, which is not of the top priorities in the emulator world, therefore there aren't many quality options to be honest. Or best bet at this is the <a href="http://www.geocities.jp/kugimoto0715/xm6g/" target="_blank">XM6 TypeG</a> emulator (don't worry, the actual emulator GUI is in English). The actual installation is pretty straightforward, just extract the zip and run the appropriate executable for your processor architecture.
+
+<div class="post-image">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/uUSEkM6zFUw" frameborder="0" allowfullscreen></iframe>
+    <p class="post-image-caption">The Yamaha YM2151 trying its best at "Cosmic Illusion", the first level music</p>
+</div>
+
 Work in progress...
