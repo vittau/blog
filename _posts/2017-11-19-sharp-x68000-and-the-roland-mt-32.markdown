@@ -57,7 +57,7 @@ Now run Munt, and open the emulator settings. There, you'll find a tab for MIDI 
     <p class="post-image-caption">XM6 TypeG settings to pass-through the MIDI signal onto the Munt emulator device</p>
 </div>
 
-To actually boot up the game in MIDI mode, you have to hold the 登録 key (the one next to the HELP key in the X68000 keyboard, and key number 53 in the emulator keyboard settings) right after you insert the disk onto the FDD0 port in the emulator. Hold it until the game' splash screen appears, and you should see the emulated MT-32 LED display come to life in the Munt window. Success!!!
+To actually boot up the game in MIDI mode, you have to hold the 登録 key (the one next to the HELP key in the X68000 keyboard, and key number 53 in the emulator keyboard settings) right after you insert the disk onto the FDD0 port in the emulator. Hold it until the game's splash screen appears, and you should see the emulated MT-32 LED display come to life in the Munt window. Success!!!
 
 <div class="post-image">
     <a href="{{ site.baseurl }}/img/posts/munt-xm6.png" target="_blank"><img src="{{ site.baseurl }}/img/posts/munt-xm6.png"/></a>
