@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Sharp X68000 and the Roland MT-32"
-date: 2017-11-19 11:40:00
+date: 2017-11-19 12:05:00
 categories: software
 location: Rio de Janeiro, Brazil
 tags: emulator, sharp, roland, games, sound
@@ -36,9 +36,7 @@ Trouble, however, comes when you first try to figure out how you're supposed to 
     <p class="post-image-caption">The X68000 used 5.25" floppy disks, such as this glorious <a href="https://en.wikipedia.org/wiki/Ys_III:_Wanderers_from_Ys" target="_blank">Wanderers from Ys</a> one</p>
 </div>
 
-The fact that most of the game is in japanese doesn't help matters too much. After fiddling with it for a bit, I figured out that you need disk 3 inserted into FDD0, and disk 2 inserted into FDD1 to get to the main menu. Disk 1 contains the intro, which you can skip entirely (if you wanna watch it, just put disk 1 in the FDD0 slot).
-
-At this point, you'll be greeted with FM synth music being modulated by the internal Sharp X68000's Yamaha YM2151 chip.
+The fact that most of the game is in japanese doesn't help matters too much. After fiddling with it for a bit, I figured out that you need disk 3 inserted into FDD0, and disk 2 inserted into FDD1 to get to the main menu. Disk 1 contains the intro, which you can skip entirely (if you wanna watch it, just put disk 1 in the FDD0 slot). At this point, you'll be greeted with FM synth music being modulated by the internal Sharp X68000's Yamaha YM2151 chip.
 
 <div class="post-image">
     <iframe width="560" height="315" src="https://www.youtube.com/embed/uUSEkM6zFUw" frameborder="0" allowfullscreen></iframe>
@@ -52,4 +50,25 @@ You are, obviously, not satisfied. You need Roland MT-32 goodness in your life, 
     <p class="post-image-caption"><a href="PhilsComputerLab" target="_blank">PhilsComputerLab posted this comprehensive guide for the installation of the Munt emulator. In our case, finishing step 2 will suffice</p>
 </div>
 
-Work in progress...
+Now run Munt, and open the emulator settings. There, you'll find a tab for MIDI which you'll have to set up like the screenshot below.
+
+<div class="post-image">
+    <a href="{{ site.baseurl }}/img/posts/xm6-settings.png" target="_blank"><img src="{{ site.baseurl }}/img/posts/xm6-settings.png"/></a>
+    <p class="post-image-caption">XM6 TypeG settings to pass-through the MIDI signal onto the Munt emulator device</p>
+</div>
+
+To actually boot up the game in MIDI mode, you have to hold the 登録 key (the one next to the HELP key in the X68000 keyboard, and key number 53 in the emulator keyboard settings) right after you insert the disk onto the FDD0 port in the emulator. Hold it until the game' splash screen appears, and you should see the emulated MT-32 LED display come to life in the Munt window. Success!!!
+
+<div class="post-image">
+    <a href="{{ site.baseurl }}/img/posts/munt-xm6.png" target="_blank"><img src="{{ site.baseurl }}/img/posts/munt-xm6.png"/></a>
+    <p class="post-image-caption">Munt emulator's screen showing the emulated LED display and the instruments' states</p>
+</div>
+
+Now you can listen to some proper game music!
+
+<div class="post-image">
+    <audio src="{{ site.baseurl }}/music/cosmic-illusion-mt-32.mp3" controls="" preload="auto" autobuffer=""></audio>
+    <p class="post-image-caption">"Cosmic Illusion" in its full Roland MT-32 glory</p>
+</div>
+
+And thus, we have reached the end of our emulation journey, hope you've enjoyed the nostalgia trip, back to this era where stuff we take for granted today, was new and exciting!
