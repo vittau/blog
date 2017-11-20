@@ -28,6 +28,7 @@ Great! But before that, first a little bit of motivation (well, at least my moti
 </div>
 
 Now, we first actually need a Sharp X68000 emulator, which is not one of the top priorities in the emulation world, therefore there aren't many quality options to be honest. Our best bet at this is the <a href="http://www.geocities.jp/kugimoto0715/xm6g/" target="_blank">XM6 TypeG</a> emulator (don't worry, the actual emulator GUI is in English). The installation is pretty straightforward, just extract the .zip you downloaded, and run the appropriate executable for your processor architecture, which are found in distinct directories inside the .zip file. You will also need the actual X68000 BIOS ROM files, which are public domain by now. Just google it, and put the files in the same directory as the emulator executable.
+<i>Note: People report that older versions of the emulator were region-locked to Japanese Windows for some reason. It appears this restriction has since been removed by the author.</i>
 
 Trouble, however, comes when you first try to figure out how you're supposed to work with the 3 disks Sol-Feace is composed of. Yes, games spawned multiple disks back then.
 
