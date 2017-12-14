@@ -26,14 +26,33 @@
         text-transform: uppercase;
         color: rgba(0, 0, 0, 0.35);
 
-        &:hover { 
+        &:hover {
             border-color: $link-colour-over;
-            color: $link-colour-over; 
+            color: $link-colour-over;
         }
 
         &[disabled] {
             pointer-events: none;
             color: #eee;
+        }
+    }
+
+    .dark {
+        .pagination-link {
+            color: #eee;
+
+            &:hover {
+                border-color: $link-colour-over;
+                color: $link-colour-over;
+            }
+
+            &[disabled] {
+                color: rgba(0, 0, 0, 0.35);
+            }
+        }
+        .pagination-link--selected {
+            border-color: $link-colour;
+            color: $link-colour;
         }
     }
 
