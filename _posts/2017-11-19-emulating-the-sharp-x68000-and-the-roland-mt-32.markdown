@@ -71,6 +71,8 @@ To actually boot up the game in MIDI mode, you have to hold the 登録 key (the 
     <p class="post-image-caption">Munt emulator's screen showing the emulated LED display and the instruments' states</p>
 </div>
 
+<i>Note: After you make sure everything is working fine, you don't need to have the Munt GUI opened to use the MT-32 emulation, it will work just the same regardless. Just don't start playback with the window open, and then close it, or else it WILL break in this case.</i>
+
 Now you can listen to some proper game music!
 
 <div class="post-image">
