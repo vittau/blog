@@ -1,38 +1,43 @@
-* { 
-    box-sizing: border-box;
-    max-width: 100%;
+* {
+  box-sizing: border-box;
+  max-width: 100%;
 }
 
 html {
-    height: 100%;
-    width: 100%;
+  height: 100%;
+  width: 100%;
 }
 
 body {
-    background: $background-colour url("/blog/img/noise.png");
+  background: $background-colour url("/blog/img/noise.png");
 }
 
 body {
-    font-family: $regular-font;
-    font-size: $regular-text-size;
-    color: $text-colour;
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    font-smoothing: antialiased;
+  font-family: $regular-font;
+  font-size: $regular-text-size;
+  color: $text-colour;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
 }
 
 a {
-    color: $link-colour;
-    text-decoration: none;
+  color: $link-colour;
+  text-decoration: none;
 
-    &:hover {
-        color: $link-colour-over;
-    }
+  &:hover {
+    color: $link-colour-over;
+  }
+}
+
+code {
+  color: $code-color;
+  background-color: $code-color-background;
 }
 
 .dark {
-    body {
-        color: $dark-text-colour;
-        background: $dark-background-colour url("/blog/img/dark-noise.png");
-    }
+  body {
+    color: $dark-text-colour;
+    background: $dark-background-colour url("/blog/img/dark-noise.png");
+  }
 }

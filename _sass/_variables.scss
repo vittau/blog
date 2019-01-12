@@ -1,43 +1,45 @@
 // Typography
 
-    // Fonts
-    @import url('https://fonts.googleapis.com/css?family=Lato:400,700');
-    @import url('https://fonts.googleapis.com/css?family=Cormorant+Garamond:600');
-    @import url('https://fonts.googleapis.com/css?family=Raleway:300,400');
-    
-    $regular-font: 'Lato', sans-serif !default;
-    $title-font: 'Cormorant Garamond', serif !default;
-    $subtitle-font: 'Raleway', serif !default;
-    $caption-font: 'Raleway', serif !default;
+// Fonts
+@import url("https://fonts.googleapis.com/css?family=Lato:400,700");
+@import url("https://fonts.googleapis.com/css?family=Cormorant+Garamond:600");
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,400");
 
-    // Colours
-    $background-colour: #fefefe;
-    $link-colour: #11ad7f !default;
-    $link-colour-over: darken($link-colour, 15%) !default;
-    $text-colour: #222 !default;
-    $inverse-text-colour: #eee !default;
-    $subtitle-colour: #888 !default;
-    $caption-colour: #777 !default;
-    $border-colour: #e5e5e5 !default;
-    $shadow-color: #222 !default;
+$regular-font: "Lato", sans-serif !default;
+$title-font: "Cormorant Garamond", serif !default;
+$subtitle-font: "Raleway", serif !default;
+$caption-font: "Raleway", serif !default;
 
-    //Dark colours
-    $dark-background-colour: #010101;
-    $dark-text-colour: #dbdbdb !default;
-    $dark-inverse-text-colour: #0f0f0f !default;
-    $dark-subtitle-colour: #757575 !default;
-    $dark-caption-colour: #878787 !default;
-    $dark-border-colour: #878787 !default;
-    $dark-shadow-color: #dbdbdb !default;
+// Colours
+$background-colour: #fefefe;
+$link-colour: #11ad7f !default;
+$link-colour-over: darken($link-colour, 15%) !default;
+$text-colour: #222 !default;
+$inverse-text-colour: #eee !default;
+$subtitle-colour: #888 !default;
+$caption-colour: #777 !default;
+$border-colour: #e5e5e5 !default;
+$shadow-color: #222 !default;
+$code-color: #053829 !default;
+$code-color-background: #e5e5e5 !default;
 
-    // Sizes
-    $regular-text-size: 17px !default;
-    $title-text-size: 50px !default;
-    $title-text-small-size: 30px !default;
-    $subtitle-text-size: 18px !default;
-    $caption-text-size: 14px !default;
+//Dark colours
+$dark-background-colour: #010101;
+$dark-text-colour: #dbdbdb !default;
+$dark-inverse-text-colour: #0f0f0f !default;
+$dark-subtitle-colour: #757575 !default;
+$dark-caption-colour: #878787 !default;
+$dark-border-colour: #878787 !default;
+$dark-shadow-color: #dbdbdb !default;
+
+// Sizes
+$regular-text-size: 17px !default;
+$title-text-size: 50px !default;
+$title-text-small-size: 30px !default;
+$subtitle-text-size: 18px !default;
+$caption-text-size: 14px !default;
 
 // Layout
 
-    // Footer
-    $footer-height: 262px !default;
+// Footer
+$footer-height: 262px !default;

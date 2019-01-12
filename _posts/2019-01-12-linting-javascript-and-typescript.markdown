@@ -19,43 +19,37 @@ Let's begin by installing all the global dependencies we will need:
 yarn global add typescript eslint tslint prettier eslint-config-airbnb eslint-config-prettier eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-react eslint-plugin-prettier tslint-config-prettier
 </code></pre>
 
-The <i>.eslintrc.json</i> file goes into the user's home folder (Windows: <i style="font-family: monospace;">%UserProfile%</i>, Linux: <i style="font-family: monospace;">~</i>), and is as follows:
+The <code>.eslintrc.json</code> file goes into the user's home folder (Windows: <code>%UserProfile%</code>, Linux: <code>~</code>), and is as follows:
 
-<pre><code class="javascript">
-{
+<pre><code class="javascript">{
   "extends": ["airbnb", "prettier"],
   "plugins": ["prettier"],
   "rules": {
     "prettier/prettier": ["error"],
     "linebreak-style": 0
   }
-}
-</code></pre>
+}</code></pre>
 
 Notice that we are extending the Airbnb style guide, and then overriding it with the Prettier config. This is to make sure that ESLint and Prettier won't fight with each other for the correct style.
 
-The <i>tslint.json</i> file also goes into the user's home folder, and is as follows:
+The <code>tslint.json</code> file also goes into the user's home folder, and is as follows:
 
-<pre><code class="javascript">
-{
+<pre><code class="javascript">{
   "extends": ["tslint:recommended", "tslint-config-prettier"],
   "rules": {
     "typedef": [true, "call-signature"]
   }
-}
-</code></pre>
+}</code></pre>
 
 Like before, we also extend a configuration to tell TSLint not to fight against Prettier.
 
 At this point, we are ready to install the Visual Studio Code extensions. The ones we use are <b>Prettier</b> (<i>esbenp.prettier-vscode</i>), <b>ESLint</b> (<i>dbaeumer.vscode-eslint</i>) and <b>TSLint</b> (<i>eg2.tslint</i>). After installing them, add the following lines to the Visual Studio Code's user settings:
 
-<pre><code class="json">
-"eslint.packageManager": "yarn",
+<pre><code class="json">"eslint.packageManager": "yarn",
 "tslint.packageManager": "yarn",
 "javascript.format.enable": false,
 "typescript.format.enable": false,
-"editor.formatOnSave": true,
-</code></pre>
+"editor.formatOnSave": true</code></pre>
 
 The lines "<i>javascript.format.enable</i>" and "<i>typescript.format.enable</i>" are set to <i>false</i> to disable the built-in formatter, and allow us to use Prettier correctly.
 
