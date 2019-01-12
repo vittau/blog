@@ -11,6 +11,14 @@ tags: javascript, typescript, prettier, lint, eslint, tslint, vscode
 
 <!--more-->
 
+We will be using <a href="https://nodejs.org" target="_blank">Node.js</a> 11.4.0 and <a href="https://yarnpkg.com" target="_blank">Yarn</a> 1.13.0 for this.
+
+Let's begin by installing all the global dependencies we will need:
+
+<pre><code class="bash">
+yarn global add typescript eslint tslint prettier eslint-config-airbnb eslint-config-prettier eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-react eslint-plugin-prettier tslint-config-prettier
+</code></pre>
+
 The <i>.eslintrc.json</i> file goes into the user's home folder (Windows: <i>%UserProfile%</i>, Linux: <i>~</i>) and is as follows:
 
 <pre><code class="javascript">
@@ -20,6 +28,17 @@ The <i>.eslintrc.json</i> file goes into the user's home folder (Windows: <i>%Us
   "rules": {
     "prettier/prettier": ["error"],
     "linebreak-style": 0
+  }
+}
+</code></pre>
+
+The <i>tslint.json</i> file goes into the user's home folder (Windows: <i>%UserProfile%</i>, Linux: <i>~</i>) and is as follows:
+
+<pre><code class="javascript">
+{
+  "extends": ["tslint:recommended", "tslint-config-prettier"],
+  "rules": {
+    "typedef": [true, "call-signature"]
   }
 }
 </code></pre>
