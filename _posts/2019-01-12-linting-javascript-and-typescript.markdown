@@ -7,11 +7,11 @@ location: Rio de Janeiro, Brazil
 tags: javascript, typescript, prettier, lint, eslint, tslint, vscode
 ---
 
-<a href="https://en.wikipedia.org/wiki/Lint_(software)" target="_blank">Linting</a> is the use of tools to analyze source-code, find and report errors, bugs, or bad coding style. This post is a guide to install and use the <a href="https://eslint.org/" target="_blank">ESLint</a> and <a href="https://palantir.github.io/tslint/" target="_blank">TSLint</a> with <a href="https://code.visualstudio.com/" target="_blank">Visual Studio Code</a>, while also using the extension <a href="https://github.com/prettier/prettier" target="_blank">Prettier</a> to provide the stylistic opinions. We will also extend the <a href="https://github.com/airbnb/javascript" target="_blank">Airbnb style guide</a> in the ESLint setup. I will not lie to you, dear reader, the main objective of this post is to serve as future reference for myself when setting up this environment again.
+<a href="https://en.wikipedia.org/wiki/Lint_(software)" target="_blank">Linting</a> consists of the usage of tools to analyze source-code, find and report errors, bugs, and bad coding style. This post is a guide to install and use the <a href="https://eslint.org/" target="_blank">ESLint</a> and <a href="https://palantir.github.io/tslint/" target="_blank">TSLint</a> linters with <a href="https://code.visualstudio.com/" target="_blank">Visual Studio Code</a>, while also using the extension <a href="https://github.com/prettier/prettier" target="_blank">Prettier</a> to provide the stylistic opinions. We will also extend the <a href="https://github.com/airbnb/javascript" target="_blank">Airbnb style guide</a> in the ESLint setup. I will not lie to you, dear reader, the main objective of this post is to serve as future reference for myself when setting up this environment again.
 
 <!--more-->
 
-We will be using <a href="https://nodejs.org" target="_blank">Node.js</a> 11.4.0 and <a href="https://yarnpkg.com" target="_blank">Yarn</a> 1.13.0 for this.
+This was tested with <a href="https://nodejs.org" target="_blank">Node.js</a> 11.4.0 and <a href="https://yarnpkg.com" target="_blank">Yarn</a> 1.13.0.
 
 Let's begin by installing all the global dependencies we will need:
 
@@ -19,7 +19,7 @@ Let's begin by installing all the global dependencies we will need:
 yarn global add typescript eslint tslint prettier eslint-config-airbnb eslint-config-prettier eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-react eslint-plugin-prettier tslint-config-prettier
 </code></pre>
 
-The <i>.eslintrc.json</i> file goes into the user's home folder (Windows: <i>%UserProfile%</i>, Linux: <i>~</i>) and is as follows:
+The <i>.eslintrc.json</i> file goes into the user's home folder (Windows: <i>%UserProfile%</i>, Linux: <i>~</i>), and is as follows:
 
 <pre><code class="javascript">
 {
@@ -32,7 +32,9 @@ The <i>.eslintrc.json</i> file goes into the user's home folder (Windows: <i>%Us
 }
 </code></pre>
 
-The <i>tslint.json</i> file goes into the user's home folder (Windows: <i>%UserProfile%</i>, Linux: <i>~</i>) and is as follows:
+Notice that we are extending the Airbnb style guide, and then overriding it with the Prettier config. This is to make sure that ESLint and Prettier won't fight with each other for the correct style.
+
+The <i>tslint.json</i> file also goes into the user's home folder, and is as follows:
 
 <pre><code class="javascript">
 {
@@ -42,3 +44,19 @@ The <i>tslint.json</i> file goes into the user's home folder (Windows: <i>%UserP
   }
 }
 </code></pre>
+
+Like before, we also extend a configuration to tell TSLint not to fight against Prettier.
+
+At this point, we are ready to install the Visual Studio Code extensions. The ones we use are <b>Prettier</b> (<i>esbenp.prettier-vscode</i>), <b>ESLint</b> (<i>dbaeumer.vscode-eslint</i>) and <b>TSLint</b> (<i>eg2.tslint</i>). After installing them, add the following lines to the Visual Studio Code's user settings:
+
+<pre><code class="json">
+"eslint.packageManager": "yarn",
+"tslint.packageManager": "yarn",
+"javascript.format.enable": false,
+"typescript.format.enable": false,
+"editor.formatOnSave": true,
+</code></pre>
+
+The lines "javascript.format.enable" and "typescript.format.enable" are set to <i>false</i> to disable the built-in formatter, and allow us to use Prettier correctly.
+
+And we are done! Reload Visual Studio Code if you haven't already, and the linting should work. Happy coding!
