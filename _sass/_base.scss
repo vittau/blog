@@ -40,4 +40,9 @@ code {
     color: $dark-text-colour;
     background: $dark-background-colour url("/blog/img/dark-noise.png");
   }
+
+  code {
+    color: $dark-code-color;
+    background-color: $dark-code-color-background;
+  }
 }
