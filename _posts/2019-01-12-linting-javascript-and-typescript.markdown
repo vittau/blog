@@ -43,7 +43,9 @@ The <code>tslint.json</code> file also goes into the user's home folder, and is 
   }
 }</code></pre>
 
-Like before, we also extend a configuration to tell TSLint not to fight against Prettier.
+Notice this file's name is not preceeded by a dot (it's not a hidden file).
+
+Like before, we have extended a configuration to tell TSLint not to fight against Prettier.
 
 At this point, we are ready to install the Visual Studio Code extensions. The ones we use are <b>Prettier</b> (<i>esbenp.prettier-vscode</i>), <b>ESLint</b> (<i>dbaeumer.vscode-eslint</i>) and <b>TSLint</b> (<i>eg2.tslint</i>). After installing them, add the following lines to the Visual Studio Code's user settings:
 
