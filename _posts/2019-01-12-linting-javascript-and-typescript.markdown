@@ -11,7 +11,7 @@ tags: javascript, typescript, prettier, lint, eslint, tslint, vscode
 
 <div class="post-image">
     <a href="{{ site.baseurl }}/img/posts/linting.png" target="_blank"><img src="{{ site.baseurl }}/img/posts/linting.png"/></a>
-    <p class="post-image-caption">Code formatted by Prettier, with TSLint highlighting my unused variable.</p>
+    <p class="post-image-caption">Code formatted by Prettier, with TSLint highlighting my bad usage of var.</p>
 </div>
 
 <!--more-->
