@@ -19,6 +19,8 @@ Let's begin by installing all the global dependencies we will need:
 yarn global add typescript eslint tslint prettier eslint-config-airbnb eslint-config-prettier eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-react eslint-plugin-prettier tslint-config-prettier
 </code></pre>
 
+Yes, the ESLint plugins are necessary because they are <a href="https://nodejs.org/en/blog/npm/peer-dependencies/" target="_blank">peer dependencies</a> of <i>eslint-config-airbnb</i>.
+
 The <code>.eslintrc.json</code> file goes into the user's home folder (Windows: <code>%UserProfile%</code>, Linux: <code>~</code>), and is as follows:
 
 <pre><code class="javascript">{
