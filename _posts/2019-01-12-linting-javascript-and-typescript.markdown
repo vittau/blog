@@ -43,7 +43,7 @@ The <code>tslint.json</code> file also goes into the user's home folder, and is 
   }
 }</code></pre>
 
-Notice this file's name is not preceeded by a dot (it's not a hidden file).
+Notice this file's name is not preceded by a dot (it's not a hidden file).
 
 Like before, we have extended a configuration to tell TSLint not to fight against Prettier.
 
