@@ -21,7 +21,7 @@ yarn global add typescript eslint tslint prettier eslint-plugin-import eslint-pl
 
 Notice that <i>eslint-plugin-import</i> is necessary because it is a <a href="https://nodejs.org/en/blog/npm/peer-dependencies/" target="_blank">peer dependency</a> of <i>eslint-config-airbnb-base</i>. If you need support for <a href="https://reactjs.org/" target="_blank">React</a>, consider using <i>eslint-config-airbnb</i> instead. It has additional peer dependencies, check the <a href="https://www.npmjs.com/package/eslint-config-airbnb" target="_blank">dependency page</a> for more information.
 
-The <code>.eslintrc.json</code> file goes into the user's home folder (Windows: <code>%UserProfile%</code>, Linux: <code>~</code>), and is as follows:
+The <code class="inline">.eslintrc.json</code> file goes into the user's home folder (Windows: <code class="inline">%UserProfile%</code>, Linux: <code class="inline">~</code>), and is as follows:
 
 <pre><code class="javascript">{
   "extends": ["airbnb-base", "prettier"],
@@ -34,7 +34,7 @@ The <code>.eslintrc.json</code> file goes into the user's home folder (Windows: 
 
 Notice that we are extending the Airbnb style guide, and then overriding it with the Prettier config. This is to make sure that ESLint and Prettier won't fight with each other for the correct style.
 
-The <code>tslint.json</code> file also goes into the user's home folder, and is as follows:
+The <code class="inline">tslint.json</code> file also goes into the user's home folder, and is as follows:
 
 <pre><code class="javascript">{
   "extends": ["tslint:recommended", "tslint-config-prettier"],

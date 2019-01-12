@@ -30,7 +30,7 @@ a {
   }
 }
 
-code {
+code.inline {
   color: $code-color;
   background-color: $code-color-background;
 }
@@ -41,7 +41,7 @@ code {
     background: $dark-background-colour url("/blog/img/dark-noise.png");
   }
 
-  code {
+  code.inline {
     color: $dark-code-color;
     background-color: $dark-code-color-background;
   }
