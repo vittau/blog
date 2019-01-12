@@ -11,7 +11,7 @@ WIP
 
 <!--more-->
 
-<pre><code class="js">
+<pre><code class="javascript">
 {
   "extends": ["airbnb", "prettier"],
   "plugins": ["prettier"],
