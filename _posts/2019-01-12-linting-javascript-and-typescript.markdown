@@ -16,15 +16,15 @@ This was tested with <a href="https://nodejs.org" target="_blank">Node.js</a> 11
 Let's begin by installing all the global dependencies we will need:
 
 <pre><code class="bash">
-yarn global add typescript eslint tslint prettier eslint-config-airbnb eslint-config-prettier eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-react eslint-plugin-prettier tslint-config-prettier
+yarn global add typescript eslint tslint prettier eslint-plugin-import eslint-plugin-prettier eslint-config-prettier eslint-config-airbnb-base tslint-config-prettier
 </code></pre>
 
-Yes, the ESLint plugins are necessary because they are <a href="https://nodejs.org/en/blog/npm/peer-dependencies/" target="_blank">peer dependencies</a> of <i>eslint-config-airbnb</i>.
+Notice that <i>eslint-plugin-import</i> is necessary because it is a <a href="https://nodejs.org/en/blog/npm/peer-dependencies/" target="_blank">peer dependency</a> of <i>eslint-config-airbnb-base</i>.
 
 The <code>.eslintrc.json</code> file goes into the user's home folder (Windows: <code>%UserProfile%</code>, Linux: <code>~</code>), and is as follows:
 
 <pre><code class="javascript">{
-  "extends": ["airbnb", "prettier"],
+  "extends": ["airbnb-base", "prettier"],
   "plugins": ["prettier"],
   "rules": {
     "prettier/prettier": ["error"],
