@@ -44,7 +44,14 @@ The <code class="inline">tslint.json</code> file also goes into the user's home 
 <pre><code class="javascript">{
   "extends": ["tslint:recommended", "tslint-config-prettier"],
   "rules": {
-    "typedef": [true, "call-signature"]
+    "typedef": [
+      true,
+      "call-signature",
+      "arrow-call-signature",
+      "parameter",
+      "arrow-parameter",
+      "property-declaration"
+    ]
   }
 }</code></pre>
 
