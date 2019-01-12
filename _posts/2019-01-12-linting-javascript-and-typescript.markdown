@@ -19,7 +19,7 @@ Let's begin by installing all the global dependencies we will need:
 yarn global add typescript eslint tslint prettier eslint-config-airbnb eslint-config-prettier eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-react eslint-plugin-prettier tslint-config-prettier
 </code></pre>
 
-The <i>.eslintrc.json</i> file goes into the user's home folder (Windows: <i>%UserProfile%</i>, Linux: <i>~</i>), and is as follows:
+The <i>.eslintrc.json</i> file goes into the user's home folder (Windows: <i style="font-family: monospace;">%UserProfile%</i>, Linux: <i style="font-family: monospace;">~</i>), and is as follows:
 
 <pre><code class="javascript">
 {
@@ -57,6 +57,6 @@ At this point, we are ready to install the Visual Studio Code extensions. The on
 "editor.formatOnSave": true,
 </code></pre>
 
-The lines "javascript.format.enable" and "typescript.format.enable" are set to <i>false</i> to disable the built-in formatter, and allow us to use Prettier correctly.
+The lines "<i>javascript.format.enable</i>" and "<i>typescript.format.enable</i>" are set to <i>false</i> to disable the built-in formatter, and allow us to use Prettier correctly.
 
 And we are done! Reload Visual Studio Code if you haven't already, and the linting should work. Happy coding!
