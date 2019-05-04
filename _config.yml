@@ -5,10 +5,10 @@ author: "Vitor Machado"
 email: vmachado@cos.ufrj.br
 description: "Artificial Intelligence graduate from the Federal University of Rio de Janeiro, and software developer at CAPGov/COPPE. Photographer as a hobby, music lover and gamer since I was a little kid."
 baseurl: "/blog"
-url: "https://vitorpmach.com"
+url: "https://vitormach.dev"
 excerpt_separator: <!--more--> #use this in posts to define how long the excerpt of the post (that is shown on the Blog page) is
 twitter_username: "VittauMach"
-github_username:  "vittau"
+github_username: "vittau"
 instagram_username: "vitor.p.mach"
 keywords: "blog,tech,developer"
 fb_app_id: 1757810987867044
@@ -22,4 +22,4 @@ paginate: 5
 
 # Sass
 sass:
-    style: :compressed
+  style: :compressed

@@ -7,7 +7,7 @@ location: Rio de Janeiro, Brazil
 tags: css, scss, dark-theme, utility
 ---
 
-One of these days while I was preparing a dark version of a SCSS, I noticed this process could probably be automated with decent results. So I had the idea to make <a href="https://www.vitorpmach.com/darkenizer" target="_blank">darkenizer</a>.
+One of these days while I was preparing a dark version of a SCSS, I noticed this process could probably be automated with decent results. So I had the idea to make <a href="https://www.vitormach.dev/darkenizer" target="_blank">darkenizer</a>.
 
 <div class="post-image">
     <a href="{{ site.baseurl }}/img/posts/darkenizer.png" target="_blank"><img src="{{ site.baseurl }}/img/posts/darkenizer.png"/></a>
