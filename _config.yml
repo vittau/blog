@@ -3,7 +3,7 @@ title: The Random Ramblings of a Software Developer
 subtitle: "A blog about computer stuff. Mostly."
 author: "Vitor Machado"
 email: vmachado@cos.ufrj.br
-description: "Artificial Intelligence graduate from the Federal University of Rio de Janeiro, and software developer at ProntLife Health Intelligence. Photographer as a hobby, music lover and gamer since I was a little kid."
+description: "I live in Rio de Janeiro. I'm a software developer, A.I. Ph.D. student, music lover and gamer."
 baseurl: "/blog"
 url: "https://vitormach.dev"
 excerpt_separator: <!--more--> #use this in posts to define how long the excerpt of the post (that is shown on the Blog page) is
