@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Trying out f.lux"
-image: {{ site.baseurl }}/img/posts/flux-shot.png
+image: "{{ site.baseurl }}/img/posts/flux-shot.png"
 date: 2017-04-05 23:55:00
 categories: software
 location: Rio de Janeiro, Brazil
