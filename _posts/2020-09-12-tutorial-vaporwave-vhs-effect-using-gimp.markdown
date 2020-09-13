@@ -48,7 +48,7 @@ Next, we add a bit of <a href="https://en.wikipedia.org/wiki/Gaussian_noise" tar
     <p class="post-image-caption">Add a bit of gaussian noise to the luma channel</p>
 </div>
 
-After that, it's time for good ol' <a href="https://en.wikipedia.org/wiki/Gaussian_blur" target="_blank">gaussian blur</a> on the luma channel. Take note of the values, they will be different later on for the chroma channels due to mimic the effect of <a href="en.wikipedia.org/wiki/Chroma_subsampling" target="_blank">chroma subsampling</a>.
+After that, it's time for good ol' <a href="https://en.wikipedia.org/wiki/Gaussian_blur" target="_blank">gaussian blur</a> on the luma channel. Take note of the values, they will be different later on for the chroma channels due to the effect of <a href="en.wikipedia.org/wiki/Chroma_subsampling" target="_blank">chroma subsampling</a> in actual VHS.
 
 <b>Filters > Blur > Gaussian Blur...</b>
 
@@ -110,6 +110,8 @@ Now comes the overkill programmer part. I have made a <a href="https://en.wikipe
 You can run it like this:
 
 <pre><code class="bash">node vhs.js >> vhs.points</code></pre>
+
+And then you can load it into the Curve Bend tool. Don't forget to set the "Curve Type" to "Free".
 
 <b>Filters > Distorts > Curve Bend...</b>
 
