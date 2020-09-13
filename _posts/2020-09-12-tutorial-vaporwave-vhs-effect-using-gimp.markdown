@@ -111,7 +111,7 @@ Now comes the overkill programmer part. I have made a <a href="https://en.wikipe
 
 You can run it like this:
 
-<pre><code class="bash">node vhs.js >> vhs.points</code></pre>
+<pre><code class="shell">$ node vhs.js >> vhs-curve-bend.points</code></pre>
 
 Or you can just use <a href="{{ site.baseurl }}/other/vhs-curve-bend.points" target="_blank">my <i>.points</i> file</a> if you really can't be bothered.
 
