@@ -19,7 +19,7 @@ After a while searching for a good <a href="https://en.wikipedia.org/wiki/Vaporw
 Before we start, I suggest you get in the mood:
 
 <div class="post-image">
-    <iframe width="560" height="315" src="https://www.youtube.com/watch?v=bAgmGZ9iQ2Y" frameborder="0" allowfullscreen></iframe>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/bAgmGZ9iQ2Y" frameborder="0" allowfullscreen></iframe>
     <p class="post-image-caption">Some classic vaporwave</p>
 </div>
 
