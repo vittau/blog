@@ -1,10 +1,7 @@
 <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
-  />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
   <meta name="theme-color" content="#11ad7f" />
   <title>
     {% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}
@@ -13,16 +10,10 @@
   <meta name="keywords" content="{{ site.keywords }}" />
   <meta name="author" content="{{ site.author }}" />
   <meta property="fb:app_id" content="{{ site.fb_app_id }}" />
-  <link
-    rel="canonical"
-    href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}"
-  />
+  <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}" />
   <link rel="icon" sizes="16x16 32x32" href="/blog/favicon.ico" />
   <link rel="icon" type="image/png" sizes="256x256" href="/blog/favicon.png" />
-  <link
-    rel="stylesheet"
-    href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/dracula.min.css"
-  />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/dracula.min.css" />
 
   <meta content="{{ site.title }}" property="og:site_name" />
   {% if page.title %}
@@ -33,7 +24,12 @@
   <meta content="website" property="og:type" />
   <meta content="{{ site.description }}" property="og:description" />
   {% if page.url %}
-  <meta content="{{ page.url | prepend: site.url }}" property="og:url" />
+  <meta content="{{ page.url | absolute_url }}" property="og:url" />
+  {% else %}
+  <meta content="{{ site.url }}" property="og:url" />
+  {% endif %}
+  {% if page.image %}
+  <meta content="{{ page.image }}" property="og:image" />
   {% endif %}
 
   <!-- Dark theme load -->

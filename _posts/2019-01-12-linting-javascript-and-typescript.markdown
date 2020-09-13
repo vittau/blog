@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Linting JavaScript and TypeScript"
+image: {{ site.baseurl }}/img/posts/linting.png
 date: 2019-01-12 15:00:00
 categories: software
 location: Rio de Janeiro, Brazil

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Emulating the Sharp X68000 and the Roland MT-32"
+image: {{ site.baseurl }}/img/posts/sharp-x68000.jpg
 date: 2017-11-19 12:05:00
 categories: software
 location: Rio de Janeiro, Brazil
@@ -14,7 +15,7 @@ Back then in the eighties there was this new technology called <a href="https://
     <p class="post-image-caption">The Sharp X68000. Ain't that a beautiful piece of hardware?</p>
 </div>
 
-Other more expensive devices however, had what's called a <a href="https://en.wikipedia.org/wiki/Wavetable_synthesis" target="_blank">wavetable</a>. Wavetables are recordings of the actual instruments, of which many samples were taken and music was modulated by chosing the nearest ones and <a href="https://en.wikipedia.org/wiki/Interpolation" target="_blank">interpolating</a> between them. One such device is the <a href="https://en.wikipedia.org/wiki/Roland_MT-32" target="_blank">Roland MT-32</a> MIDI synthesizer, which cost almost US$700 back then in 1987 when it was released.
+Other more expensive devices however, had what's called a <a href="https://en.wikipedia.org/wiki/Wavetable_synthesis" target="_blank">wavetable</a>. Wavetables are recordings of the actual instruments, of which many samples were taken and music was modulated by chosing the nearest ones and <a href="https://en.wikipedia.org/wiki/Interpolation" target="_blank">interpolating</a> between them. One such device is the <a href="https://en.wikipedia.org/wiki/Roland_MT-32" target="_blank">Roland MT-32</a> MIDI synthesizer, which cost almost US\$700 back then in 1987 when it was released.
 
 Are you ready to embark on an exciting adventure into emulation?!
 

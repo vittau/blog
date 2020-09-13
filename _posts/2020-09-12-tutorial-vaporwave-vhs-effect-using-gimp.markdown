@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Tutorial: Vaporwave VHS effect using GIMP"
+image: {{ site.baseurl }}/img/posts/vaporwave-final.jpg
 date: 2020-09-12 21:25:00
 categories: software
 location: Rio de Janeiro, Brazil

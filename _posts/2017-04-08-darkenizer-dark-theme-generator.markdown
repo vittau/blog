@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Darkenizer - Dark theme generator"
+image: {{ site.baseurl }}/img/posts/darkenizer.png
 date: 2017-04-08 13:45:00
 categories: software
 location: Rio de Janeiro, Brazil
