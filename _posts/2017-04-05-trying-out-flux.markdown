@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Trying out f.lux"
+description: "I decided to try f.lux today. What is it you might wonder?"
 image: "/img/posts/flux-shot.png"
 date: 2017-04-05 23:55:00
 categories: software

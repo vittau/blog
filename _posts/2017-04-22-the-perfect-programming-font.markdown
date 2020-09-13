@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "The perfect programming font?"
+description: "So let's talk about one of these little things I can obsess about: fonts."
 image: "/img/posts/iosevka.png"
 date: 2017-04-22 21:49:00
 categories: software

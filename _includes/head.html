@@ -15,21 +15,31 @@
   <link rel="icon" type="image/png" sizes="256x256" href="/blog/favicon.png" />
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/dracula.min.css" />
 
+  <meta content="website" property="og:type" />
   <meta content="{{ site.title }}" property="og:site_name" />
+
   {% if page.title %}
   <meta content="{{ page.title }}" property="og:title" />
   {% else %}
   <meta content="{{ site.title }}" property="og:title" />
   {% endif %}
-  <meta content="website" property="og:type" />
+
+  {% if page.description %}
+  <meta content="{{ page.description }}" property="og:description" />
+  {% else %}
   <meta content="{{ site.description }}" property="og:description" />
+  {% endif %}
+
   {% if page.url %}
   <meta content="{{ page.url | absolute_url }}" property="og:url" />
   {% else %}
   <meta content="{{ site.url }}" property="og:url" />
   {% endif %}
+
   {% if page.image %}
   <meta content="{{ page.image | absolute_url }}" property="og:image" />
+  {% else %}
+  <meta content="{{ site.image | absolute_url }}" property="og:image" />
   {% endif %}
 
   <!-- Dark theme load -->

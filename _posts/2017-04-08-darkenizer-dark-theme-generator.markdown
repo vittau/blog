@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Darkenizer - Dark theme generator"
+description: "One of these days while I was preparing a dark version of a SCSS, I noticed this process could probably be automated with decent results."
 image: "/img/posts/darkenizer.png"
 date: 2017-04-08 13:45:00
 categories: software

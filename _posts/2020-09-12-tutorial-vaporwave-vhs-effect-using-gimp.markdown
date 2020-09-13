@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Tutorial: Vaporwave VHS effect using GIMP"
+description: "After a while searching for a good vaporwave effect, I ended up deciding to do it myself using GIMP."
 image: "/img/posts/vaporwave-final.jpg"
 date: 2020-09-12 21:25:00
 categories: software

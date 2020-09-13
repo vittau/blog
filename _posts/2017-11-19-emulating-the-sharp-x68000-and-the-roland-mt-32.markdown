@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Emulating the Sharp X68000 and the Roland MT-32"
+description: "Are you ready to embark on an exciting adventure into emulation?!"
 image: "/img/posts/sharp-x68000.jpg"
 date: 2017-11-19 12:05:00
 categories: software

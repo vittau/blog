@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Starting out"
+description: "It's time to start my own blog!"
 date: 2017-04-05 23:10:00
 categories: blog
 location: Rio de Janeiro, Brazil

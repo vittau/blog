@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Linting JavaScript and TypeScript"
+description: "I will not lie to you, dear reader, the main objective of this post is to serve as future reference for myself when setting up this environment again."
 image: "/img/posts/linting.png"
 date: 2019-01-12 15:00:00
 categories: software
