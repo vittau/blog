@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Tutorial: Vaporwave VHS effect using GIMP"
-date: 2017-11-19 12:05:00
+date: 2020-09-12 21:25:00
 categories: software
 location: Rio de Janeiro, Brazil
 tags: gimp, photography, postprocessing, vaporwave, retrowave, vhs
