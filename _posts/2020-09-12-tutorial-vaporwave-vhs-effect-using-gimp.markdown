@@ -111,6 +111,8 @@ You can run it like this:
 
 <pre><code class="bash">node vhs.js >> vhs.points</code></pre>
 
+Or you can just use <a href="{{ site.baseurl }}/other/vhs-curve-bend.points" target="_blank">my <i>.points</i> file</a> if you really can't be bothered.
+
 And then you can load it into the Curve Bend tool. Don't forget to set the "Curve Type" to "Free".
 
 <b>Filters > Distorts > Curve Bend...</b>
