@@ -57,7 +57,7 @@ After that, it's time for good ol' <a href="https://en.wikipedia.org/wiki/Gaussi
     <p class="post-image-caption">Some gaussian blur to the luma channel</p>
 </div>
 
-It's time for the <a href="https://en.wikipedia.org/wiki/Unsharp_masking" target="_blank">Unsharp mask</a> (a.k.a. sharpening). Turns out <a href="https://en.wikipedia.org/wiki/Videocassette_recorder" target="_blank">VCRs</a> add some rudimentary sharpening to the luma channel to attempt to alleviate some of the blurriness. It introduces the halo effects we are used to seeing in VHS footage.
+It's time for the <a href="https://en.wikipedia.org/wiki/Unsharp_masking" target="_blank">unsharp mask</a> (a.k.a. sharpening). Turns out <a href="https://en.wikipedia.org/wiki/Videocassette_recorder" target="_blank">VCRs</a> add some rudimentary sharpening to the luma channel to attempt to alleviate some of the blurriness. It introduces the halo effects we are used to seeing in VHS footage.
 
 <b>Filters > Enhance > Sharpen (Unsharp Mask)...</b>
 
@@ -84,7 +84,7 @@ Now it's time to add gaussian blur to both of the color channels. Repeat this pr
     <p class="post-image-caption">Some gaussian blur to the color channels</p>
 </div>
 
-We will shift the blueness channel a bit to the left to reproduce some of the fringing distortion that usually appears during the reconstruction of the signal. It's similar to <a href="https://en.wikipedia.org/wiki/Purple_fringing" target="_blank">Purple fringing</a> in photography, albeit with a different cause.
+We will shift the blueness channel a bit to the left to reproduce some of the fringing distortion that usually appears during the reconstruction of the signal. It's similar to <a href="https://en.wikipedia.org/wiki/Purple_fringing" target="_blank">purple fringing</a> in photography, albeit with a different cause.
 
 <div class="post-image">
     <a href="{{ site.baseurl }}/img/posts/vaporwave-step7.png" target="_blank"><img src="{{ site.baseurl }}/img/posts/vaporwave-step7.png"/></a>
@@ -126,6 +126,7 @@ You can run it like this:
 To increase the vaporwave factor we can add a bit of color balance effects and reduce saturation.
 
 <b>Colors > Color Balance...</b>
+<br />
 <b>Colors > Saturation...</b>
 
 <div class="post-image">
