@@ -4,7 +4,7 @@ title: "Tutorial: Vaporwave VHS effect using GIMP"
 date: 2020-09-12 21:25:00
 categories: software
 location: Rio de Janeiro, Brazil
-tags: gimp, photography, postprocessing, vaporwave, retrowave, vhs
+tags: gimp, tutorial, photography, postprocessing, vaporwave, retrowave, vhs
 ---
 
 After a while searching for a good <a href="https://en.wikipedia.org/wiki/Vaporwave" target="_blank">vaporwave</a> effect, I ended up deciding to do it myself using <a href="https://en.wikipedia.org/wiki/GIMP" target="_blank">GIMP</a>.
