@@ -29,7 +29,7 @@
   <meta content="{{ site.url }}" property="og:url" />
   {% endif %}
   {% if page.image %}
-  <meta content="{{ page.image | prepend: site.url }}" property="og:image" />
+  <meta content="{{ page.image | absolute_url }}" property="og:image" />
   {% endif %}
 
   <!-- Dark theme load -->
