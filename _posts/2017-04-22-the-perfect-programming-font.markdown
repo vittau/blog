@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "The perfect programming font?"
-image: "{{ site.baseurl }}/img/posts/iosevka.png"
+image: "img/posts/iosevka.png"
 date: 2017-04-22 21:49:00
 categories: software
 location: Rio de Janeiro, Brazil
