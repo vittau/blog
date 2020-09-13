@@ -1,39 +1,38 @@
 <section class="post">
-    <div class="post-header post-header--dw">
-        <a href="{{ site.baseurl }}{{ include.post.url }}"><h3 class="post-header-title">{{ include.post.title }}</h3></a>
-        <h4 class="post-header-date"><span class="ordinal">{{ include.post.date | date: "%e" }}</span> {{ include.post.date | date: "%B &#8217;%y" }}</h4>
-    </div>
-    {% if include.ignore_social != true %}
-    <div class="fb-like" data-href="{{site.url}}{{ site.baseurl }}{{ include.post.url }}" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
+  <div class="post-header post-header--dw">
+    <a href="{{ site.baseurl }}{{ include.post.url }}">
+      <h3 class="post-header-title">{{ include.post.title }}</h3>
+    </a>
+    <h4 class="post-header-date"><span class="ordinal">{{ include.post.date | date: "%e" }}</span> {{ include.post.date | date: "%B &#8217;%y" }}</h4>
+  </div>
+  <div class="post-body">
+    {{ include.content }}
+    {% if include.ignore_social == true %}
+    <a href="{{ site.baseurl }}{{ post.url }}">[Read more]</a>
     {% endif %}
-    <div class="post-body">
-        {{ include.content }}
-        {% if include.ignore_social == true %}
-        <a href="{{ site.baseurl }}{{ post.url }}">[Read more]</a>
-        {% endif %}
-    </div>
-    <div class="post-footer">
-        <ul class="post-footer-tags">
-            {% for tag in include.post.tags %}
-              <li class="post-footer-tag">#{{ tag }}</li>
-            {% endfor %}
-        </ul>
-        <!--<a href="https://www.google.com/maps/search/{{ include.post.location }}" target="_blank" class="post-footer-location">{{ include.post.location }}</a>-->
-    </div>
-    {% if include.ignore_social != true %}
-    <div id="disqus_thread"></div>
-    <script>
-        var disqus_config = function () {
-            this.page.url = "{{site.url}}{{ site.baseurl }}{{ include.post.url }}";
-            this.page.identifier = "{{ include.post.url }}";
-        };
-        (function() {
-            var d = document, s = d.createElement('script');
-            s.src = 'https://vitor-machados-blog.disqus.com/embed.js';
-            s.setAttribute('data-timestamp', +new Date());
-            (d.head || d.body).appendChild(s);
-        })();
-    </script>
-    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-    {% endif %}
+  </div>
+  <div class="post-footer">
+    <ul class="post-footer-tags">
+      {% for tag in include.post.tags %}
+      <li class="post-footer-tag">#{{ tag }}</li>
+      {% endfor %}
+    </ul>
+    <!--<a href="https://www.google.com/maps/search/{{ include.post.location }}" target="_blank" class="post-footer-location">{{ include.post.location }}</a>-->
+  </div>
+  {% if include.ignore_social != true %}
+  <div id="disqus_thread"></div>
+  <script>
+    var disqus_config = function () {
+      this.page.url = "{{site.url}}{{ site.baseurl }}{{ include.post.url }}";
+      this.page.identifier = "{{ include.post.url }}";
+    };
+    (function () {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://vitor-machados-blog.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  {% endif %}
 </section>
