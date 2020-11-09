@@ -6,7 +6,7 @@ email: vmachado@cos.ufrj.br
 description: "I live in Rio de Janeiro. I'm a software developer, A.I. Ph.D. student, music lover and gamer."
 baseurl: "/blog"
 url: "https://www.vitormach.dev"
-image: "/img/avatar.jpg"
+image: "/img/avatar.png"
 excerpt_separator: <!--more--> #use this in posts to define how long the excerpt of the post (that is shown on the Blog page) is
 twitter_username: "VittauMach"
 github_username: "vittau"
