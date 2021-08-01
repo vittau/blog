@@ -48,7 +48,7 @@ Trouble, however, comes when you first try to figure out how you're supposed to 
 The fact that most of the game is in Japanese doesn't help matters too much. After fiddling with it for a bit, I figured out that you need disk 3 inserted into FDD0, and disk 2 inserted into FDD1 to get to the main menu. Disk 1 contains the intro, which you can skip entirely (if you wanna watch it, just put disk 1 in the FDD0 slot). At this point, you'll be greeted with FM synth music being modulated by the internal Sharp X68000's Yamaha YM2151 chip (emulated chip, of course).
 
 <div class="post-image">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/uUSEkM6zFUw" frameborder="0" allowfullscreen></iframe>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/cqur1C6kg_s" frameborder="0" allowfullscreen></iframe>
     <p class="post-image-caption">The Yamaha YM2151 trying its best at "Cosmic Illusion", the first level music</p>
 </div>
 
