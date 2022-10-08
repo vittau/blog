@@ -134,13 +134,110 @@ But wait, how did I get here? Now, it's time to dive deep into the technical par
 
 We're going to use <a href="https://www.roomeqwizard.com/" target="_blank">Room EQ Wizard (REW)</a> to create the target curve.
 
+Super* Review kindly provided <a href="https://docs.google.com/spreadsheets/d/165QHVUpf6eEBxxvGhIEDjkRsDVrYfZlWTu_hGEaXOmc/edit?usp=sharing" target="_blank">this spreadsheet</a> to help building the input file for REW. In the first tab ("Custom"), we will be filling in amplitude values (dB) for each relevant frequency we wish to key in. It is recommended that the 1000KHz value is kept at 100, and the other frequencies to be adjusted relative to it. You only need to fill in some of the frequencies, and when you export the target curve will be interpolate along them. Switch to the "Export" for more information on how to export the curve.
+
+Here are the exported keypoints of my own target curve:
+
+<table>
+<thead>
+  <tr>
+    <th>Frequency</th>
+    <th>SPL (dB)</th>
+  </tr>
+</thead>
+<tbody>
+<tr>
+    <td>10</td>
+    <td>107.5</td>
+  </tr>
+  <tr>
+    <td>20</td>
+    <td>107.2</td>
+  </tr>
+  <tr>
+    <td>30</td>
+    <td>106.7</td>
+  </tr>
+  <tr>
+    <td>40</td>
+    <td>106.2</td>
+  </tr>
+  <tr>
+    <td>50</td>
+    <td>105.6</td>
+  </tr>
+  <tr>
+    <td>80</td>
+    <td>104.2</td>
+  </tr>
+  <tr>
+    <td>100</td>
+    <td>103.5</td>
+  </tr>
+  <tr>
+    <td>150</td>
+    <td>102.0</td>
+  </tr>
+  <tr>
+    <td>300</td>
+    <td>100.5</td>
+  </tr>
+  <tr>
+    <td>500</td>
+    <td>100.0</td>
+  </tr>
+  <tr>
+    <td>600</td>
+    <td>100.0</td>
+  </tr>
+  <tr>
+    <td>1,000</td>
+    <td>100.0</td>
+  </tr>
+  <tr>
+    <td>1,500</td>
+    <td>102.5</td>
+  </tr>
+  <tr>
+    <td>2,500</td>
+    <td>107.1</td>
+  </tr>
+  <tr>
+    <td>3,000</td>
+    <td>107.5</td>
+  </tr>
+  <tr>
+    <td>3,500</td>
+    <td>107.1</td>
+  </tr>
+  <tr>
+    <td>5,000</td>
+    <td>105.0</td>
+  </tr>
+  <tr>
+    <td>10,000</td>
+    <td>100.0</td>
+  </tr>
+  <tr>
+    <td>20,000</td>
+    <td>94.0</td>
+  </tr>
+  <tr>
+    <td>22,000</td>
+    <td>93.5</td>
+  </tr>
+</tbody>
+</table>
+
+Obs.: I have manually added in values for 10Hz and 22.000KHz to make the edges of the REW output smoother (the range we will export from REW will be 20Hz to 20.000KHz).
+
 TODO: Add an input explanation and example
 TODO: Add REW screenshots
 TODO: Talk about the REW export procedure for usage in CrinGraph
 
 <h6>Using the target curve</h6>
 
-TODO: Explain how to import the curve on Squig.link and AutoEQ
+TODO: Explain how to import the curve on Squig.link and use AutoEQ
 
 <h6>Custom CrinGraph</h6>
 
