@@ -121,7 +121,7 @@ A very useful tool to build and analyze parametric equalizers is crinacle's <a h
 
 There are many software which you can use to apply band and parametric equalizers, I will mention some which I use and enjoy.
 
-Wavelet is an Android app that allows you to use system-wide equalization. It has a built-in band equalizer with 9 bands, and a <a href="https://github.com/jaakkopasanen/AutoEq#convolution-equalizers" target="_blank">convolution equalizer</a>. I will not go into details about convolution equalizers, but suffice to say we will be able to export a Wavelet settings file using CrinGraph's parametric equalizer (more on that later).
+<a href="https://play.google.com/store/apps/details?id=com.pittvandewitt.wavelet" target="_blank">Wavelet</a> is an Android app that allows you to use system-wide equalization. It has a built-in band equalizer with 9 bands, and a <a href="https://github.com/jaakkopasanen/AutoEq#convolution-equalizers" target="_blank">convolution equalizer</a>. I will not go into details about convolution equalizers, but suffice to say we will be able to export a Wavelet settings file using CrinGraph's parametric equalizer (more on that later).
 
 <a href="https://github.com/jaakkopasanen/AutoEq" target="_blank">AutoEQ</a> is a project and not a software per se, but a very relevant one.
 
