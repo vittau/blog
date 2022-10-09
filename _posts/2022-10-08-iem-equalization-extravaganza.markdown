@@ -16,6 +16,8 @@ Audiophiles see <a href="https://en.wikipedia.org/wiki/In-ear_monitor" target="_
     <p class="post-image-caption">The legendary <a href="https://www.flickr.com/photos/vitormach/52220783635/" target="_blank">Moondrop Blessing 2:Dusk</a></p>
 </div>
 
+<!--more-->
+
 <h5>Before we proceed</h5>
 
 Before we dive into IEM equalization, there's a few topics I need to introduce to make sure we're all on the same page.
@@ -28,13 +30,13 @@ As with every hobby, it can always get more complicated. Usually we divide tonal
 
 The famous IEM reviewer crinacle has his own <a href="https://crinacle.com/2020/04/08/graphs-101-how-to-read-headphone-measurements/" target="_blank">definitions</a>, which are as follows:
 <ul>
-  <li>20Hz to 80Hz: Sub-bass;</li>
-  <li>80Hz to 200Hz: Mid-bass;</li>
-  <li>200Hz to 800Hz: Lower midrange;</li>
-  <li>800Hz to 1.500Hz: Centre midrange;</li>
-  <li>1.500Hz to 5.000Hz: Upper midrange;</li>
-  <li>5.000Hz to 10.000Hz: Treble;</li>
-  <li>10.000Hz+: Upper treble/"air".</li>
+  <li>• 20Hz to 80Hz: Sub-bass;</li>
+  <li>• 80Hz to 200Hz: Mid-bass;</li>
+  <li>• 200Hz to 800Hz: Lower midrange;</li>
+  <li>• 800Hz to 1.500Hz: Centre midrange;</li>
+  <li>• 1.500Hz to 5.000Hz: Upper midrange;</li>
+  <li>• 5.000Hz to 10.000Hz: Treble;</li>
+  <li>• 10.000Hz+: Upper treble/"air".</li>
 </ul>
 
 <h6>IEMs vs headphones vs speakers</h6>
@@ -105,9 +107,9 @@ Band equalizers have filters at specific, static frequencies. They usually provi
 For more precise corrections, we use parametric equalizers. I will leave it to the folks at PreSonus to provide a more <a href="https://www.presonus.com/learn/technical-articles/What-Is-a-Parametric-Eq" target="_blank">in-depth explanation</a>, but I will very quickly go through the main concepts intuitively. A parametric equalizer filter is composed of three parameters: frequency, Q and gain. Q stands for "quality" but that is a very deceiving name.
 
 <ul>
-  <li>Frequency: the frequency at which the filter is centered at;</li>
-  <li>Q: the "spread" of the filter. A small Q value means the filter is very wide, and a large Q results in a very narrow filter;</li>
-  <li>Gain: The amplitude at the center of the filter.</li>
+  <li>• Frequency: the frequency at which the filter is centered at;</li>
+  <li>• Q: the "spread" of the filter. A small Q value means the filter is very wide, and a large Q results in a very narrow filter;</li>
+  <li>• Gain: The amplitude at the center of the filter.</li>
 </ul>
 
 <div class="post-image">
@@ -142,8 +144,8 @@ I'm not a huge fan of the Harman curve. It has too much bass for me, and I'm als
 
 The only things I have decided to change in the Super 22 curve were:
 <ul>
-  <li>added slightly more sub-bass to increase the feeling of bass extension;</li>
-  <li>removed the scoop between 6~8KHz, which seems arbitrary to me personally.</li>
+  <li>• added slightly more sub-bass to increase the feeling of bass extension;</li>
+  <li>• removed the scoop between 6~8KHz, which seems arbitrary to me personally.</li>
 </ul>
 
 Hence I came up with the VitorMach target:
