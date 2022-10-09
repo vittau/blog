@@ -89,7 +89,7 @@ Due to <a href="https://en.wikipedia.org/wiki/Acoustic_resonance#Resonance_of_a_
 As such, frequency response graphs should be used with care, and its limitations have to be considered. They are most useful when used as a comparison tool between measurements taken with a consistent methodology. Frequency response graphs can be used as an aid for equalization, but one has to be mindful of such limitations, and also differences from person to person (your ear is not a GRAS coupler!), unit variance, etc...
 
 <div class="post-image">
-    <iframe width="560" height="315" src="https://www.youtube.com/watch?v=Qc__cF6i2mw" frameborder="0" allowfullscreen></iframe>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/Qc__cF6i2mw" frameborder="0" allowfullscreen></iframe>
     <p class="post-image-caption">Crinacle goes in-depth into IEM measuring equipments</p>
 </div>
 
