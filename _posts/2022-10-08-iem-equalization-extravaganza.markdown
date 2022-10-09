@@ -18,28 +18,27 @@ Audiophiles see <a href="https://en.wikipedia.org/wiki/In-ear_monitor" target="_
 
 <!--more-->
 
-<h5>Before we proceed</h5>
+##### Before we proceed
 
 Before we dive into IEM equalization, there's a few topics I need to introduce to make sure we're all on the same page.
 
-<h6>Tonality</h6>
+###### Tonality
 
 <strong>Tonality</strong> is basically how a sound reproduction device outputs each part of the <a href="https://en.wikipedia.org/wiki/Audio_frequency" target="_blank">frequency spectrum</a>. That is to say, it will determine how much bass, mids and treble the sound will ultimately have.
 
 As with every hobby, it can always get more complicated. Usually we divide tonality into sub-regions, such as "sub-bass", "upper-midrange" and "air region" (high treble). There are no precise definitions of where exactly in the frequency spectrum each area is located, and the terms only provide a general idea.
 
 The famous IEM reviewer crinacle has his own <a href="https://crinacle.com/2020/04/08/graphs-101-how-to-read-headphone-measurements/" target="_blank">definitions</a>, which are as follows:
-<ul>
-  <li>• 20Hz to 80Hz: Sub-bass;</li>
-  <li>• 80Hz to 200Hz: Mid-bass;</li>
-  <li>• 200Hz to 800Hz: Lower midrange;</li>
-  <li>• 800Hz to 1.500Hz: Centre midrange;</li>
-  <li>• 1.500Hz to 5.000Hz: Upper midrange;</li>
-  <li>• 5.000Hz to 10.000Hz: Treble;</li>
-  <li>• 10.000Hz+: Upper treble/"air".</li>
-</ul>
 
-<h6>IEMs vs headphones vs speakers</h6>
+  - • 20Hz to 80Hz: Sub-bass;
+  - • 80Hz to 200Hz: Mid-bass;
+  - • 200Hz to 800Hz: Lower midrange;
+  - • 800Hz to 1.500Hz: Centre midrange;
+  - • 1.500Hz to 5.000Hz: Upper midrange;
+  - • 5.000Hz to 10.000Hz: Treble;
+  - • 10.000Hz+: Upper treble/"air".
+
+###### IEMs vs headphones vs speakers
 
 At this point, it is important to understand that <strong>different types of devices should have different frequency response curves</strong>.
 
@@ -51,7 +50,7 @@ Finally, IEMs have it even worse, because they bypass the pinna completely and o
 
 All of that is to say: different types of devices will aim for different types of frequency response targets.
 
-<h6>Frequency response targets</h6>
+###### Frequency response targets
 
 For the remainder of this post, I will focus on IEMs. One of the most famous <strong>target response curves</strong> in the IEM world is the <a href="https://headphonesaddict.com/harman-curve/" target="_blank">Harman IE target</a> (<a href="https://www.aes.org/e-lib/browse.cfm?elib=19436" target="_blank">official paper</a>).
 
@@ -66,7 +65,7 @@ Another important curve is the diffuse field target curve, created by Etymotic R
 
 Other curves exist, such as Moondrop's own in-house <a href="https://crinacle.com/2019/02/02/moondrop-blessing/" target="_blank">Virtual Diffuse Sound Field (VDSF)</a>, or reviewer curves such as crinacle's <a href="https://crinacle.com/2020/10/05/in-ear-fidelitys-iem-neutral-target-gets-an-update-database-updates/" target="_blank">IEF Neutral</a>.
 
-<h6>"Technicalities"?</h6>
+###### "Technicalities"?
 
 Usually audiophiles divide the sound signature analysis into two groups: tonality and technicalities. Some aspects of the sound signature are hard (or maybe impossible) to describe using frequency response (the tonality) alone. This is where other, more abstract terms start to show up: "soundstage", "imaging", "attack speed", "texture", "details", etc...
 
@@ -76,7 +75,7 @@ Crinacle goes over these topics in great detail <a href="https://crinacle.com/20
 
 I find it quite surprising that in this day and age most of what we use to describe audio is still highly unscientific, veering into the "it's an art" territory. But nevertheless, this is the state of things. My own personal, unscientific view, is that most of the "detail" stems from a reproduction of the treble region in an accurate and devoid of peaks fashion. Regarding "soundstage" and "imaging", these are heavily tied to the <a href="https://en.wikipedia.org/wiki/Head-related_transfer_function" target="_blank">Head-Related Transfer Function (HRTF)</a>, which varies from person to person and is especially hard for IEMs to emulate properly, which is why they tend to fare poorly in this aspect.
 
-<h6>Measurements</h6>
+###### Measurements
 
 Now, what use would target curves be if there were no way to <strong>measure</strong> and analyze how an IEM responds?
 
@@ -93,7 +92,7 @@ As such, frequency response graphs should be used with care, and its limitations
     <p class="post-image-caption">Crinacle goes in-depth into IEM measuring equipments</p>
 </div>
 
-<h6>Equalizers</h6>
+###### Equalizers
 
 If you're here, I assume you're reasonably familiar with the concept of <a href="https://en.wikipedia.org/wiki/Equalization_(audio)" target="_blank"><strong>audio equalization</strong></a>. Still, I will expand a bit on the two most common types of equalizers: band and parametric.
 
@@ -106,11 +105,9 @@ Band equalizers have filters at specific, static frequencies. They usually provi
 
 For more precise corrections, we use parametric equalizers. I will leave it to the folks at PreSonus to provide a more <a href="https://www.presonus.com/learn/technical-articles/What-Is-a-Parametric-Eq" target="_blank">in-depth explanation</a>, but I will very quickly go through the main concepts intuitively. A parametric equalizer filter is composed of three parameters: frequency, Q and gain. Q stands for "quality" but that is a very deceiving name.
 
-<ul>
-  <li>• Frequency: the frequency at which the filter is centered at;</li>
-  <li>• Q: the "spread" of the filter. A small Q value means the filter is very wide, and a large Q results in a very narrow filter;</li>
-  <li>• Gain: The amplitude at the center of the filter.</li>
-</ul>
+  - • Frequency: the frequency at which the filter is centered at;
+  - • Q: the "spread" of the filter. A small Q value means the filter is very wide, and a large Q results in a very narrow filter;
+  - • Gain: The amplitude at the center of the filter.
 
 <div class="post-image">
     <a href="{{ site.baseurl }}/img/posts/q-values.png" target="_blank"><img src="{{ site.baseurl }}/img/posts/q-values.png"/></a>
@@ -133,7 +130,7 @@ Finally, we have <a href="https://equalizerapo.com/" target="_blank">Equalizer A
 
 We are now ready to go into the densest part of this whole thing, which is how I came with my own target curve to help me equalize my own IEMs.
 
-<h5>My own target curve</h5>
+##### My own target curve
 
 I'm not a huge fan of the Harman curve. It has too much bass for me, and I'm also quite sensitive to the 8KHz region, which is very prominent in the Harman curve. The new <a href="https://www.youtube.com/watch?v=RWzBw3XBn8c" target="_blank">Super 22 target curve</a> made by Super* Review is much closer to my own personal tastes, and served as the basis for my own target curve.
 
@@ -143,10 +140,9 @@ I'm not a huge fan of the Harman curve. It has too much bass for me, and I'm als
 </div>
 
 The only things I have decided to change in the Super 22 curve were:
-<ul>
-  <li>• added slightly more sub-bass to increase the feeling of bass extension;</li>
-  <li>• removed the scoop between 6~8KHz, which seems arbitrary to me personally.</li>
-</ul>
+
+  - • added slightly more sub-bass to increase the feeling of bass extension;
+  - • removed the scoop between 6~8KHz, which seems arbitrary to me personally.
 
 Hence I came up with the VitorMach target:
 
@@ -157,7 +153,7 @@ Hence I came up with the VitorMach target:
 
 But wait, how did I get here? Now, it's time to dive deep into the technical part.
 
-<h6>Room EQ Wizard (REW)</h6>
+###### Room EQ Wizard (REW)
 
 We're going to use <a href="https://www.roomeqwizard.com/" target="_blank">Room EQ Wizard (REW)</a> to create the target curve.
 
@@ -287,7 +283,7 @@ With that done, go to File > Export > Export measurement as text. Make sure your
 
 Click OK and save a new txt file. You will notice this file is much larger than your input, because it contains the interpolated values for the entire curve, not just your keypoints.
 
-<h6>Using the target curve</h6>
+###### Using the target curve
 
 With the target curve file in hands, it's simply a matter of going to Squiglink's Equalizer tab and clicking on "Upload Target" to use your own target curve.
 
@@ -326,10 +322,18 @@ As an added tip, you can hit this button to flatten one of the curves:
 
 This makes it easier to judge how aggresive your equalizer curve is.
 
-<h6>Custom CrinGraph</h6>
+###### Custom CrinGraph
 
 As I mentioned before, CrinGraph is an open-source software available on GitHub. I have decided to host my own instance using <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>, which is free. The repository contains <a href="https://github.com/mlochbaum/CrinGraph/blob/master/Configuring.md" target="_blank">documentation</a> on the basic configuration for deploying your own instance.
 
-<h6>Conclusion</h6>
+###### Conclusion
 
 I hope this was useful to you, and feel free to contact me using the Disqus chat below!
+
+###### Resources
+- • <a href="{{ site.baseurl }}/other/Squig - Aria VitorMach.txt" target="_blank">EQ settings - Aria</a>
+- • <a href="{{ site.baseurl }}/other/Squig - Chu VitorMach.txt" target="_blank">EQ settings - Chu</a>
+- • <a href="{{ site.baseurl }}/other/Squig - Dusk VitorMach.txt" target="_blank">EQ settings - Dusk</a>
+- • <a href="{{ site.baseurl }}/other/Aria VitorMach.txt" target="_blank">Wavelet settings - Aria</a>
+- • <a href="{{ site.baseurl }}/other/Chu VitorMach.txt" target="_blank">Wavelet settings - Chu</a>
+- • <a href="{{ site.baseurl }}/other/Dusk VitorMach.txt" target="_blank">Wavelet settings - Dusk</a>
