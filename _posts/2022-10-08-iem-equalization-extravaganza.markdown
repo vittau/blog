@@ -312,3 +312,7 @@ This makes it easier to judge how aggresive your equalizer curve actually is.
 <h6>Custom CrinGraph</h6>
 
 As I mentioned before, CrinGraph is an open-source software available on GitHub. I have decided to host my own instance using <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>, which is free. The repository contains <a href="https://github.com/mlochbaum/CrinGraph/blob/master/Configuring.md" target="_blank">documentation</a> on the basic configuration for deploying your own instance.
+
+<h6>Conclusion</h6>
+
+I hope this was useful to you, and feel free to contact me using the Disqus chat below!
