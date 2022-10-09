@@ -95,7 +95,10 @@ If you're here, I assume you're reasonably familiar with the concept of <a href=
 
 Band equalizers have filters at specific, static frequencies. They usually provide the user with a simple interface containing multiple bands at certain set frequencies, and the user is able to increase or decrease the amplitude of the audio around each frequency. These are fine for some coarse corrections, but due to the fixed bands it's often not possible to execute corrections exactly as desired.
 
-TODO: Add band equalizer example image
+<div class="post-image">
+    <a href="{{ site.baseurl }}/img/posts/fb2k-xnor-eq.png" target="_blank"><img src="{{ site.baseurl }}/img/posts/fb2k-xnor-eq.png"/></a>
+    <p class="post-image-caption"><a href="https://www.foobar2000.org/components/view/foo_dsp_xgeq" target="_blank">xnor's band equalizer</a> for <a href="https://www.foobar2000.org/" target="_blank">foobar2000</a></p>
+</div>
 
 For more precise corrections, we use parametric equalizers. I will leave it to the folks at PreSonus to provide a more <a href="https://www.presonus.com/learn/technical-articles/What-Is-a-Parametric-Eq" target="_blank">in-depth explanation</a>, but I will very quickly go through the main concepts intuitively. A parametric equalizer filter is composed of three parameters: frequency, Q and gain. Q stands for "quality" but that is a very deceiving name.
 
@@ -105,7 +108,10 @@ For more precise corrections, we use parametric equalizers. I will leave it to t
   <li>Gain: The amplitude at the center of the filter.</li>
 </ul>
 
-TODO: Add image comparing different Q values
+<div class="post-image">
+    <a href="{{ site.baseurl }}/img/posts/q-values.png" target="_blank"><img src="{{ site.baseurl }}/img/posts/q-values.png"/></a>
+    <p class="post-image-caption">Different Q values, image courtesy of <a href="https://wiki.jriver.com/index.php/Parametric_Equalizer" target="_blank">JRiver</a></p>
+</div>
 
 A very useful tool to build and analyze parametric equalizers is crinacle's <a href="https://crinacle.com/graphs/iems/graphtool/" target="_blank">graph comparison tool</a>. It is an open-source available on <a href="https://github.com/mlochbaum/CrinGraph" target="_blank">GitHub</a>, made by Marshall Lochbaum. However my favorite implementation of this tool is Super* Review's <a href="https://squig.link/" target="_blank">Squig.link</a>. I even have my own deployed <a href="https://www.vitormach.dev/CrinGraph/" target="_blank">here</a>!
 
@@ -127,7 +133,10 @@ We are now ready to go into the most dense part of this whole thing, which is ho
 
 I'm not a huge fan of the Harman curve. It has too much bass for me, and I'm also quite sensitive to the 8KHz region, which is very prominent in the Harman curve. The new <a href="https://www.youtube.com/watch?v=RWzBw3XBn8c" target="_blank">Super 22 target curve</a> made by Super* Review is much closer to my own personal tastes, and served as the basis for my own target curve.
 
-TODO: Add Super22 target curve image
+<div class="post-image">
+    <a href="{{ site.baseurl }}/img/posts/super22-target.png" target="_blank"><img src="{{ site.baseurl }}/img/posts/super22-target.png"/></a>
+    <p class="post-image-caption">Super22 target curve</p>
+</div>
 
 The only things I have decided to change in the Super 22 curve were:
 <ul>
@@ -137,7 +146,10 @@ The only things I have decided to change in the Super 22 curve were:
 
 Hence I came up with the VitorMach target:
 
-TODO: Add VitorMach target curve
+<div class="post-image">
+    <a href="{{ site.baseurl }}/img/posts/vitormach-target.png" target="_blank"><img src="{{ site.baseurl }}/img/posts/vitormach-target.png"/></a>
+    <p class="post-image-caption">VitorMach target curve</p>
+</div>
 
 But wait, how did I get here? Now, it's time to dive deep into the technical part.
 
