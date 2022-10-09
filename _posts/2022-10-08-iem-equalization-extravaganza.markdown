@@ -2,7 +2,7 @@
 layout: post
 title: "IEM Equalization Extravaganza"
 description: "A quick introduction into the IEM equalization world"
-image: "/img/posts/iem-eq.jpg"
+image: "/img/posts/iem-dusk.jpg"
 date: 2022-10-08 18:40:00
 categories: audio
 location: Rio de Janeiro, Brazil
@@ -11,11 +11,9 @@ tags: audiophile, audio, music, iem, headphone, equalizer
 
 Audiophiles see <a href="https://en.wikipedia.org/wiki/In-ear_monitor" target="_blank">In-ear monitors (IEMs)</a> as an inexpensive way into audiophilia. Sure, with the recent rise of the "<a href="https://www.makeuseof.com/what-is-chi-fi/" target="_blank">chi-fi</a>" it has never been so cheap to have access to good sound quality.
 
-TODO: Create iem-eq.jpg image
-
 <div class="post-image">
-    <a href="{{ site.baseurl }}/img/posts/iem-eq.jpg" target="_blank"><img src="{{ site.baseurl }}/img/posts/iem-eq.jpg"/></a>
-    <p class="post-image-caption">IEM Equalizer Extravaganza</p>
+    <a href="{{ site.baseurl }}/img/posts/iem-dusk.jpg" target="_blank"><img src="{{ site.baseurl }}/img/posts/iem-dusk.jpg"/></a>
+    <p class="post-image-caption">The legendary <a href="https://www.flickr.com/photos/vitormach/52220783635/" target="_blank">Moondrop Blessing 2:Dusk</a></p>
 </div>
 
 <h5>Before we proceed</h5>
@@ -30,13 +28,13 @@ As with every hobby, it can always get more complicated. Usually we divide tonal
 
 The famous IEM reviewer crinacle has his own <a href="https://crinacle.com/2020/04/08/graphs-101-how-to-read-headphone-measurements/" target="_blank">definitions</a>, which are as follows:
 <ul>
-  <li>20Hz to 80Hz: Sub-bass</li>
-  <li>80Hz to 200Hz: Mid-bass</li>
-  <li>200Hz to 800Hz: Lower midrange</li>
-  <li>800Hz to 1,500Hz: Centre midrange</li>
-  <li>1,500Hz to 5,000Hz: Upper midrange</li>
-  <li>5,000Hz to 10,000Hz: Treble</li>
-  <li>10,000Hz+: Upper treble/"air"</li>
+  <li>20Hz to 80Hz: Sub-bass;</li>
+  <li>80Hz to 200Hz: Mid-bass;</li>
+  <li>200Hz to 800Hz: Lower midrange;</li>
+  <li>800Hz to 1.500Hz: Centre midrange;</li>
+  <li>1.500Hz to 5.000Hz: Upper midrange;</li>
+  <li>5.000Hz to 10.000Hz: Treble;</li>
+  <li>10.000Hz+: Upper treble/"air".</li>
 </ul>
 
 <h6>IEMs vs headphones vs speakers</h6>
@@ -55,7 +53,10 @@ All of that is to say: different types of devices will aim for different types o
 
 For the remainder of this post, I will focus on IEMs. One of the most famous <strong>target response curves</strong> in the IEM world is the <a href="https://headphonesaddict.com/harman-curve/" target="_blank">Harman IE target</a> (<a href="https://www.aes.org/e-lib/browse.cfm?elib=19436" target="_blank">official paper</a>).
 
-TODO: Add Harman curve image here
+<div class="post-image">
+    <a href="{{ site.baseurl }}/img/posts/harman-target.png" target="_blank"><img src="{{ site.baseurl }}/img/posts/harman-target.png"/></a>
+    <p class="post-image-caption">The Harman target curve</p>
+</div>
 
 The Harman curve is meant to capture the taste of what most people would consider "good". It has what audiophiles sometimes describe as a "V-shaped" tonality: lots of bass (mostly focused on the sub-bass area) and goes up again on the treble region. It also accounts for an increased output in the region around 2~5KHz, meant to emulate the effect the ear pinna has on the sound that reaches our ears (remember, an IEM bypasses the pinna completely). This is usually referred to as the "pinna gain".
 
