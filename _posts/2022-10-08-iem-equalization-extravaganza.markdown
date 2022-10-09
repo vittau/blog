@@ -138,7 +138,17 @@ Super* Review kindly provided <a href="https://docs.google.com/spreadsheets/d/16
 
 Here are the exported keypoints of my own target curve:
 
-<table>
+<style>
+  .target-keypoints th {
+    padding: 0 10px;
+    font-size: 0.75rem;
+  }
+  .target-keypoints td {
+    padding: 0;
+    font-size: 0.75rem;
+  }
+</style>
+<table class="target-keypoints">
 <thead>
   <tr>
     <th>Frequency</th>
