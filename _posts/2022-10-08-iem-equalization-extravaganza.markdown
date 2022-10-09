@@ -3,7 +3,7 @@ layout: post
 title: "IEM Equalization Extravaganza"
 description: "A quick introduction into the IEM equalization world"
 image: "/img/posts/iem-dusk.jpg"
-date: 2022-10-08 18:40:00
+date: 2022-10-08 22:40:00
 categories: audio
 location: Rio de Janeiro, Brazil
 tags: audiophile, audio, music, iem, headphone, equalizer
@@ -115,21 +115,21 @@ For more precise corrections, we use parametric equalizers. I will leave it to t
     <p class="post-image-caption">Different Q values, image courtesy of <a href="https://wiki.jriver.com/index.php/Parametric_Equalizer" target="_blank">JRiver</a></p>
 </div>
 
-A very useful tool to build and analyze parametric equalizers is crinacle's <a href="https://crinacle.com/graphs/iems/graphtool/" target="_blank">graph comparison tool</a>. It is an open-source available on <a href="https://github.com/mlochbaum/CrinGraph" target="_blank">GitHub</a>, made by Marshall Lochbaum. However my favorite implementation of this tool is Super* Review's <a href="https://squig.link/" target="_blank">Squiglink</a>. I even have my own deployed <a href="https://www.vitormach.dev/CrinGraph/" target="_blank">here</a>!
+A very useful tool to build and analyze parametric equalizers is crinacle's <a href="https://crinacle.com/graphs/iems/graphtool/" target="_blank">graph comparison tool</a>. It is an open-source available on <a href="https://github.com/mlochbaum/CrinGraph" target="_blank">GitHub</a>, made by Marshall Lochbaum. However, my favorite implementation of this tool is Super* Review's <a href="https://squig.link/" target="_blank">Squiglink</a>. I even have my own deployed <a href="https://www.vitormach.dev/CrinGraph/" target="_blank">here</a>!
 
 There are many software which you can use to apply band and parametric equalizers, I will mention some which I use and enjoy.
 
 Wavelet is an Android app that allows you to use system-wide equalization. It has a built-in band equalizer with 9 bands, and a <a href="https://github.com/jaakkopasanen/AutoEq#convolution-equalizers" target="_blank">convolution equalizer</a>. I will not go into details about convolution equalizers, but suffice to say we will be able to export a Wavelet settings file using CrinGraph's parametric equalizer (more on that later).
 
-<a href="https://github.com/jaakkopasanen/AutoEq" target="_blank">AutoEQ</a> is actually a project and not a software per se, but a very relevant one.
+<a href="https://github.com/jaakkopasanen/AutoEq" target="_blank">AutoEQ</a> is a project and not a software per se, but a very relevant one.
 
 > AutoEQ is a project for equalizing headphone frequency responses automatically, and it achieves this by parsing frequency response measurements and producing equalization settings which correct the headphone to a neutral sound.
 
 It includes a huge database with over 4000 measurements, and parametric equalizer settings tuned to the Harman target. Wavelet has built-in support for the AutoEQ database using its AutoEQ function. However, we will export our own equalizer curve later.
 
-Finally we have <a href="https://equalizerapo.com/" target="_blank">Equalizer APO</a>, an open-source Windows equalizer. It has graphic, parametric and convolution equalizer support, among other features. It's usually used in conjunction with the <a href="https://sourceforge.net/projects/peace-equalizer-apo-extension/" target="_blank">Peace</a> interface.
+Finally, we have <a href="https://equalizerapo.com/" target="_blank">Equalizer APO</a>, an open-source Windows equalizer. It has graphic, parametric and convolution equalizer support, among other features. It's usually used in conjunction with the <a href="https://sourceforge.net/projects/peace-equalizer-apo-extension/" target="_blank">Peace</a> interface.
 
-We are now ready to go into the most dense part of this whole thing, which is how I came with my own target curve to help me equalize my own IEMs.
+We are now ready to go into the densest part of this whole thing, which is how I came with my own target curve to help me equalize my own IEMs.
 
 <h5>My own target curve</h5>
 
@@ -274,7 +274,7 @@ In REW, go to File > Import > Import frequency response. Choose your keypoints .
     <p class="post-image-caption">Keypoints file imported in REW</p>
 </div>
 
-Go in the Graph menu, and choose one of the smoothing options to make the curve less "jagged". In my case I went full smooth and choose 1/1 smoothing (the strongest), but feel free to experiment.
+Go in the Graph menu and choose one of the smoothing options to make the curve less "jagged". In my case I went full smooth and choose 1/1 smoothing (the strongest), but feel free to experiment.
 
 With that done, go to File > Export > Export measurement as text. Make sure your options look like this:
 
@@ -287,7 +287,7 @@ Click OK and save a new txt file. You will notice this file is much larger than 
 
 <h6>Using the target curve</h6>
 
-With the target curve file in hands, it's simply a matter of going to Squiglink's Equalizer tab, and clicking on "Upload Target" to use your own target curve.
+With the target curve file in hands, it's simply a matter of going to Squiglink's Equalizer tab and clicking on "Upload Target" to use your own target curve.
 
 With the target curve loaded, we can begin to use the parametric equalizer, and the AutoEQ function.
 
@@ -304,7 +304,7 @@ There are a few things to note here.
 
 First, the number of filters on the left sidebar will determine the maximum number of filters AutoEQ will use. The AutoEQ Range parameter specifies the frequency range which AutoEQ should try to equalize. I would heavily recommend not changing this range, because like I said before, the treble region measurements are very unreliable.
 
-Speaking of unreliability, I would try to avoid using aggressive (high gain) and narrow (high Q) filters above 7KHz, because this might result in a "correction" that does not work well with your particular unit, or on your own ears. In the treble region, prefer wideband adjustments (low Q) and modest gain settings. Use the AutoEQ result as a basis, and change the values on the left sidebar.
+Speaking of unreliability, I would try to avoid using aggressive (high gain) and narrow (high Q) filters above 7KHz, because this might result in a "correction" that does not work well with your particular unit, or on your own ears. In the treble region, prefer wideband adjustments (low Q) and modest gain settings. Use the AutoEQ result only as a basis, and tweak the values on the left sidebar.
 
 You should end up with something like this after some tweaks on the treble region:
 
@@ -322,7 +322,7 @@ As an added tip, you can hit this button to flatten one of the curves:
     <p class="post-image-caption">Original squig flattened</p>
 </div>
 
-This makes it easier to judge how aggresive your equalizer curve actually is.
+This makes it easier to judge how aggresive your equalizer curve is.
 
 <h6>Custom CrinGraph</h6>
 
