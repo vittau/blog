@@ -266,9 +266,24 @@ Here are the exported keypoints of my own target curve:
 
 Obs.: I have manually added in values for 10Hz and 22.000KHz to make the edges of the REW output smoother (the range we will export from REW will be 20Hz to 20.000KHz).
 
-TODO: Add an input explanation and example
-TODO: Add REW screenshots
-TODO: Talk about the REW export procedure for usage in CrinGraph
+In REW, go to File > Import > Import frequency response. Choose your keypoints .txt file, and you should see this:
+
+
+<div class="post-image">
+    <a href="{{ site.baseurl }}/img/posts/rew-imported.png" target="_blank"><img src="{{ site.baseurl }}/img/posts/rew-imported.png"/></a>
+    <p class="post-image-caption">Keypoints file imported in REW</p>
+</div>
+
+Go in the Graph menu, and choose one of the smoothing options to make the curve less "jagged". In my case I went full smooth and choose 1/1 smoothing (the strongest), but feel free to experiment.
+
+With that done, go to File > Export > Export measurement as text. Make sure your options look like this:
+
+<div class="post-image">
+    <a href="{{ site.baseurl }}/img/posts/rew-export.png" target="_blank"><img src="{{ site.baseurl }}/img/posts/rew-export.png"/></a>
+    <p class="post-image-caption">REW measurement export dialog</p>
+</div>
+
+Click OK and save a new txt file. You will notice this file is much larger than your input, because it contains the interpolated values for the entire curve, not just your keypoints.
 
 <h6>Using the target curve</h6>
 
