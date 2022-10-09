@@ -9,7 +9,7 @@ location: Rio de Janeiro, Brazil
 tags: audiophile, audio, music, iem, headphone, equalizer
 ---
 
-Audiophiles see <a href="https://en.wikipedia.org/wiki/In-ear_monitor" target="_blank">In-ear monitors (IEMs)</a> as an inexpensive way into audiophilia. Sure, with the recent rise of the "<a href="https://www.makeuseof.com/what-is-chi-fi/" target="_blank">chi-fi</a>" it has never been so cheap to have access to good sound quality.
+Audiophiles see <a href="https://en.wikipedia.org/wiki/In-ear_monitor" target="_blank">In-ear monitors (IEMs)</a> as an inexpensive way into audiophilia. Sure, with the recent rise of the "<a href="https://www.makeuseof.com/what-is-chi-fi/" target="_blank">chi-fi</a>" it has never been so cheap to have access to good sound quality. Still, a certain sound signature might not be to the tastes of everyone, not to mention different ears will literally hear things differently. In such cases, one has the possibility of applying equalization to change the signature of audio hardware.
 
 <div class="post-image">
     <a href="{{ site.baseurl }}/img/posts/iem-dusk.jpg" target="_blank"><img src="{{ site.baseurl }}/img/posts/iem-dusk.jpg"/></a>
