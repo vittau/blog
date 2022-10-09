@@ -66,15 +66,17 @@ Other curves exist, such as Moondrop's own in-house <a href="https://crinacle.co
 
 <h6>"Technicalities"?</h6>
 
-Before we move on to more technical aspects, let us quickly go over what audiophiles usually refer to as "techinicalities".
+Usually audiophiles divide the sound signature analysis into two groups: tonality and technicalities. Some aspects of the sound signature are hard (or maybe impossible) to describe using frequency response (the tonality) alone. This is where other, more abstract terms start to show up: "soundstage", "imaging", "attack speed", "texture", "details", etc...
 
-TODO: Talk about soundstage, imaging and attack/release
-TODO: Talk about minimum phase devices
-TODO: Talk about frequency response and distortion
+Crinacle goes over these topics in great detail <a href="https://crinacle.com/2019/02/04/what-is-technical-ability-according-to-me-myself-and-i/" target="_blank">on this article</a>, where he states:
+
+> Do note that whatever I write here is still mostly “pseudoscience” in that most of the things here aren’t peer-reviewed or academically researched (or scientifically accurate, for that matter!)
+
+I find it quite surprising that in this day and age most of what we use to describe audio is still highly unscientific, veering into the "it's an art" territory. But nevertheless, this is the state of things. My own personal, unscientific view, is that most of the "detail" stems from a reproduction of the treble region in an accurate and devoid of peaks fashion. Regarding "soundstage" and "imaging", these are heavily tied to the <a href="https://en.wikipedia.org/wiki/Head-related_transfer_function" target="_blank">Head-Related Transfer Function (HRTF)</a>, which varies from person to person and is especially hard for IEMs to emulate properly, which is why they tend to fare poorly in this aspect.
 
 <h6>Measurements</h6>
 
-What use would target curves be if there were no way to <strong>measure</strong> and analyze how an IEM responds?
+Now, what use would target curves be if there were no way to <strong>measure</strong> and analyze how an IEM responds?
 
 Measurements are a very complicated subject, which I do not have a lot of property to talk about, so I will give you some general pointers of where to go.
 
