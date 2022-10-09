@@ -108,9 +108,19 @@ TODO: Add image comparing different Q values
 
 A very useful tool to build and analyze parametric equalizers is crinacle's <a href="https://crinacle.com/graphs/iems/graphtool/" target="_blank">graph comparison tool</a>. It is an open-source available on <a href="https://github.com/mlochbaum/CrinGraph" target="_blank">GitHub</a>, made by Marshall Lochbaum. However my favorite implementation of this tool is Super* Review's <a href="https://squig.link/" target="_blank">Squig.link</a>. I even have my own deployed <a href="https://www.vitormach.dev/CrinGraph/" target="_blank">here</a>!
 
-TODO: Talk about Wavelet, AutoEQ and Equalizer APO
+There are many software which you can use to apply band and parametric equalizers, I will mention some which I use and enjoy.
 
-In fact, we are now ready to go into the most dense part of this whole thing, which is how I came with my own target curve to help me equalize my own IEMs.
+Wavelet is an Android app that allows you to use system-wide equalization. It has a built-in band equalizer with 9 bands, and a <a href="https://github.com/jaakkopasanen/AutoEq#convolution-equalizers" target="_blank">convolution equalizer</a>. I will not go into details about convolution equalizers, but suffice to say we will be able to export a Wavelet settings file using CrinGraph's parametric equalizer (more on that later).
+
+<a href="https://github.com/jaakkopasanen/AutoEq" target="_blank">AutoEQ</a> is actually a project and not a software per se, but a very relevant one.
+
+> AutoEQ is a project for equalizing headphone frequency responses automatically, and it achieves this by parsing frequency response measurements and producing equalization settings which correct the headphone to a neutral sound.
+
+It includes a huge database with over 4000 measurements, and parametric equalizer settings tuned to the Harman target. Wavelet has built-in support for the AutoEQ database using its AutoEQ function. However, we will export our own equalizer curve later.
+
+Finally we have <a href="https://equalizerapo.com/" target="_blank">Equalizer APO</a>, an open-source Windows equalizer. It has graphic, parametric and convolution equalizer support, among other features. It's usually used in conjunction with the <a href="https://sourceforge.net/projects/peace-equalizer-apo-extension/" target="_blank">Peace</a> interface.
+
+We are now ready to go into the most dense part of this whole thing, which is how I came with my own target curve to help me equalize my own IEMs.
 
 <h5>My own target curve</h5>
 
