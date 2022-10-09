@@ -115,7 +115,7 @@ For more precise corrections, we use parametric equalizers. I will leave it to t
     <p class="post-image-caption">Different Q values, image courtesy of <a href="https://wiki.jriver.com/index.php/Parametric_Equalizer" target="_blank">JRiver</a></p>
 </div>
 
-A very useful tool to build and analyze parametric equalizers is crinacle's <a href="https://crinacle.com/graphs/iems/graphtool/" target="_blank">graph comparison tool</a>. It is an open-source available on <a href="https://github.com/mlochbaum/CrinGraph" target="_blank">GitHub</a>, made by Marshall Lochbaum. However my favorite implementation of this tool is Super* Review's <a href="https://squig.link/" target="_blank">Squig.link</a>. I even have my own deployed <a href="https://www.vitormach.dev/CrinGraph/" target="_blank">here</a>!
+A very useful tool to build and analyze parametric equalizers is crinacle's <a href="https://crinacle.com/graphs/iems/graphtool/" target="_blank">graph comparison tool</a>. It is an open-source available on <a href="https://github.com/mlochbaum/CrinGraph" target="_blank">GitHub</a>, made by Marshall Lochbaum. However my favorite implementation of this tool is Super* Review's <a href="https://squig.link/" target="_blank">Squiglink</a>. I even have my own deployed <a href="https://www.vitormach.dev/CrinGraph/" target="_blank">here</a>!
 
 There are many software which you can use to apply band and parametric equalizers, I will mention some which I use and enjoy.
 
@@ -272,8 +272,43 @@ TODO: Talk about the REW export procedure for usage in CrinGraph
 
 <h6>Using the target curve</h6>
 
-TODO: Explain how to import the curve on Squig.link and use AutoEQ
+With the target curve file in hands, it's simply a matter of going to Squiglink's Equalizer tab, and clicking on "Upload Target" to use your own target curve.
+
+With the target curve loaded, we can begin to use the parametric equalizer, and the AutoEQ function.
+
+First, choose your IEM model in the Models tab. Hopefully it's been measured, but if it hasn't, check "Other IEM databases" down in the footer for other CrinGraph databases, maybe you will find yours in one of these.
+
+Now, back to the Equalizer tab, and we are ready to hit the AutoEQ button. You should see something like this:
+
+<div class="post-image">
+    <a href="{{ site.baseurl }}/img/posts/squig-autoeq.png" target="_blank"><img src="{{ site.baseurl }}/img/posts/squig-autoeq.png"/></a>
+    <p class="post-image-caption">Squiglink's AutoEQ feature</p>
+</div>
+
+There are a few things to note here.
+
+First, the number of filters on the left sidebar will determine the maximum number of filters AutoEQ will use. The AutoEQ Range parameter specifies the frequency range which AutoEQ should try to equalize. I would heavily recommend not changing this range, because like I said before, the treble region measurements are very unreliable.
+
+Speaking of unreliability, I would try to avoid using aggressive (high gain) and narrow (high Q) filters above 7KHz, because this might result in a "correction" that does not work well with your particular unit, or on your own ears. In the treble region, prefer wideband adjustments (low Q) and modest gain settings. Use the AutoEQ result as a basis, and change the values on the left sidebar.
+
+You should end up with something like this after some tweaks on the treble region:
+
+<div class="post-image">
+    <a href="{{ site.baseurl }}/img/posts/squig-autoeq-adjusted.png" target="_blank"><img src="{{ site.baseurl }}/img/posts/squig-autoeq-adjusted.png"/></a>
+    <p class="post-image-caption">A much less aggressive treble EQ</p>
+</div>
+
+When you are ready, you can hit the "Export Graphic EQ (For Wavelet)" button if you wish to export a convolution settings file for Wavelet, or you can simply reproduce the parametric equalizer values on your equalizer software of choice.
+
+As an added tip, you can hit this button to flatten one of the curves:
+
+<div class="post-image">
+    <a href="{{ site.baseurl }}/img/posts/squig-autoeq-flatten.png" target="_blank"><img src="{{ site.baseurl }}/img/posts/squig-autoeq-flatten.png"/></a>
+    <p class="post-image-caption">Original squig flattened</p>
+</div>
+
+This makes it easier to judge how aggresive your equalizer curve actually is.
 
 <h6>Custom CrinGraph</h6>
 
-As I mentioned before, CrinGraph is open-source software available on GitHub. I have decided to host my own instance using <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>, which is free. The repository contains <a href="https://github.com/mlochbaum/CrinGraph/blob/master/Configuring.md" target="_blank">documentation</a> on the basic configuration for deploying your own instance.
+As I mentioned before, CrinGraph is an open-source software available on GitHub. I have decided to host my own instance using <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>, which is free. The repository contains <a href="https://github.com/mlochbaum/CrinGraph/blob/master/Configuring.md" target="_blank">documentation</a> on the basic configuration for deploying your own instance.
