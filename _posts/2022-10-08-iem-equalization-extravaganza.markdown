@@ -338,7 +338,7 @@ I hope this was useful to you, and feel free to contact me using the Disqus chat
 - • <a href="{{ site.baseurl }}/other/Chu VitorMach.txt" target="_blank">Wavelet settings - Chu</a>
 - • <a href="{{ site.baseurl }}/other/Dusk VitorMach.txt" target="_blank">Wavelet settings - Dusk</a>
 
-###### Update: November 06, 2022
-I have come with a new variant of my target curve denoted "VitorMach Bright". I've developed it after tinkering around some more with my Blessing 2:Dusk. This target is supposed to make vocals slighly less boomy, while trying to preserve as much of the pinna gain treble as possible. Visit my <a href="https://www.vitormach.dev/CrinGraph/" target="_blank">CrinGraph instance</a> to check the new target.
-I also came up with an EQ for the Dusk conforming to this target. Please note that the first filter is a low shelf filter (LSQ) instead of the usual peak (PK) type.
-- • <a href="{{ site.baseurl }}/other/Squig - Dusk VitorMach Bright.txt" target="_blank">EQ settings - Dusk (bright)</a>
+###### Update: November 13, 2022
+I have come with a new variant of my target curve. Visit my <a href="https://www.vitormach.dev/CrinGraph/" target="_blank">CrinGraph instance</a> to check it out.
+I also came up with an EQ for the Dusk conforming to this target. Please note that the first and last filters are shelf filters (LSQ and HSQ respectively) instead of the usual peak (PK) type.
+- • <a href="{{ site.baseurl }}/other/Squig - Dusk VitorMach Nov22.txt" target="_blank">EQ settings - Dusk (Nov22)</a>
