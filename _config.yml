@@ -8,7 +8,6 @@ baseurl: "/blog"
 url: "https://www.vitormach.dev"
 image: "/img/avatar.png"
 excerpt_separator: <!--more--> #use this in posts to define how long the excerpt of the post (that is shown on the Blog page) is
-twitter_username: "VittauMach"
 github_username: "vittau"
 instagram_username: "vitor.p.mach"
 keywords: "blog,tech,developer"
