@@ -9,6 +9,8 @@ location: Rio de Janeiro, Brazil
 tags: audiophile, audio, music, iem, headphone, equalizer
 ---
 
+<!-- @format -->
+
 Audiophiles see <a href="https://en.wikipedia.org/wiki/In-ear_monitor" target="_blank">In-ear monitors (IEMs)</a> as an inexpensive way into audiophilia. Sure, with the recent rise of the "<a href="https://www.makeuseof.com/what-is-chi-fi/" target="_blank">chi-fi</a>" it has never been so cheap to have access to good sound quality. Still, a certain sound signature might not be to the tastes of everyone, not to mention different ears will literally hear things differently. In such cases, one has the possibility of applying equalization to change the signature of audio hardware.
 
 <div class="post-image">
@@ -30,13 +32,13 @@ As with every hobby, it can always get more complicated. Usually we divide tonal
 
 The famous IEM reviewer crinacle has his own <a href="https://crinacle.com/2020/04/08/graphs-101-how-to-read-headphone-measurements/" target="_blank">definitions</a>, which are as follows:
 
-  - • 20Hz to 80Hz: Sub-bass;
-  - • 80Hz to 200Hz: Mid-bass;
-  - • 200Hz to 800Hz: Lower midrange;
-  - • 800Hz to 1.500Hz: Centre midrange;
-  - • 1.500Hz to 5.000Hz: Upper midrange;
-  - • 5.000Hz to 10.000Hz: Treble;
-  - • 10.000Hz+: Upper treble/"air".
+- • 20Hz to 80Hz: Sub-bass;
+- • 80Hz to 200Hz: Mid-bass;
+- • 200Hz to 800Hz: Lower midrange;
+- • 800Hz to 1.500Hz: Centre midrange;
+- • 1.500Hz to 5.000Hz: Upper midrange;
+- • 5.000Hz to 10.000Hz: Treble;
+- • 10.000Hz+: Upper treble/"air".
 
 ###### IEMs vs headphones vs speakers
 
@@ -83,7 +85,7 @@ Measurements are a very complicated subject, which I do not have a lot of proper
 
 To measure the frequency response of IEMs instruments known as <a href="https://www.grasacoustics.com/products/ear-simulator/product/786-ra0402" target="_blank">couplers</a> are used. The IEM is inserted on the opening, and usually a <a href="https://en.wikipedia.org/wiki/Sine_wave" target="_blank">sine wave</a> sweep is performed on the IEM, which is then used to graph the amplitude of the sound reaching the coupler.
 
-Due to <a href="https://en.wikipedia.org/wiki/Acoustic_resonance#Resonance_of_a_tube_of_air" target="_blank">ressonances</a> inside the coupler, IEM frequency response graphs will always end up with some peaks in certain treble frequencies. For consistency, usually reviewers try to position the peak in the same place for every measured IEM, by varying insertion depth. For instance, <a href="https://www.youtube.com/c/SuperReview/" target="_blank">Super* Review</a> targets 8KHz for the ressonance peak.
+Due to <a href="https://en.wikipedia.org/wiki/Acoustic_resonance#Resonance_of_a_tube_of_air" target="_blank">ressonances</a> inside the coupler, IEM frequency response graphs will always end up with some peaks in certain treble frequencies. For consistency, usually reviewers try to position the peak in the same place for every measured IEM, by varying insertion depth. For instance, <a href="https://www.youtube.com/c/SuperReview/" target="_blank">Super\* Review</a> targets 8KHz for the ressonance peak.
 
 As such, frequency response graphs should be used with care, and its limitations have to be considered. They are most useful when used as a comparison tool between measurements taken with a consistent methodology. Frequency response graphs can be used as an aid for equalization, but one has to be mindful of such limitations, and also differences from person to person (your ear is not a GRAS coupler!), unit variance, etc...
 
@@ -103,20 +105,20 @@ Band equalizers have filters at specific, static frequencies. They usually provi
     <p class="post-image-caption"><a href="https://www.foobar2000.org/components/view/foo_dsp_xgeq" target="_blank">xnor's band equalizer</a> for <a href="https://www.foobar2000.org/" target="_blank">foobar2000</a></p>
 </div>
 
-For more precise corrections, we use parametric equalizers. I will leave it to the folks at PreSonus to provide a more <a href="https://www.presonus.com/learn/technical-articles/What-Is-a-Parametric-Eq" target="_blank">in-depth explanation</a>, but I will very quickly go through the main concepts intuitively. A parametric equalizer filter is composed of three parameters: frequency, Q and gain. Q stands for "quality" but that is a very deceiving name.
+For more precise corrections, we use parametric equalizers. I will leave it to the folks at PreSonus to provide a more <a href="https://www.presonus.com/learn/technical-articles/What-Is-a-Parametric-Eq" target="_blank">in-depth explanation</a>, but I will very quickly go through the main concepts intuitively. A parametric equalizer filter is composed of three parameters: frequency, Q and gain. Q stands for "quality" (which is a bit of a deceiving title).
 
-  - • Frequency: the frequency at which the filter is centered at;
-  - • Q: the "spread" of the filter. A small Q value means the filter is very wide, and a large Q results in a very narrow filter;
-  - • Gain: The amplitude at the center of the filter.
+- • Frequency: the frequency at which the filter is centered at;
+- • Q: the "spread" of the filter. A small Q value means the filter is very wide, and a large Q results in a very narrow filter;
+- • Gain: The amplitude at the center of the filter.
 
 <div class="post-image">
     <a href="{{ site.baseurl }}/img/posts/q-values.png" target="_blank"><img src="{{ site.baseurl }}/img/posts/q-values.png"/></a>
     <p class="post-image-caption">Different Q values, image courtesy of <a href="https://wiki.jriver.com/index.php/Parametric_Equalizer" target="_blank">JRiver</a></p>
 </div>
 
-A very useful tool to build and analyze parametric equalizers is crinacle's <a href="https://crinacle.com/graphs/iems/graphtool/" target="_blank">graph comparison tool</a>. It is an open-source available on <a href="https://github.com/mlochbaum/CrinGraph" target="_blank">GitHub</a>, made by Marshall Lochbaum. However, my favorite implementation of this tool is Super* Review's <a href="https://squig.link/" target="_blank">Squiglink</a>. I even have my own deployed <a href="https://www.vitormach.dev/CrinGraph/" target="_blank">here</a>!
+A very useful tool to build and analyze parametric equalizers is crinacle's <a href="https://crinacle.com/graphs/iems/graphtool/" target="_blank">graph comparison tool</a>. It is an open-source tool available on <a href="https://github.com/mlochbaum/CrinGraph" target="_blank">GitHub</a>, made by Marshall Lochbaum. However, my favorite implementation of it is Super\* Review's <a href="https://squig.link/" target="_blank">Squiglink</a>. I even have my own deployed <a href="https://www.vitormach.dev/CrinGraph/" target="_blank">here</a>!
 
-There are many software which you can use to apply band and parametric equalizers, I will mention some which I use and enjoy.
+There are many softwares which you can use to apply band and parametric equalizers, I will mention some which I use and enjoy.
 
 <a href="https://play.google.com/store/apps/details?id=com.pittvandewitt.wavelet" target="_blank">Wavelet</a> is an Android app that allows you to use system-wide equalization. It has a built-in band equalizer with 9 bands, and a <a href="https://github.com/jaakkopasanen/AutoEq#convolution-equalizers" target="_blank">convolution equalizer</a>. I will not go into details about convolution equalizers, but suffice to say we will be able to export a Wavelet settings file using CrinGraph's parametric equalizer (more on that later).
 
@@ -132,7 +134,7 @@ We are now ready to go into the densest part of this whole thing, which is how I
 
 ##### My own target curve
 
-I'm not a huge fan of the Harman curve. It has too much bass for me, and I'm also quite sensitive to the 8KHz region, which is very prominent in the Harman curve. The new <a href="https://www.youtube.com/watch?v=RWzBw3XBn8c" target="_blank">Super 22 target curve</a> made by Super* Review is much closer to my own personal tastes, and served as the basis for my own target curve.
+I'm not a huge fan of the Harman curve. It has too much bass for me, and I'm also quite sensitive to the 8KHz region, which is very prominent in the Harman curve. The new <a href="https://www.youtube.com/watch?v=RWzBw3XBn8c" target="_blank">Super 22 target curve</a> made by Super\* Review is much closer to my own personal tastes, and served as the basis for my own target curve.
 
 <div class="post-image">
     <a href="{{ site.baseurl }}/img/posts/super22-target.png" target="_blank"><img src="{{ site.baseurl }}/img/posts/super22-target.png"/></a>
@@ -141,8 +143,8 @@ I'm not a huge fan of the Harman curve. It has too much bass for me, and I'm als
 
 The only things I have decided to change in the Super 22 curve were:
 
-  - • added slightly more sub-bass to increase the feeling of bass extension;
-  - • removed the scoop between 6~8KHz, which seems arbitrary to me personally.
+- • added slightly more sub-bass to increase the feeling of bass extension;
+- • removed the scoop between 6~8KHz, which seems arbitrary to me personally.
 
 Hence I came up with the VitorMach target:
 
@@ -157,7 +159,7 @@ But wait, how did I get here? Now, it's time to dive deep into the technical par
 
 We're going to use <a href="https://www.roomeqwizard.com/" target="_blank">Room EQ Wizard (REW)</a> to create the target curve.
 
-Super* Review kindly provided <a href="https://docs.google.com/spreadsheets/d/165QHVUpf6eEBxxvGhIEDjkRsDVrYfZlWTu_hGEaXOmc/edit?usp=sharing" target="_blank">this spreadsheet</a> to help building the input file for REW. In the first tab ("Custom"), we will be filling in amplitude values (dB) for each relevant frequency we wish to key in. It is recommended that the 1000KHz value is kept at 100, and the other frequencies to be adjusted relative to it. You only need to fill in some of the frequencies, and when you export the target curve will be interpolate along them. Switch to the "Export" for more information on how to export the curve.
+Super\* Review kindly provided <a href="https://docs.google.com/spreadsheets/d/165QHVUpf6eEBxxvGhIEDjkRsDVrYfZlWTu_hGEaXOmc/edit?usp=sharing" target="_blank">this spreadsheet</a> to help building the input file for REW. In the first tab ("Custom"), we will be filling in amplitude values (dB) for each relevant frequency we wish to key in. It is recommended that the 1000Hz value is kept at 100, and the other frequencies to be adjusted relative to it. You only need to fill in some of the frequencies, and when you export it, the target curve will be interpolated along them. Switch to the "Export" for more information on how to export the curve.
 
 Here are the exported keypoints of my own target curve:
 
@@ -266,7 +268,6 @@ Obs.: I have manually added in values for 10Hz and 22.000KHz to make the edges o
 
 In REW, go to File > Import > Import frequency response. Choose your keypoints .txt file, and you should see this:
 
-
 <div class="post-image">
     <a href="{{ site.baseurl }}/img/posts/rew-imported.png" target="_blank"><img src="{{ site.baseurl }}/img/posts/rew-imported.png"/></a>
     <p class="post-image-caption">Keypoints file imported in REW</p>
@@ -331,6 +332,7 @@ As I mentioned before, CrinGraph is an open-source software available on GitHub.
 I hope this was useful to you, and feel free to contact me using the Disqus chat below!
 
 ###### Resources
+
 - • <a href="{{ site.baseurl }}/other/Squig - Aria VitorMach.txt" target="_blank">EQ settings - Aria</a>
 - • <a href="{{ site.baseurl }}/other/Squig - Chu VitorMach.txt" target="_blank">EQ settings - Chu</a>
 - • <a href="{{ site.baseurl }}/other/Squig - Dusk VitorMach.txt" target="_blank">EQ settings - Dusk</a>
@@ -339,6 +341,8 @@ I hope this was useful to you, and feel free to contact me using the Disqus chat
 - • <a href="{{ site.baseurl }}/other/Dusk VitorMach.txt" target="_blank">Wavelet settings - Dusk</a>
 
 ###### Update: November 13, 2022
+
 I have come with a new variant of my target curve. Visit my <a href="https://www.vitormach.dev/CrinGraph/" target="_blank">CrinGraph instance</a> to check it out.
 I also came up with an EQ for the Dusk conforming to this target. Please note that the first and last filters are shelf filters (LSQ and HSQ respectively) instead of the usual peak (PK) type.
+
 - • <a href="{{ site.baseurl }}/other/Squig - Dusk VitorMach Nov22.txt" target="_blank">EQ settings - Dusk (Nov22)</a>
