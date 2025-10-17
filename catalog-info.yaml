@@ -1,4 +1,16 @@
 apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: vitor
+  description: IT guy.
+spec:
+  profile:
+    displayName: Vitor Machado
+    email: vitor@examplemail.com
+    picture: https://avatars.githubusercontent.com/u/2932830
+  memberOf: []
+---
+apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
   name: blog
