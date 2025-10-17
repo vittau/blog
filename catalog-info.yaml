@@ -1,0 +1,23 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: blog
+  title: Vitor Machado’s Blog
+  description: A personal blog sharing articles on technology, image processing and audio.
+  tags:
+    - blog
+    - personal
+  links:
+    - url: https://vitormach.dev/blog
+      title: Vitor Machado’s Blog
+      icon: website
+    - url: https://github.com/vittau/blog
+      title: Source Code
+      icon: github
+spec:
+  type: website
+  owner: vitor
+  lifecycle: experimental
+  system: personal-projects
+  providesApis: []
+  dependsOn: []
