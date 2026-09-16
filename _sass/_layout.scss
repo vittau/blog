@@ -1,144 +1,309 @@
-#ribbon {
-    display: table;
-    background-size: cover;
-    width: 100%;
-    height: 400px;
-    text-align: center;
-    box-shadow: 0px 0px 10px 0px $shadow-color;
+// -----------------------------------------------------------------------------
+// Site chrome: floating navbar, page masthead and footer.
+// -----------------------------------------------------------------------------
 
-    // Non-retina device
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url($ribbon);
+// --- navbar ------------------------------------------------------------------
 
-    // Retina device
-    @media only screen and (-webkit-min-device-pixel-ratio: 1.2), only screen and (min--moz-device-pixel-ratio: 1.2), only screen and (-o-min-device-pixel-ratio: 5/4), only screen and (min-device-pixel-ratio: 1.2), only screen and (min-resolution: 120dpi), only screen and (min-resolution: 1.2dppx) {
-        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url($ribbon-retina);
-    }
+.nav-sentinel { position: absolute; top: 0; height: 1px; width: 100%; }
 
-    background-position: center;
-
-    a,
-    a:hover {
-        color: $text-colour;
-    }
-
-    header {
-        display: table-cell;
-        vertical-align: middle;
-        padding-left: 10px;
-        padding-right: 10px;
-    }
-
-    #bulb-anchor {
-        position: absolute;
-        right: 15px;
-        top: 360px;
-        cursor: pointer;
-    }
-
-    #bulb {
-        width: 25px;
-        height: 25px;
-
-        background-image: url($bulb);
-
-        // Retina @2x device
-        @media only screen and (-webkit-min-device-pixel-ratio: 1.2), only screen and (min--moz-device-pixel-ratio: 1.2), only screen and (-o-min-device-pixel-ratio: 5/4), only screen and (min-device-pixel-ratio: 1.2), only screen and (min-resolution: 120dpi), only screen and (min-resolution: 1.2dppx) {
-            background-image: url($bulb-2x);
-            background-size: 25px;
-        }
-
-        // Retina @3x device
-        @media only screen and (-webkit-min-device-pixel-ratio: 3), only screen and (min--moz-device-pixel-ratio: 3), only screen and (-o-min-device-pixel-ratio: 3/1), only screen and (min-device-pixel-ratio: 3), only screen and (min-resolution: 288dpi), only screen and (min-resolution: 3dppx) {
-            background-image: url($bulb-3x);
-            background-size: 25px;
-        }
-    }
+.nav {
+  position: sticky;
+  top: var(--sp-4);
+  z-index: 100;
+  margin-bottom: calc(var(--nav-h) * -1 - var(--sp-4));
+}
+.nav__inner {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  align-items: center;
+  gap: var(--sp-5);
+  height: var(--nav-h);
+  padding: 0 var(--sp-3) 0 var(--sp-5);
+  border-radius: var(--r-pill);
+  border: 1px solid var(--surface-border);
+  box-shadow: none;
+  transition: box-shadow var(--dur-base) var(--ease);
+}
+// glass sits on a pseudo-element: backdrop-filter would otherwise make the bar a
+// containing block for the fixed mobile panel inside it.
+.nav__inner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  background: var(--surface);
+  backdrop-filter: blur(16px);
+  transition: background-color var(--dur-base) var(--ease);
+}
+.nav.is-scrolled .nav__inner { box-shadow: var(--shadow-card); }
+.nav.is-scrolled .nav__inner::before { background: var(--surface-strong); }
+@supports not (backdrop-filter: blur(1px)) {
+  .nav__inner::before, .chip, .surface, .btn--secondary { background: var(--surface-strong); }
 }
 
-#wrap {
-    margin: 15px auto;
-    width: 885px;
+.brand {
+  font-weight: 600;
+  font-size: 1.0625rem;
+  letter-spacing: -.01em;
+  white-space: nowrap;
+}
+.brand__mark, .brand__dot { color: var(--accent-ink); }
+.brand__mark { font-weight: 700; margin-right: 2px; }
 
-    // Sticky footer trick, see http://css-tricks.com/snippets/css/sticky-footer/
-    min-height: 100%;
-    margin-bottom: (-1 * $footer-height);
+.nav__links {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-5);
+  margin-left: auto;
+}
+.nav__link {
+  position: relative;
+  font-size: var(--fs-sm);
+  color: var(--text-muted);
+  padding-block: var(--sp-2);
+  transition: color var(--dur-base) var(--ease);
+}
+.nav__link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transition: transform var(--dur-base) var(--ease);
+}
+.nav__link:hover { color: var(--text); }
+.nav__link.is-active { color: var(--text); }
+.nav__link.is-active::after { transform: scaleX(1); }
 
-    &:after {
-      content: "";
-      display: block;
-      height: $footer-height;
-    }
+.nav__aside {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  padding-left: var(--sp-4);
+  border-left: 1px solid var(--surface-border);
+}
+.nav__social { display: flex; gap: var(--sp-1); }
+.nav__social .icon-btn { width: 34px; height: 34px; border: 0; background: none; }
+.nav__social .icon-btn:hover { background: var(--surface-strong); color: var(--accent-ink); }
+
+.theme-toggle {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--surface-strong);
+  border: 1px solid var(--surface-border);
+  transition: color var(--dur-base) var(--ease), transform var(--dur-base) var(--ease);
+}
+.theme-toggle:hover { color: var(--accent-ink); transform: rotate(-12deg); }
+.theme-toggle .icon { width: 1.05rem; height: 1.05rem; }
+.theme-toggle__moon { display: none; }
+:root[data-theme="dark"] .theme-toggle__sun { display: none; }
+:root[data-theme="dark"] .theme-toggle__moon { display: block; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .theme-toggle__sun { display: none; }
+  :root:not([data-theme="light"]) .theme-toggle__moon { display: block; }
 }
 
-@media only screen and (max-width : 900px) {
-    #wrap { width: 90%; }
-}
+.nav__burger { display: none; }
+.nav__backdrop { display: none; }
 
-h1 {
-    color: $inverse-text-colour;
-    font-family: $title-font;
-    font-size: $title-text-size;
-    font-weight: 600;
-    letter-spacing: 1px;
-    display: inline;
-}
+// --- masthead ----------------------------------------------------------------
 
-@media only screen and (max-width : 900px) {
-    h1 {
-        font-size: $title-text-small-size;
-    }
+.masthead {
+  position: relative;
+  padding-block: calc(var(--nav-h) + var(--sp-9)) var(--sp-9);
+  overflow: hidden;
 }
+.masthead__title {
+  font-size: var(--fs-display);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -.02em;
+  color: var(--accent-ink);
+  margin-block: var(--sp-2) var(--sp-4);
+  max-width: 20ch;
+}
+.masthead__lead {
+  font-size: var(--fs-lead);
+  line-height: 1.65;
+  color: var(--text-muted);
+  max-width: 56ch;
+}
+.masthead--post .masthead__title { width: 100%; max-width: 100%; }
+.masthead__meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--sp-3);
+  margin-top: var(--sp-5);
+  font-size: var(--fs-sm);
+  color: var(--text-muted);
+}
+.masthead__meta .dot { color: var(--accent); }
 
-h2 {
-    font-family: $subtitle-font;
-    font-size: $subtitle-text-size;
-    font-weight: 400;
+// --- footer ------------------------------------------------------------------
+
+.footer {
+  border-top: 1px solid var(--surface-border);
+  padding-block: var(--sp-8) var(--sp-6);
+}
+.footer__top {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--sp-5);
+  justify-content: space-between;
+}
+.footer__social { display: flex; gap: var(--sp-2); }
+.footer__nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-5);
+  font-size: var(--fs-sm);
+  color: var(--text-muted);
+}
+.footer__nav a:hover { color: var(--accent-ink); }
+
+.footer__about {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-5);
+  margin-top: var(--sp-7);
+  padding: var(--sp-6);
+}
+.footer__avatar {
+  width: 84px;
+  height: 84px;
+  flex: none;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center 28%;
+  border: 2px solid var(--accent);
+  box-shadow: 0 0 40px rgba($c-primary, .3);
+}
+.footer__about-title {
+  font-size: var(--fs-eyebrow);
+  font-weight: 600;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: var(--sp-2);
+}
+.footer__about-text {
+  font-size: var(--fs-sm);
+  line-height: 1.65;
+  color: var(--text-muted);
+}
+.footer__about-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-4);
+  margin-top: var(--sp-3);
+  font-size: var(--fs-sm);
+  font-weight: 600;
+}
+.footer__about-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  color: var(--accent-ink);
+}
+.footer__about-links a:hover { opacity: .75; }
+.footer__about-links .icon { width: .95rem; height: .95rem; }
+
+.footer__legal {
+  margin-top: var(--sp-6);
+  padding-top: var(--sp-5);
+  border-top: 1px solid var(--surface-border);
+  text-align: center;
+  font-size: var(--fs-eyebrow);
+  line-height: 2;
+  color: var(--text-muted);
+}
+.footer__legal a { text-decoration: underline; text-underline-offset: 3px; }
+.footer__legal a:hover { color: var(--accent-ink); }
+
+// --- responsive --------------------------------------------------------------
+
+@media (max-width: $bp-nav) {
+  .nav__aside { margin-left: auto; padding-left: 0; border-left: 0; }
+  .nav__social { display: none; }
+
+  .nav__burger {
+    display: grid;
+    place-items: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: var(--surface-strong);
+    border: 1px solid var(--surface-border);
+  }
+  .nav__burger .icon { width: 1.15rem; height: 1.15rem; }
+
+  .nav__links {
+    position: fixed;
+    inset: 0 0 0 auto;
+    z-index: 2;
+    width: min(80vw, 320px);
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: var(--sp-6);
     margin: 0;
-    color: $subtitle-colour;
-    display: inline;
+    padding: var(--sp-8) var(--sp-7);
+    background: var(--bg);
+    border-left: 1px solid var(--surface-border);
+    transform: translateX(100%);
+    visibility: hidden;
+    transition: transform var(--dur-base) var(--ease), visibility var(--dur-base);
+  }
+  .nav__links.is-open { transform: none; visibility: visible; }
+  .nav__link { font-size: 1.125rem; }
+  .nav__link::after { display: none; }
+  .nav__link.is-active { color: var(--accent-ink); }
+
+  .nav__backdrop {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 99;
+    background: rgba(0, 0, 0, .45);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity var(--dur-base) var(--ease), visibility var(--dur-base);
+  }
+  .nav__backdrop.is-open { opacity: 1; visibility: visible; }
+
+  // with JS off the panel cannot open, so it becomes a plain row in the bar
+  html.no-js .nav__burger { display: none; }
+  html.no-js .nav__links {
+    position: static;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: var(--sp-4);
+    width: auto;
+    padding: 0;
+    background: none;
+    border: 0;
+    transform: none;
+    visibility: visible;
+  }
+  html.no-js .nav__inner { height: auto; flex-wrap: wrap; padding: var(--sp-3) var(--sp-5); border-radius: var(--r-lg); }
+  html.no-js .nav__link { font-size: var(--fs-sm); }
 }
 
-h5 {
-    font-family: $regular-font;
-    font-size: $subtitle-text-size;
-    font-weight: 700;
-}
-
-h6 {
-  font-family: $regular-font;
-  font-size: $subtitle-text-size;
-  font-weight: 400;
-}
-
-footer {
-    background-size: cover;
-    height: $footer-height;
-    width: 100%;
-    display: table;
-    box-shadow: 0px 0px 10px 0px $shadow-color;
-    background-position: bottom;
-
-    // Non-retina device
-    background-image: url($banner);
-
-    // Retina device
-    @media only screen and (-webkit-min-device-pixel-ratio: 1.2), only screen and (min--moz-device-pixel-ratio: 1.2), only screen and (-o-min-device-pixel-ratio: 5/4), only screen and (min-device-pixel-ratio: 1.2), only screen and (min-resolution: 120dpi), only screen and (min-resolution: 1.2dppx) {
-        background-image: url($banner-retina);
-    }
-}
-
-.dark {
-    #ribbon #bulb {
-        background-image: url($dark-bulb);
-
-        // Retina @2x device
-        @media only screen and (-webkit-min-device-pixel-ratio: 1.2), only screen and (min--moz-device-pixel-ratio: 1.2), only screen and (-o-min-device-pixel-ratio: 5/4), only screen and (min-device-pixel-ratio: 1.2), only screen and (min-resolution: 120dpi), only screen and (min-resolution: 1.2dppx) {
-            background-image: url($dark-bulb-2x);
-        }
-
-        // Retina @3x device
-        @media only screen and (-webkit-min-device-pixel-ratio: 3), only screen and (min--moz-device-pixel-ratio: 3), only screen and (-o-min-device-pixel-ratio: 3/1), only screen and (min-device-pixel-ratio: 3), only screen and (min-resolution: 288dpi), only screen and (min-resolution: 3dppx) {
-            background-image: url($dark-bulb-3x);
-        }
-    }
+@media (max-width: $bp-md) {
+  :root { --gutter: 16px; --nav-h: 60px; }
+  .masthead { padding-block: calc(var(--nav-h) + var(--sp-8)) var(--sp-7); }
+  .footer__top { flex-direction: column; text-align: center; }
+  .footer__about { flex-direction: column; text-align: center; }
+  .footer__about-links { justify-content: center; }
 }

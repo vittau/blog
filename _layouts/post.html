@@ -2,4 +2,47 @@
 layout: default
 ---
 
-{% include post.html post=page content=content %}
+<article class="article">
+  <div class="container container--reading">
+    {% if page.image %}
+    <img class="article__hero" src="{{ page.image | relative_url }}" alt="" loading="lazy">
+    {% endif %}
+
+    <div class="article__body">
+      {{ content }}
+    </div>
+
+    <footer class="article__footer">
+      {% if page.tags %}
+      <ul class="article__tags">
+        {% for tag in page.tags %}<li class="tag">#{{ tag }}</li>{% endfor %}
+      </ul>
+      {% else %}<span></span>{% endif %}
+
+      <a class="article__back" href="{{ '/' | relative_url }}">
+        <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-left"></use></svg>
+        Back to the blog
+      </a>
+    </footer>
+
+    <div class="article__comments">
+      <div id="disqus_thread"></div>
+      <script>
+        // Exposed on window so js/main.js can re-run it via DISQUS.reset when
+        // the visitor switches theme (Disqus only reads the inherited text
+        // color when the thread loads).
+        window.disqus_config = function () {
+          this.page.url = "{{ page.url | absolute_url }}";
+          this.page.identifier = "{{ page.url }}";
+        };
+        (function () {
+          var d = document, s = d.createElement('script');
+          s.src = 'https://vitor-machados-blog.disqus.com/embed.js';
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+        })();
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+  </div>
+</article>

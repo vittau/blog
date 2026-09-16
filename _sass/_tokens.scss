@@ -1,0 +1,157 @@
+// -----------------------------------------------------------------------------
+// Design tokens
+// Auto-hosped fonts, spacing/radius/motion scales and the semantic color system.
+// Values come from _config.yml via the Sass variables set in css/screen.scss.
+// The palette is emitted as custom properties so light/dark can swap at runtime.
+// -----------------------------------------------------------------------------
+
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('#{$font-dir}/poppins-400-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('#{$font-dir}/poppins-400-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('#{$font-dir}/poppins-600-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('#{$font-dir}/poppins-600-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('#{$font-dir}/poppins-700-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('#{$font-dir}/poppins-700-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+:root {
+  // brand (identical in both themes)
+  --brand-coral: #{$c-primary};
+  --brand-coral-rgb: #{$c-primary-rgb};
+  --brand-purple: #{$c-secondary};
+  --brand-purple-rgb: #{$c-secondary-rgb};
+
+  // typography
+  --font: 'Poppins', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: ui-monospace, 'SFMono-Regular', 'Cascadia Mono', Menlo, Consolas, monospace;
+  --fs-display: clamp(2rem, 6vw, 3.25rem);
+  --fs-h1: clamp(1.75rem, 4.5vw, 2.5rem);
+  --fs-h2: clamp(1.5rem, 3.5vw, 2rem);
+  --fs-h3: 1.125rem;
+  --fs-lead: 1.0625rem;
+  --fs-body: 1rem;
+  --fs-sm: 0.875rem;
+  --fs-eyebrow: 0.75rem;
+
+  // spacing (base 4px)
+  --sp-1: 4px;  --sp-2: 8px;  --sp-3: 12px; --sp-4: 16px; --sp-5: 24px;
+  --sp-6: 32px; --sp-7: 48px; --sp-8: 64px; --sp-9: 96px; --sp-10: 128px;
+
+  // layout
+  --container: 1140px;
+  --reading: 720px;
+  --gutter: 24px;
+  --section-pad-y: clamp(3rem, 8vw, 5.5rem);
+  --nav-h: 68px;
+
+  // radius
+  --r-sm: 8px; --r-md: 12px; --r-lg: 20px; --r-xl: 28px; --r-pill: 999px;
+
+  // motion
+  --ease: cubic-bezier(.4, 0, .2, 1);
+  --dur-fast: 150ms;
+  --dur-base: 250ms;
+  --dur-slow: 500ms;
+
+  // --- light theme (default) ---
+  color-scheme: light;
+  --bg: #{$c-light-bg};
+  --grad-from: #{$c-light-grad-from};
+  --grad-to: #{$c-light-grad-to};
+  --text: #{$c-light-text};
+  --text-muted: #{$c-light-text-muted};
+  --surface: rgba(255, 255, 255, .55);
+  --surface-strong: rgba(255, 255, 255, .85);
+  --surface-border: rgba(61, 61, 61, .12);
+  --accent: var(--brand-coral);
+  --accent-ink: #{$c-primary-ink-light};
+  --accent-solid: #{$c-primary-solid-light};
+  --accent-2: var(--brand-purple);
+  --on-accent: #fff;
+  --shadow-card: 0 8px 28px rgba(61, 61, 61, .10);
+  --code-bg: rgba(61, 61, 61, .07);
+  --code-border: rgba(61, 61, 61, .12);
+}
+
+// --- dark theme: automatic unless the visitor chose light ---
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --bg: #{$c-dark-bg};
+    --grad-from: #{$c-dark-grad-from};
+    --grad-to: #{$c-dark-grad-to};
+    --text: #{$c-dark-text};
+    --text-muted: #{$c-dark-text-muted};
+    --surface: rgba(255, 255, 255, .045);
+    --surface-strong: rgba(255, 255, 255, .09);
+    --surface-border: rgba(255, 255, 255, .11);
+    // pure coral fails AA as small text over translucent surfaces in the dark
+    // theme, and white on coral is only 3.65:1; hence lightened text and dark
+    // text on the solid button (4.64:1).
+    --accent-ink: #{$c-primary-ink-dark};
+    --accent-solid: var(--brand-coral);
+    --on-accent: #{$c-dark-bg};
+    --shadow-card: 0 8px 32px rgba(0, 0, 0, .35);
+    --code-bg: rgba(255, 255, 255, .06);
+    --code-border: rgba(255, 255, 255, .11);
+  }
+}
+
+// --- dark theme: explicit choice ---
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #{$c-dark-bg};
+  --grad-from: #{$c-dark-grad-from};
+  --grad-to: #{$c-dark-grad-to};
+  --text: #{$c-dark-text};
+  --text-muted: #{$c-dark-text-muted};
+  --surface: rgba(255, 255, 255, .045);
+  --surface-strong: rgba(255, 255, 255, .09);
+  --surface-border: rgba(255, 255, 255, .11);
+  --accent-ink: #{$c-primary-ink-dark};
+  --accent-solid: var(--brand-coral);
+  --on-accent: #{$c-dark-bg};
+  --shadow-card: 0 8px 32px rgba(0, 0, 0, .35);
+  --code-bg: rgba(255, 255, 255, .06);
+  --code-border: rgba(255, 255, 255, .11);
+}

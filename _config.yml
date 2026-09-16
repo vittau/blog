@@ -6,18 +6,61 @@ email: vmachado@cos.ufrj.br
 description: "I live in Curitiba, Brazil. I'm a software developer, A.I. Ph.D. student, music lover and gamer."
 baseurl: "/blog"
 url: "https://www.vitormach.dev"
-image: "/img/avatar.png"
+image: "/img/photo.webp"
 excerpt_separator: <!--more--> #use this in posts to define how long the excerpt of the post (that is shown on the Blog page) is
 github_username: "vittau"
 instagram_username: "vitor.p.mach"
 keywords: "blog,tech,developer"
 
+# Pagination
+paginate: 5
+
+# Where the blog sends visitors back to. Used by the navbar brand and footer.
+home_url: "https://www.vitormach.dev"
+
+# Design tokens. Same palette as vitormach.dev (see DESIGN.md there); edit only
+# this file to repaint the blog. Hex without the leading '#'. The *-rgb fields are
+# the same values in decimal, used inside rgba(); keep them in sync with the hex
+# next to them (the hex_to_rgb filter does not run on GitHub Pages).
+color:
+  # brand
+  primary: CC6868                  # coral: accent, borders, icons, active state
+  primary-rgb: "204, 104, 104"
+  primary-ink-light: A94442        # darkened coral: text/links on the light theme (AA 4.83:1)
+  primary-solid-light: B5514F      # darkened coral: button background with white text (AA 4.94:1)
+  primary-ink-dark: D98080         # lightened coral: text/links on the dark theme (AA 5.3:1)
+  secondary: 7C4B83                # purple: secondary button, avatar glow
+  secondary-rgb: "124, 75, 131"
+  # dark theme
+  dark-bg: 1B1B2B
+  dark-grad-from: 232437
+  dark-grad-to: 563C4D
+  dark-text: FFFFFF
+  dark-text-muted: BABABA
+  # light theme
+  light-bg: E7E9F3
+  light-grad-from: CBCEF1
+  light-grad-to: EDCFD8
+  light-text: 3D3D3D
+  light-text-muted: 5A5A66
+
+# Social links. 'icon' is the id of a <symbol> in _includes/icons.html.
+# 'nav: true' repeats the link in the navbar.
+social:
+  - title: GitHub
+    handle: "@vittau"
+    url: https://github.com/vittau
+    icon: i-github
+    nav: true
+  - title: Instagram
+    handle: "@vitor.p.mach"
+    url: https://www.instagram.com/vitor.p.mach
+    icon: i-instagram
+    nav: true
+
 # Build settings
 markdown: kramdown
 permalink: /:year/:month/:day/:title
-
-# Pagination
-paginate: 5
 
 # Sass
 sass:

@@ -1,6 +1,7 @@
+@import "modules/archive/rules";
 @import "modules/post/rules";
-@import "modules/about/rules";
 @import "modules/pagination/rules";
-@include travelog-post;
-@include travelog-about;
-@include travelog-pagination;
+
+@include blog-archive;
+@include blog-post;
+@include blog-pagination;

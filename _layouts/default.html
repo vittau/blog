@@ -1,21 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
 {% include head.html %}
 
-<body>
-  <div id="ribbon">
-    {% include header.html %}
-    <a id="bulb-anchor" onclick="switchDark()">
-      <div id="bulb"></div>
-    </a>
-  </div>
-  <div id="wrap">{{ content }}</div>
+<body id="top">
+  {% include icons.html %}
+  {% include header.html %}
+
+  <main id="main">
+    {% include masthead.html %}
+    {{ content }}
+  </main>
+
   {% include footer.html %}
-  <script type="text/javascript" src="{{ site.baseurl }}/js/travelog.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
-  <script>
-    hljs.initHighlightingOnLoad();
-  </script>
+  {% include scripts.html %}
 </body>
 
 </html>

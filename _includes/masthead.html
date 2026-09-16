@@ -1,0 +1,21 @@
+{% if page.title %}
+<header class="masthead masthead--post grad-bg">
+  <div class="container container--reading">
+    {% if page.categories %}<p class="eyebrow">{{ page.categories | join: " · " }}</p>{% endif %}
+    <h1 class="masthead__title">{{ page.title }}</h1>
+    {% if page.description %}<p class="masthead__lead">{{ page.description }}</p>{% endif %}
+    <div class="masthead__meta">
+      {% if page.date %}<span>{{ page.date | date: "%b %-d, %Y" }}</span>{% endif %}
+      {% if page.location %}<span class="dot" aria-hidden="true">&bull;</span><span>{{ page.location }}</span>{% endif %}
+    </div>
+  </div>
+</header>
+{% else %}
+<header class="masthead grad-bg">
+  <div class="container">
+    <p class="eyebrow">The blog</p>
+    <h1 class="masthead__title">{{ site.title }}</h1>
+    <p class="masthead__lead">{{ site.subtitle }}</p>
+  </div>
+</header>
+{% endif %}

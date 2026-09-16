@@ -1,283 +1,224 @@
+// -----------------------------------------------------------------------------
+// Post: the single-post article and the rich text the markdown produces.
+// -----------------------------------------------------------------------------
+
 @import "modules/post/variables";
-@mixin travelog-post {
-    .post {
-        margin-bottom: 40px;
-        text-align: justify;
-    }
 
-    .post-header {
-        padding-left: 35px;
-        min-height: $post-header-height;
-        background-repeat: no-repeat;
-        background-position: left center;
-        background-color: transparent;
-        margin-bottom: 15px;
-    }
+@mixin blog-post {
+  .article {
+    padding-block: var(--sp-8) var(--sp-9);
+  }
 
-    .post-header--dw,
-    .post-header--ar {
-        background-size: 24px;
-    }
+  .article__hero {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: var(--r-lg);
+    border: 1px solid var(--surface-border);
+    box-shadow: var(--shadow-card);
+    margin-bottom: var(--sp-8);
+  }
 
-    .post-header--dw {
-        // Non-retina device
-        background-image: url($binary);
+  .article__body {
+    font-size: 1.0625rem;
+    line-height: 1.75;
+    color: var(--text-muted);
+  }
+  .article__body > * + * { margin-top: var(--sp-5); }
 
-        // Retina @2x device
-        @media only screen and (-webkit-min-device-pixel-ratio: 1.2), only screen and (min--moz-device-pixel-ratio: 1.2), only screen and (-o-min-device-pixel-ratio: 5/4), only screen and (min-device-pixel-ratio: 1.2), only screen and (min-resolution: 120dpi), only screen and (min-resolution: 1.2dppx) {
-            background-image: url($binary-2x);
-            background-size: 25px;
-        }
+  .article__body p { color: var(--text-muted); }
+  .article__body strong { color: var(--text); font-weight: 600; }
 
-        // Retina @3x device
-        @media only screen and (-webkit-min-device-pixel-ratio: 3), only screen and (min--moz-device-pixel-ratio: 3), only screen and (-o-min-device-pixel-ratio: 3/1), only screen and (min-device-pixel-ratio: 3), only screen and (min-resolution: 288dpi), only screen and (min-resolution: 3dppx) {
-            background-image: url($binary-3x);
-            background-size: 25px;
-        }
-    }
+  .article__body a {
+    color: var(--accent-ink);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1px;
+    transition: opacity var(--dur-fast) var(--ease);
+  }
+  .article__body a:hover { opacity: .75; }
 
-    .post-header-title {
-        margin-bottom: 5px;
-        font-family: $regular-font;
-        font-size: 20px;
-        font-weight: 500;
-        text-transform: uppercase;
-        text-align: left;
-        letter-spacing: 1px;
+  // posts use ##### / ###### as section headings
+  .article__body h5 {
+    font-size: var(--fs-h2);
+    font-weight: 600;
+    letter-spacing: -.01em;
+    color: var(--text);
+    margin-top: var(--sp-8);
+  }
+  .article__body h6 {
+    font-size: var(--fs-h3);
+    font-weight: 600;
+    color: var(--text);
+    margin-top: var(--sp-6);
+  }
 
-        // Force default text colour [as post-header is wrapped by a link]
-        color: $text-colour;
+  // several posts already carry a literal "•" inside the list item, so the
+  // unordered list is kept marker-less and only indented.
+  .article__body ul,
+  .article__body ol {
+    display: grid;
+    gap: var(--sp-2);
+  }
+  .article__body ul { list-style: none; padding-left: var(--sp-5); }
+  .article__body ol { list-style: decimal; padding-left: var(--sp-7); }
+  .article__body li { padding-left: var(--sp-1); }
+  .article__body li::marker { color: var(--accent); }
 
-        // However let the normal hover colour apply
-        &:hover { color: $link-colour-over; }
-    }
+  .article__body blockquote {
+    border-left: 3px solid var(--accent);
+    padding: var(--sp-2) var(--sp-5);
+    background: var(--surface);
+    border-radius: 0 var(--r-md) var(--r-md) 0;
+    font-style: italic;
+  }
+  .article__body blockquote p { margin: 0; }
 
-    .post-header-date {
-        font-family: $caption-font;
-        font-style: italic;
-        font-weight: 300;
-        color: $post-header-date-colour;
-        letter-spacing: 1px;
-    }
+  .article__body hr {
+    border: 0;
+    border-top: 1px solid var(--surface-border);
+    margin-block: var(--sp-7);
+  }
 
-    .post-image {
-        font-size: 0;
-        margin-bottom: 15px;
-        text-align: center;
+  // --- inline code and code blocks -------------------------------------------
+  .article__body code {
+    font-family: var(--font-mono);
+    font-size: .875em;
+  }
+  .article__body code.inline {
+    padding: 2px var(--sp-2);
+    border-radius: var(--r-sm);
+    background: var(--code-bg);
+    border: 1px solid var(--code-border);
+    color: var(--accent-ink);
+    white-space: nowrap;
+  }
+  .article__body pre {
+    padding: var(--sp-5);
+    border-radius: var(--r-md);
+    background: var(--code-bg);
+    border: 1px solid var(--code-border);
+    overflow-x: auto;
+    font-size: var(--fs-sm);
+    line-height: 1.6;
+  }
+  .article__body pre code {
+    background: none;
+    border: 0;
+    padding: 0;
+    color: var(--text);
+  }
 
-        img {
-            max-width: 100%;
-            max-height: 400px;
-        }
-        
-        video{
-            width: 100%;
-            max-width: 100%;
-        }
-    }
+  // minimal highlight.js theme, token-based so it follows light/dark
+  .hljs-comment, .hljs-quote { color: var(--text-muted); font-style: italic; }
+  .hljs-keyword, .hljs-literal, .hljs-built_in, .hljs-type, .hljs-selector-tag { color: var(--accent-ink); font-weight: 600; }
+  .hljs-string, .hljs-attr, .hljs-symbol, .hljs-selector-attr, .hljs-selector-class { color: var(--accent-2); }
+  .hljs-number, .hljs-meta, .hljs-variable, .hljs-template-variable { color: var(--accent-ink); }
+  .hljs-title, .hljs-section, .hljs-name { color: var(--text); font-weight: 600; }
+  .hljs-deletion { color: var(--accent-ink); }
+  .hljs-addition { color: var(--accent-2); }
 
-    .post-image--split {
-        margin-right: -15px;
+  // --- images and captions ----------------------------------------------------
+  .post-image {
+    margin-block: var(--sp-6);
+    text-align: center;
+    font-size: 0;
+  }
+  .post-image img {
+    display: inline-block;
+    width: auto;
+    max-width: 100%;
+    max-height: 420px;
+    border-radius: var(--r-md);
+    border: 1px solid var(--surface-border);
+    box-shadow: var(--shadow-card);
+  }
+  .post-image iframe,
+  .post-image video {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: var(--r-md);
+    border: 1px solid var(--surface-border);
+    box-shadow: var(--shadow-card);
+  }
+  .post-image-caption {
+    display: block;
+    margin-top: var(--sp-3);
+    font-size: var(--fs-sm);
+    font-style: italic;
+    line-height: 1.5;
+    color: var(--text-muted);
+  }
+  .post-image-caption p { margin: 0; }
+  .post-image-caption p + p { margin-top: var(--sp-3); }
 
-        img {
-            width: calc(50% - 7.5px);
-            max-width: 435px;
-            margin-right: 15px;
-        }
+  .post-image--split {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--sp-3);
+    align-items: flex-start;
+  }
+  .post-image--split img {
+    width: calc(50% - var(--sp-2));
+    max-width: none;
+  }
+  .post-image--split .post-image-caption { width: 100%; }
 
-        .post-image-caption {
-            margin-right: 15px;
-        }
-    }
+  // --- tables (e.g. the REW keypoints table) ---------------------------------
+  .article__body table {
+    width: 100%;
+    font-size: var(--fs-sm);
+    border: 1px solid var(--surface-border);
+    border-radius: var(--r-md);
+    overflow: hidden;
+  }
+  .article__body th,
+  .article__body td {
+    padding: var(--sp-2) var(--sp-4);
+    text-align: left;
+    border-bottom: 1px solid var(--surface-border);
+  }
+  .article__body th {
+    font-weight: 600;
+    color: var(--text);
+    background: var(--surface-strong);
+  }
+  .article__body tr:last-child td { border-bottom: 0; }
 
-    @media only screen and (max-width : 900px) {
-        .post-image--split img {
-            width: calc(50% - 15px);
-            max-width: none;
-        }
-    }
+  // --- article footer ---------------------------------------------------------
+  .article__footer {
+    margin-top: var(--sp-8);
+    padding-top: var(--sp-5);
+    border-top: 1px solid var(--surface-border);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--sp-4);
+  }
+  .article__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--sp-2);
+  }
+  .article__back {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--sp-2);
+    font-size: var(--fs-sm);
+    font-weight: 600;
+    color: var(--accent-ink);
+  }
+  .article__back:hover { opacity: .75; }
 
-    @media only screen and (max-width : 500px) {
-        .post-image--split {
-            margin-right: 0;
+  .article__comments { margin-top: var(--sp-8); }
+  // Disqus chooses light/dark from the text color it inherits here; pin it to the
+  // theme's text token so the choice is deterministic.
+  #disqus_thread { color: var(--text); }
 
-            img {
-                margin-right: 0;
-                width: 100%;
-                display: block;
-                margin-bottom: 15px;
-            }
-
-            .post-image-caption {
-                // Offset margin of full-width split images
-                margin-top: -10px;
-                margin-right: 0;
-            }
-        }
-    }
-
-    .post-image-caption {
-        vertical-align: middle;
-        font-size: 20px;
-        font-family: $caption-font;
-        font-weight: 300;
-        font-style: italic;
-        color: $caption-colour;
-        background: $post-image-background-colour;
-        padding: 15px 20px 13px;
-        text-align: center;
-        margin-top: 5px;
-
-        // Paragraphs within the caption should have no margin
-        p { margin: 0; }
-
-        // Paragraphs following other paragraphs in the caption should have a top margin
-        p + p { margin-top: 15px; }
-    }
-
-    .post-image-caption-left,
-    .post-image-caption-right {
-        display: inline-block;
-        width: calc(50% - 1.5px);
-    }
-
-    .post-image-caption-left {
-        text-align: left;
-        padding-right: 10px;
-    }
-
-    .post-image-caption-right {
-        text-align: right;
-        padding-left: 10px;
-    }
-
-    @media only screen and (max-width : 500px) {
-        .post-image-caption-left,
-        .post-image-caption-right {
-            text-align: left;
-            display: block;
-            width: 100%;
-            padding: 0;
-        }
-
-        .post-image-caption-left {
-            margin-bottom: 15px;
-
-            &:before {
-                content: 'Left';
-                text-transform: uppercase;
-                font-weight: bold;
-                font-style: normal;
-                display: block;
-            }
-        }
-
-        .post-image-caption-right:before {
-            content: 'Right';
-            text-transform: uppercase;
-            font-weight: bold;
-            font-style: normal;
-            display: block;
-        }
-    }
-
-    .post-footer {
-        margin-top: 35px;
-        padding-bottom: 15px;
-        border-bottom: 1px solid $border-colour;
-
-        // Both children are floated, so use a clearfix on the parent
-        @include clearfix;
-    }
-
-    /*
-    .post-footer-tags,
-    .post-footer-location {
-        max-width: 50%;
-    }
-
-    .post-footer-tags {
-        // In order to play nicely with the location element floated to the right of the footer
-        float: left;
-    }
-    */
-
-    .post-footer-tag {
-        font-family: $regular-font;
-        font-weight: 700;
-        display: inline;
-        text-transform: uppercase;
-        font-size: $caption-text-size;
-        margin-right: 5px;
-        letter-spacing: 1px;
-    }
-
-    /*
-    .post-footer-location {
-        font-family: $regular-font;
-        font-weight: 700;
-        font-size: $caption-text-size;
-        color: $caption-colour;
-        float: right;
-        min-height: $post-footer-location-height;
-        line-height: $post-footer-location-line-height;
-        padding-right: 51px;
-        letter-spacing: 1px;
-        background-repeat: no-repeat;
-        background-position: right center;
-        background-color: transparent;
-        background-size: 13px;
-
-        // Non-retina devices
-        background-image: url($icon-location);
-
-        // Retina @2x device
-        @media only screen and (-webkit-min-device-pixel-ratio: 1.2), only screen and (min--moz-device-pixel-ratio: 1.2), only screen and (-o-min-device-pixel-ratio: 5/4), only screen and (min-device-pixel-ratio: 1.2), only screen and (min-resolution: 120dpi), only screen and (min-resolution: 1.2dppx) {
-            background-image: url($icon-location-2x);
-        }
-
-        // Retina @3x device
-        @media only screen and (-webkit-min-device-pixel-ratio: 3), only screen and (min--moz-device-pixel-ratio: 3), only screen and (-o-min-device-pixel-ratio: 3/1), only screen and (min-device-pixel-ratio: 3), only screen and (min-resolution: 288dpi), only screen and (min-resolution: 3dppx) {
-            background-image: url($icon-location-3x);
-        }
-
-        &:hover {
-            color: $link-colour;
-        }
-    }
-    */
-
-    .dark {
-        .post-footer {
-            border-bottom: 1px solid $dark-border-colour;
-        }
-        .post-header-title {
-            color: $dark-text-colour;
-        }
-
-        .post-header-date {
-            color: $dark-post-header-date-colour;
-        }
-
-        .post-image-caption {
-            color: $dark-caption-colour;
-            background: $dark-post-image-background-colour;
-        }
-
-        .post-header--dw {
-            background-image: url($dark-binary);
-
-            // Retina @2x device
-            @media only screen and (-webkit-min-device-pixel-ratio: 1.2), only screen and (min--moz-device-pixel-ratio: 1.2), only screen and (-o-min-device-pixel-ratio: 5/4), only screen and (min-device-pixel-ratio: 1.2), only screen and (min-resolution: 120dpi), only screen and (min-resolution: 1.2dppx) {
-                background-image: url($dark-binary-2x);
-                background-size: 25px;
-            }
-
-            // Retina @3x device
-            @media only screen and (-webkit-min-device-pixel-ratio: 3), only screen and (min--moz-device-pixel-ratio: 3), only screen and (-o-min-device-pixel-ratio: 3/1), only screen and (min-device-pixel-ratio: 3), only screen and (min-resolution: 288dpi), only screen and (min-resolution: 3dppx) {
-                background-image: url($dark-binary-3x);
-                background-size: 25px;
-            }
-        }
-    }
+  @media (max-width: $bp-md) {
+    .post-image--split img { width: 100%; }
+    .article__footer { flex-direction: column; align-items: flex-start; }
+  }
 }

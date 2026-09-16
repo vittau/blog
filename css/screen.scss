@@ -1,40 +1,34 @@
 ---
-# this ensures Jekyll reads the file to be transformed into CSS later
-# only Main files contain this front matter, not partials.
+# Front matter is required so Jekyll transforms this file into CSS.
+# Liquid runs on the body below before Sass compiles it, which is how the
+# palette from _config.yml reaches the stylesheet.
 ---
 
-$ribbon: "{{ site.baseurl }}/img/ribbon.webp";
-$ribbon-retina: "{{ site.baseurl }}/img/ribbon-retina.webp";
-$banner: "{{ site.baseurl }}/img/banner.webp";
-$banner-retina: "{{ site.baseurl }}/img/banner-retina.webp";
-$binary: "{{ site.baseurl }}/img/binary.png";
-$binary-2x: "{{ site.baseurl }}/img/binary@2x.png";
-$binary-3x: "{{ site.baseurl }}/img/binary@3x.png";
-$dark-binary: "{{ site.baseurl }}/img/dark-binary.png";
-$dark-binary-2x: "{{ site.baseurl }}/img/dark-binary@2x.png";
-$dark-binary-3x: "{{ site.baseurl }}/img/dark-binary@3x.png";
-$icon-location: "{{ site.baseurl }}/img/icon-location.png";
-$icon-location-2x: "{{ site.baseurl }}/img/icon-location@2x.png";
-$icon-location-3x: "{{ site.baseurl }}/img/icon-location@3x.png";
-$icon-twitter: "{{ site.baseurl }}/img/icon-twitter.png";
-$icon-twitter-2x: "{{ site.baseurl }}/img/icon-twitter@2x.png";
-$icon-twitter-3x: "{{ site.baseurl }}/img/icon-twitter@3x.png";
-$icon-instagram: "{{ site.baseurl }}/img/icon-instagram.png";
-$icon-instagram-2x: "{{ site.baseurl }}/img/icon-instagram@2x.png";
-$icon-instagram-3x: "{{ site.baseurl }}/img/icon-instagram@3x.png";
-$icon-world: "{{ site.baseurl }}/img/icon-world.png";
-$icon-world-2x: "{{ site.baseurl }}/img/icon-world@2x.png";
-$icon-world-3x: "{{ site.baseurl }}/img/icon-world@3x.png";
-$bulb: "{{ site.baseurl }}/img/bulb.png";
-$bulb-2x: "{{ site.baseurl }}/img/bulb@2x.png";
-$bulb-3x: "{{ site.baseurl }}/img/bulb@3x.png";
-$dark-bulb: "{{ site.baseurl }}/img/dark-bulb.png";
-$dark-bulb-2x: "{{ site.baseurl }}/img/dark-bulb@2x.png";
-$dark-bulb-3x: "{{ site.baseurl }}/img/dark-bulb@3x.png";
+// Tokens that Sass needs at compile time (custom properties are emitted in
+// _sass/_tokens.scss; everything that changes with the theme lives there).
+$font-dir: "{{ site.baseurl }}/fonts";
+
+$c-primary: #{{ site.color.primary }};
+$c-primary-rgb: {{ site.color.primary-rgb }};
+$c-primary-ink-light: #{{ site.color.primary-ink-light }};
+$c-primary-solid-light: #{{ site.color.primary-solid-light }};
+$c-primary-ink-dark: #{{ site.color.primary-ink-dark }};
+$c-secondary: #{{ site.color.secondary }};
+$c-secondary-rgb: {{ site.color.secondary-rgb }};
+$c-dark-bg: #{{ site.color.dark-bg }};
+$c-dark-grad-from: #{{ site.color.dark-grad-from }};
+$c-dark-grad-to: #{{ site.color.dark-grad-to }};
+$c-dark-text: #{{ site.color.dark-text }};
+$c-dark-text-muted: #{{ site.color.dark-text-muted }};
+$c-light-bg: #{{ site.color.light-bg }};
+$c-light-grad-from: #{{ site.color.light-grad-from }};
+$c-light-grad-to: #{{ site.color.light-grad-to }};
+$c-light-text: #{{ site.color.light-text }};
+$c-light-text-muted: #{{ site.color.light-text-muted }};
 
 @import "vendor/normalize";
-@import "utils";
 @import "variables";
+@import "tokens";
 @import "base";
 @import "layout";
 @import "modules";
