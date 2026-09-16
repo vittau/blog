@@ -65,3 +65,8 @@ permalink: /:year/:month/:day/:title
 # Sass
 sass:
   style: :compressed
+
+# Not published as part of the site (documentation for contributors/agents).
+exclude:
+  - CLAUDE.md
+  - DESIGN.md
