@@ -60,7 +60,7 @@ Validação visual sem navegador interativo: o Chrome headless já instalado ser
 
 **Analytics.** GA4 (`G-NSNV8ZR1NV`) inline em `_includes/head.html`.
 
-**Imagens.** `img/photo.webp` é o retrato usado no bloco do autor no rodapé (recortado em 4:5); `img/posts/` guarda as imagens dos posts. O `og:image` vem de `site.image` (`_config.yml`). Sobra do tema antigo: `avatar.jpg`, `ribbon*`, `banner*`, `binary*`, `bulb*`, `noise*` e `icon-*`, tudo sem referência no código (ver débito em `DESIGN.md`).
+**Imagens.** `img/photo.webp` é o retrato usado no bloco do autor no rodapé (recortado em 4:5); `img/posts/` guarda as imagens dos posts. O `og:image` vem de `site.image` (`_config.yml`).
 
 **Conteúdo estático fora do Jekyll.** `other/` (arquivos de configuração de EQ) e `music/` (mp3) são copiados as-is pelo Jekyll; não compartilham nada com o tema.
 

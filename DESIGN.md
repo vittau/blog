@@ -120,7 +120,6 @@ Escala de espaçamento, raios, `--ease`/`--ease-out` e durações idênticos ao 
 
 ### Débito de design conhecido
 
-- **Assets do tema antigo.** `img/` ainda guarda `ribbon*`, `banner*`, `binary*`, `bulb*`, `dark-*`, `noise*`, `icon-*` e `avatar.jpg`, todos sem referência no código.
 - **O Disqus não segue a tipografia nem a paleta** — só claro/escuro. Os botões de login dele (coloridos) são a parte menos coerente da página.
 - **Build oficial do Jekyll não roda localmente.** Ver `CLAUDE.md` para a rota de pré-visualização e a validação do Sass com o Ruby Sass 3.7.4.
 - **Navegação por teclado e leitor de tela** não foram percorridas à mão com um leitor de tela real.
