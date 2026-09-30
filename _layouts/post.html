@@ -3,27 +3,50 @@ layout: default
 ---
 
 <article class="article">
-  <div class="container container--reading">
-    {% if page.image %}
-    <img class="article__hero" src="{{ page.image | relative_url }}" alt="" loading="lazy">
-    {% endif %}
+  {% comment %}
+    Cover image, wider than the reading column. Skipped when the post body already
+    shows the same image, so it never appears twice in a row.
+  {% endcomment %}
+  {% if page.image %}{% unless content contains page.image %}
+  <div class="container container--wide">
+    <img class="article__hero" src="{{ page.image | relative_url }}" alt="" decoding="async">
+  </div>
+  {% endunless %}{% endif %}
 
+  <div class="container container--reading">
     <div class="article__body">
       {{ content }}
     </div>
 
     <footer class="article__footer">
       {% if page.tags %}
-      <ul class="article__tags">
-        {% for tag in page.tags %}<li class="tag">#{{ tag }}</li>{% endfor %}
+      <ul class="tags">
+        {% for tag in page.tags %}<li class="tag">{{ tag | remove: "," }}</li>{% endfor %}
       </ul>
       {% else %}<span></span>{% endif %}
 
-      <a class="article__back" href="{{ '/' | relative_url }}">
+      <a class="link-arrow link-arrow--back" href="{{ '/' | relative_url }}">
         <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-left"></use></svg>
-        Back to the blog
+        All posts
       </a>
     </footer>
+
+    {% if page.previous or page.next %}
+    <nav class="pager" aria-label="More posts">
+      {% if page.previous %}
+      <a class="pager__link" href="{{ page.previous.url | relative_url }}">
+        <span class="kicker">Previous</span>
+        <span class="pager__title">{{ page.previous.title }}</span>
+      </a>
+      {% endif %}
+      {% if page.next %}
+      <a class="pager__link pager__link--next" href="{{ page.next.url | relative_url }}">
+        <span class="kicker">Next</span>
+        <span class="pager__title">{{ page.next.title }}</span>
+      </a>
+      {% endif %}
+    </nav>
+    {% endif %}
 
     <div class="article__comments">
       <div id="disqus_thread"></div>

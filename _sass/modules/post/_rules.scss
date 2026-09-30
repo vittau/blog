@@ -5,54 +5,64 @@
 @import "modules/post/variables";
 
 @mixin blog-post {
-  .article {
-    padding-block: var(--sp-8) var(--sp-9);
-  }
+  .article { padding-bottom: var(--sp-8); }
 
+  // the cover image is wider than the reading column
   .article__hero {
     display: block;
     width: 100%;
     aspect-ratio: 16 / 9;
     object-fit: cover;
     border-radius: var(--r-lg);
-    border: 1px solid var(--surface-border);
-    box-shadow: var(--shadow-card);
+    background: var(--surface-2);
     margin-bottom: var(--sp-8);
   }
 
   .article__body {
-    font-size: 1.0625rem;
+    font-size: var(--fs-read);
     line-height: 1.75;
     color: var(--text-muted);
   }
   .article__body > * + * { margin-top: var(--sp-5); }
 
-  .article__body p { color: var(--text-muted); }
   .article__body strong { color: var(--text); font-weight: 600; }
+  .article__body em { font-style: italic; }
 
   .article__body a {
     color: var(--accent-ink);
     text-decoration: underline;
+    text-decoration-color: rgba($c-primary, .45);
     text-underline-offset: 3px;
     text-decoration-thickness: 1px;
-    transition: opacity var(--dur-fast) var(--ease);
+    transition: text-decoration-color var(--dur-base) var(--ease);
   }
-  .article__body a:hover { opacity: .75; }
+  .article__body a:hover { text-decoration-color: currentColor; }
 
-  // posts use ##### / ###### as section headings
+  // posts use ##### / ###### as section headings; h2-h4 get the same treatment
+  .article__body h2,
+  .article__body h3,
   .article__body h5 {
-    font-size: var(--fs-h2);
-    font-weight: 600;
-    letter-spacing: -.01em;
-    color: var(--text);
     margin-top: var(--sp-8);
-  }
-  .article__body h6 {
-    font-size: var(--fs-h3);
-    font-weight: 600;
+    font-family: var(--font-serif);
+    font-size: var(--fs-h2);
+    font-weight: 500;
+    line-height: 1.12;
+    letter-spacing: -.015em;
     color: var(--text);
-    margin-top: var(--sp-6);
+    font-synthesis: none;
   }
+  .article__body h4,
+  .article__body h6 {
+    margin-top: var(--sp-6);
+    font-family: var(--font-serif);
+    font-size: var(--fs-h3);
+    font-weight: 500;
+    line-height: 1.2;
+    color: var(--text);
+    font-synthesis: none;
+  }
+  .article__body h2 + *, .article__body h3 + *, .article__body h4 + *,
+  .article__body h5 + *, .article__body h6 + * { margin-top: var(--sp-4); }
 
   // several posts already carry a literal "•" inside the list item, so the
   // unordered list is kept marker-less and only indented.
@@ -64,44 +74,47 @@
   .article__body ul { list-style: none; padding-left: var(--sp-5); }
   .article__body ol { list-style: decimal; padding-left: var(--sp-7); }
   .article__body li { padding-left: var(--sp-1); }
-  .article__body li::marker { color: var(--accent); }
+  .article__body li::marker { color: var(--accent); font-family: var(--font-mono); font-size: .9em; }
 
   .article__body blockquote {
-    border-left: 3px solid var(--accent);
-    padding: var(--sp-2) var(--sp-5);
-    background: var(--surface);
-    border-radius: 0 var(--r-md) var(--r-md) 0;
+    padding-left: var(--sp-5);
+    border-left: 2px solid var(--accent);
+    font-family: var(--font-serif);
+    font-size: 1.3125rem;
     font-style: italic;
+    line-height: 1.45;
+    color: var(--text);
   }
   .article__body blockquote p { margin: 0; }
 
   .article__body hr {
+    width: 40px;
+    margin: var(--sp-8) auto;
     border: 0;
-    border-top: 1px solid var(--surface-border);
-    margin-block: var(--sp-7);
+    border-top: 1px solid var(--accent);
   }
 
   // --- inline code and code blocks -------------------------------------------
   .article__body code {
     font-family: var(--font-mono);
-    font-size: .875em;
+    font-size: .86em;
   }
   .article__body code.inline {
-    padding: 2px var(--sp-2);
-    border-radius: var(--r-sm);
-    background: var(--code-bg);
-    border: 1px solid var(--code-border);
-    color: var(--accent-ink);
+    padding: 2px 6px;
+    border-radius: 6px;
+    background: var(--surface-2);
+    border: 1px solid var(--line);
+    color: var(--text);
     white-space: nowrap;
   }
   .article__body pre {
     padding: var(--sp-5);
     border-radius: var(--r-md);
-    background: var(--code-bg);
-    border: 1px solid var(--code-border);
+    background: var(--surface);
+    border: 1px solid var(--line);
     overflow-x: auto;
     font-size: var(--fs-sm);
-    line-height: 1.6;
+    line-height: 1.65;
   }
   .article__body pre code {
     background: none;
@@ -110,18 +123,19 @@
     color: var(--text);
   }
 
-  // minimal highlight.js theme, token-based so it follows light/dark
+  // minimal highlight.js theme, token-based so it follows light/dark. Coral for
+  // keywords and literals, sage for strings, muted italic for comments.
   .hljs-comment, .hljs-quote { color: var(--text-muted); font-style: italic; }
-  .hljs-keyword, .hljs-literal, .hljs-built_in, .hljs-type, .hljs-selector-tag { color: var(--accent-ink); font-weight: 600; }
-  .hljs-string, .hljs-attr, .hljs-symbol, .hljs-selector-attr, .hljs-selector-class { color: var(--accent-2); }
-  .hljs-number, .hljs-meta, .hljs-variable, .hljs-template-variable { color: var(--accent-ink); }
+  .hljs-keyword, .hljs-selector-tag, .hljs-built_in, .hljs-type { color: var(--accent-ink); font-weight: 600; }
+  .hljs-literal, .hljs-number, .hljs-meta, .hljs-variable, .hljs-template-variable { color: var(--accent-ink); }
+  .hljs-string, .hljs-symbol, .hljs-regexp, .hljs-addition { color: var(--code-string); }
+  .hljs-attr, .hljs-attribute, .hljs-selector-attr, .hljs-selector-class, .hljs-property { color: var(--text); }
   .hljs-title, .hljs-section, .hljs-name { color: var(--text); font-weight: 600; }
   .hljs-deletion { color: var(--accent-ink); }
-  .hljs-addition { color: var(--accent-2); }
 
   // --- images and captions ----------------------------------------------------
   .post-image {
-    margin-block: var(--sp-6);
+    margin-block: var(--sp-7);
     text-align: center;
     font-size: 0;
   }
@@ -129,29 +143,31 @@
     display: inline-block;
     width: auto;
     max-width: 100%;
-    max-height: 420px;
+    max-height: 460px;
     border-radius: var(--r-md);
-    border: 1px solid var(--surface-border);
-    box-shadow: var(--shadow-card);
+    border: 1px solid var(--line);
   }
+  .post-image a { display: inline-block; }
   .post-image iframe,
   .post-image video {
     width: 100%;
     aspect-ratio: 16 / 9;
     border-radius: var(--r-md);
-    border: 1px solid var(--surface-border);
-    box-shadow: var(--shadow-card);
+    border: 1px solid var(--line);
   }
   .post-image-caption {
     display: block;
-    margin-top: var(--sp-3);
-    font-size: var(--fs-sm);
+    max-width: 52ch;
+    margin: var(--sp-3) auto 0;
+    font-family: var(--font-serif);
+    font-size: 1.0625rem;
     font-style: italic;
-    line-height: 1.5;
+    line-height: 1.45;
     color: var(--text-muted);
   }
   .post-image-caption p { margin: 0; }
   .post-image-caption p + p { margin-top: var(--sp-3); }
+  .post-image-caption a { font-style: italic; }
 
   .post-image--split {
     display: flex;
@@ -169,7 +185,7 @@
   .article__body table {
     width: 100%;
     font-size: var(--fs-sm);
-    border: 1px solid var(--surface-border);
+    border: 1px solid var(--line);
     border-radius: var(--r-md);
     overflow: hidden;
   }
@@ -177,40 +193,56 @@
   .article__body td {
     padding: var(--sp-2) var(--sp-4);
     text-align: left;
-    border-bottom: 1px solid var(--surface-border);
+    border-bottom: 1px solid var(--line);
   }
   .article__body th {
-    font-weight: 600;
+    font-family: var(--font-mono);
+    font-size: var(--fs-xs);
+    font-weight: 500;
+    letter-spacing: .06em;
+    text-transform: uppercase;
     color: var(--text);
-    background: var(--surface-strong);
+    background: var(--surface-2);
   }
   .article__body tr:last-child td { border-bottom: 0; }
 
   // --- article footer ---------------------------------------------------------
   .article__footer {
-    margin-top: var(--sp-8);
-    padding-top: var(--sp-5);
-    border-top: 1px solid var(--surface-border);
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
     gap: var(--sp-4);
+    margin-top: var(--sp-8);
+    padding-top: var(--sp-5);
+    border-top: 1px solid var(--line);
   }
-  .article__tags {
+
+  // previous / next post
+  .pager {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--sp-4);
+    margin-top: var(--sp-7);
+  }
+  .pager__link {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     gap: var(--sp-2);
+    padding: var(--sp-5);
+    border-radius: var(--r-lg);
+    border: 1px solid var(--line);
+    background: var(--surface);
+    transition: border-color var(--dur-base) var(--ease), transform var(--dur-slow) var(--ease-out);
   }
-  .article__back {
-    display: inline-flex;
-    align-items: center;
-    gap: var(--sp-2);
-    font-size: var(--fs-sm);
-    font-weight: 600;
-    color: var(--accent-ink);
+  .pager__link:hover { border-color: rgba($c-primary, .55); transform: translateY(-3px); }
+  .pager__link--next { grid-column: 2; text-align: right; }
+  .pager__link--next .kicker { justify-content: flex-end; }
+  .pager__title {
+    font-family: var(--font-serif);
+    font-size: 1.25rem;
+    line-height: 1.2;
   }
-  .article__back:hover { opacity: .75; }
 
   .article__comments { margin-top: var(--sp-8); }
   // Disqus chooses light/dark from the text color it inherits here; pin it to the
@@ -220,5 +252,10 @@
   @media (max-width: $bp-md) {
     .post-image--split img { width: 100%; }
     .article__footer { flex-direction: column; align-items: flex-start; }
+  }
+  @media (max-width: $bp-sm) {
+    .article__body { font-size: 1.0625rem; }
+    .pager { grid-template-columns: 1fr; }
+    .pager__link--next { grid-column: auto; }
   }
 }

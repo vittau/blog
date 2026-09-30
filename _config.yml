@@ -3,7 +3,7 @@ title: The Random Ramblings of a Software Developer
 subtitle: "A blog about computer stuff. Mostly."
 author: "Vitor Machado"
 email: vmachado@cos.ufrj.br
-description: "I live in Curitiba, Brazil. I'm a software developer, A.I. Ph.D. student, music lover and gamer."
+description: "I live in Curitiba, Brazil. I'm a software architect with a doctorate in Artificial Intelligence, a music lover and a gamer."
 baseurl: "/blog"
 url: "https://www.vitormach.dev"
 image: "/img/photo.webp"
@@ -23,26 +23,27 @@ home_url: "https://www.vitormach.dev"
 # the same values in decimal, used inside rgba(); keep them in sync with the hex
 # next to them (the hex_to_rgb filter does not run on GitHub Pages).
 color:
-  # brand
-  primary: CC6868                  # coral: accent, borders, icons, active state
+  # brand: a single accent, coral
+  primary: CC6868                  # coral: decoration, borders, active state
   primary-rgb: "204, 104, 104"
-  primary-ink-light: A94442        # darkened coral: text/links on the light theme (AA 4.83:1)
-  primary-solid-light: B5514F      # darkened coral: button background with white text (AA 4.94:1)
-  primary-ink-dark: D98080         # lightened coral: text/links on the dark theme (AA 5.3:1)
-  secondary: 7C4B83                # purple: secondary button, avatar glow
-  secondary-rgb: "124, 75, 131"
-  # dark theme
-  dark-bg: 1B1B2B
-  dark-grad-from: 232437
-  dark-grad-to: 563C4D
-  dark-text: FFFFFF
-  dark-text-muted: BABABA
-  # light theme
-  light-bg: E7E9F3
-  light-grad-from: CBCEF1
-  light-grad-to: EDCFD8
-  light-text: 3D3D3D
-  light-text-muted: 5A5A66
+  primary-ink-light: A5492F        # terracotta: text/links on the light theme (AA 5.1:1)
+  primary-solid-light: AD4F38      # terracotta: button background with white text (AA 5.3:1)
+  primary-ink-dark: E08A7E         # lightened coral: text/links on the dark theme (AA 7.2:1)
+  # code highlighting only: strings (the one non-coral hue, for legibility)
+  code-string-light: 56632F        # sage on --surface, AA 6.2:1
+  code-string-dark: A7B57C         # sage on --surface, AA 7.8:1
+  # dark theme: warm charcoal
+  dark-bg: 141316
+  dark-bg-rgb: "20, 19, 22"
+  dark-surface: 1D1B20
+  dark-text: F2EEE8
+  dark-text-muted: A8A198
+  # light theme: paper
+  light-bg: F4F0E8
+  light-bg-rgb: "244, 240, 232"
+  light-surface: FBF9F5
+  light-text: 26231F
+  light-text-muted: 5F5850
 
 # Social links. 'icon' is the id of a <symbol> in _includes/icons.html.
 # 'nav: true' repeats the link in the navbar.
@@ -52,11 +53,15 @@ social:
     url: https://github.com/vittau
     icon: i-github
     nav: true
+  - title: LinkedIn
+    handle: in/vitormach
+    url: https://www.linkedin.com/in/vitormach
+    icon: i-linkedin
+    nav: true
   - title: Instagram
     handle: "@vitor.p.mach"
     url: https://www.instagram.com/vitor.p.mach
     icon: i-instagram
-    nav: true
 
 # Build settings
 markdown: kramdown

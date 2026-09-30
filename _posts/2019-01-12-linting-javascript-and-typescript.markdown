@@ -22,8 +22,7 @@ This was tested with <a href="https://nodejs.org" target="_blank">Node.js</a> 11
 
 Let's begin by installing all the global dependencies we will need:
 
-<pre><code class="bash">
-yarn global add typescript eslint tslint prettier eslint-plugin-import eslint-plugin-prettier eslint-config-prettier eslint-config-airbnb-base tslint-config-prettier
+<pre><code class="bash">yarn global add typescript eslint tslint prettier eslint-plugin-import eslint-plugin-prettier eslint-config-prettier eslint-config-airbnb-base tslint-config-prettier
 </code></pre>
 
 Notice that <i>eslint-plugin-import</i> is necessary because it is a <a href="https://nodejs.org/en/blog/npm/peer-dependencies/" target="_blank">peer dependency</a> of <i>eslint-config-airbnb-base</i>. If you need support for <a href="https://reactjs.org/" target="_blank">React</a>, consider using <i>eslint-config-airbnb</i> instead. It has additional peer dependencies, check the <a href="https://www.npmjs.com/package/eslint-config-airbnb" target="_blank">dependency page</a> for more information.

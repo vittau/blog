@@ -1,21 +1,58 @@
-{% if page.title %}
-<header class="masthead masthead--post grad-bg">
+{% if page.layout == 'post' %}
+{% assign words = page.content | strip_html | number_of_words %}
+{% assign minutes = words | divided_by: 220 | plus: 1 | floor %}
+<header class="masthead masthead--post">
   <div class="container container--reading">
-    {% if page.categories %}<p class="eyebrow">{{ page.categories | join: " · " }}</p>{% endif %}
-    <h1 class="masthead__title">{{ page.title }}</h1>
-    {% if page.description %}<p class="masthead__lead">{{ page.description }}</p>{% endif %}
-    <div class="masthead__meta">
-      {% if page.date %}<span>{{ page.date | date: "%b %-d, %Y" }}</span>{% endif %}
-      {% if page.location %}<span class="dot" aria-hidden="true">&bull;</span><span>{{ page.location }}</span>{% endif %}
-    </div>
+    <p class="kicker enter" style="--d: 0">
+      {% if page.categories %}<span class="kicker__accent">{{ page.categories | join: " · " }}</span><span class="dot" aria-hidden="true">&middot;</span>{% endif %}
+      <span>{{ minutes }} min read</span>
+    </p>
+    <h1 class="masthead__title enter" style="--d: 1">{{ page.title }}</h1>
+    {% if page.description %}<p class="masthead__lead enter" style="--d: 2">{{ page.description }}</p>{% endif %}
+    <p class="masthead__meta enter" style="--d: 3">
+      {% if page.date %}<time datetime="{{ page.date | date: '%Y-%m-%d' }}">{{ page.date | date: "%B %-d, %Y" }}</time>{% endif %}
+      {% if page.location %}<span class="dot" aria-hidden="true">&middot;</span><span>{{ page.location }}</span>{% endif %}
+    </p>
+  </div>
+</header>
+{% elsif page.title %}
+<header class="masthead masthead--post">
+  <div class="container container--reading">
+    <h1 class="masthead__title enter" style="--d: 0">{{ page.title }}</h1>
+    {% if page.description %}<p class="masthead__lead enter" style="--d: 1">{{ page.description }}</p>{% endif %}
   </div>
 </header>
 {% else %}
-<header class="masthead grad-bg">
+{% comment %} Blog home: the title's " of …" half goes to its own italic line. {% endcomment %}
+{% assign title_parts = site.title | split: " of " %}
+{% assign first_year = site.posts.last.date | date: "%Y" %}
+<header class="masthead">
   <div class="container">
-    <p class="eyebrow">The blog</p>
-    <h1 class="masthead__title">{{ site.title }}</h1>
-    <p class="masthead__lead">{{ site.subtitle }}</p>
+    <p class="kicker enter" style="--d: 0">
+      <span class="kicker__accent">The blog</span>
+      <span class="dot" aria-hidden="true">&middot;</span>
+      <span>{{ site.posts.size }} posts since {{ first_year }}</span>
+      {% if paginator.page > 1 %}<span class="dot" aria-hidden="true">&middot;</span><span>Page {{ paginator.page }}</span>{% endif %}
+    </p>
+    <h1 class="masthead__title">
+      {% if title_parts.size == 2 %}
+      <span class="enter" style="--d: 1">{{ title_parts[0] }}</span>
+      <em class="enter" style="--d: 2">of {{ title_parts[1] }}</em>
+      {% else %}
+      <span class="enter" style="--d: 1">{{ site.title }}</span>
+      {% endif %}
+    </h1>
+    <p class="masthead__lead enter" style="--d: 3">{{ site.subtitle }}</p>
+    <div class="masthead__actions enter" style="--d: 4">
+      <a class="link-arrow link-arrow--out" href="{{ site.home_url }}">
+        About me, on vitormach.dev
+        <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-out"></use></svg>
+      </a>
+      <a class="link-arrow" href="{{ '/feed.xml' | relative_url }}">
+        Subscribe via RSS
+        <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-right"></use></svg>
+      </a>
+    </div>
   </div>
 </header>
 {% endif %}

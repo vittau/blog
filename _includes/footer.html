@@ -1,54 +1,47 @@
 <footer class="footer">
   <div class="container">
-    <div class="footer__top">
-      <a class="brand" href="{{ site.home_url }}">
-        <span class="brand__mark">&lt;/&gt;</span>vitor<span class="brand__dot">.</span>
-      </a>
-
-      <ul class="footer__social">
-        {% for network in site.social %}
-        <li>
-          <a class="icon-btn" href="{{ network.url }}" target="_blank" rel="noopener" title="{{ network.title }}">
-            <svg class="icon" aria-hidden="true" focusable="false"><use href="#{{ network.icon }}"></use></svg>
-            <span class="sr-only">{{ network.title }}</span>
-          </a>
-        </li>
-        {% endfor %}
-      </ul>
-
-      <ul class="footer__nav">
-        <li><a href="{{ '/' | relative_url }}">Blog</a></li>
-        <li><a href="{{ site.home_url }}">Portfolio</a></li>
-        <li><a href="{{ '/feed.xml' | relative_url }}">RSS</a></li>
-      </ul>
-    </div>
-
-    <section class="footer__about surface">
-      <img class="footer__avatar" src="{{ '/img/photo.webp' | relative_url }}" alt="{{ site.author }}" width="84" height="84" loading="lazy">
+    <section class="author" aria-label="About the author">
+      <div class="author__photo">
+        <img src="{{ '/img/photo.webp' | relative_url }}" alt="{{ site.author }}" width="112" height="140" loading="lazy">
+      </div>
       <div>
-        <p class="footer__about-title">About</p>
-        <p class="footer__about-text">{{ site.description }}</p>
-        <div class="footer__about-links">
+        <p class="kicker"><span class="kicker__accent">Written by {{ site.author }}</span></p>
+        <p class="author__text">{{ site.description }}</p>
+        <div class="author__links">
           <a href="{{ site.home_url }}">
-            <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-home"></use></svg>
+            <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-diamond"></use></svg>
             vitormach.dev
           </a>
           {% for network in site.social %}
           <a href="{{ network.url }}" target="_blank" rel="noopener">
             <svg class="icon" aria-hidden="true" focusable="false"><use href="#{{ network.icon }}"></use></svg>
-            {{ network.handle }}
+            {{ network.title }}
           </a>
           {% endfor %}
+          <a href="{{ '/feed.xml' | relative_url }}">
+            <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-rss"></use></svg>
+            RSS
+          </a>
         </div>
       </div>
     </section>
 
-    <p class="footer__legal">
-      &copy; {{ site.time | date: "%Y" }} {{ site.author }}.
-      Built with <a href="https://jekyllrb.com/" target="_blank" rel="noopener">Jekyll</a>,
-      hosted on <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a>.<br>
-      Layout inspired by
-      <a href="https://www.behance.net/gallery/193147621/Personal-Portfolio-Page-Web-Design" target="_blank" rel="noopener">Giselle Santos&rsquo; portfolio concept</a>.
-    </p>
+    <div class="footer__bar">
+      <a class="brand" href="{{ site.home_url }}" aria-label="Vitor Machado, home page">
+        <svg class="brand__mark" aria-hidden="true" focusable="false"><use href="#i-diamond"></use></svg>
+        <span>vitor machado</span>
+      </a>
+
+      <p class="footer__legal">
+        &copy; {{ site.time | date: "%Y" }} {{ site.author }}.
+        Built with <a href="https://jekyllrb.com/" target="_blank" rel="noopener">Jekyll</a>,
+        hosted on <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a>.
+      </p>
+
+      <a class="footer__top" href="#top">
+        Back to top
+        <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-right"></use></svg>
+      </a>
+    </div>
   </div>
 </footer>

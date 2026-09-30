@@ -1,0 +1,23 @@
+{% comment %} The newest post, shown large at the top of the first page. {% endcomment %}
+{% assign p = include.post %}
+{% assign words = p.content | strip_html | number_of_words %}
+<article class="feature">
+  <a class="feature__media" href="{{ p.url | relative_url }}" tabindex="-1" aria-hidden="true">
+    {% if p.image %}<img src="{{ p.image | relative_url }}" alt="" decoding="async">{% endif %}
+  </a>
+  <div>
+    <p class="kicker">
+      <span class="kicker__accent">Latest</span>
+      <span class="dot" aria-hidden="true">&middot;</span>
+      <time datetime="{{ p.date | date: '%Y-%m-%d' }}">{{ p.date | date: "%b %-d, %Y" }}</time>
+      <span class="dot" aria-hidden="true">&middot;</span>
+      <span>{{ words | divided_by: 220 | plus: 1 | floor }} min read</span>
+    </p>
+    <h2 class="feature__title"><a href="{{ p.url | relative_url }}">{{ p.title }}</a></h2>
+    <p class="feature__desc">{% if p.description %}{{ p.description }}{% else %}{{ p.excerpt | strip_html | truncatewords: 40 }}{% endif %}</p>
+    <a class="link-arrow" href="{{ p.url | relative_url }}">
+      Read the post
+      <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-right"></use></svg>
+    </a>
+  </div>
+</article>

@@ -1,32 +1,30 @@
+{% comment %}
+  One row of the feed. Tags come from the front matter as "a, b, c"; Jekyll splits
+  them on whitespace, so each one may carry a trailing comma: strip it here.
+{% endcomment %}
 {% assign p = include.post %}
-<article class="post-card surface">
-  <a class="post-card__media" href="{{ p.url | relative_url }}" tabindex="-1" aria-hidden="true">
-    {% if p.image %}
-    <img class="post-card__thumb" src="{{ p.image | relative_url }}" alt="" loading="lazy">
-    {% else %}
-    <div class="post-card__thumb post-card__thumb--text">{{ p.title }}</div>
-    {% endif %}
-  </a>
+{% assign words = p.content | strip_html | number_of_words %}
+<article class="entry">
+  <p class="entry__when">
+    <strong><time datetime="{{ p.date | date: '%Y-%m-%d' }}">{{ p.date | date: "%b %-d, %Y" }}</time></strong>
+    {{ p.categories | join: " · " }} &middot; {{ words | divided_by: 220 | plus: 1 | floor }} min
+  </p>
 
-  <div class="post-card__body">
-    <p class="post-card__date">
-      {{ p.date | date: "%b %-d, %Y" }}
-      {% if p.categories %}<span class="dot" aria-hidden="true">&bull;</span> {{ p.categories | join: " · " }}{% endif %}
-    </p>
-
-    <h2 class="post-card__title"><a href="{{ p.url | relative_url }}">{{ p.title }}</a></h2>
-
-    <div class="post-card__excerpt">{{ p.excerpt | strip_html | truncatewords: 40 }}</div>
-
+  <div class="entry__main">
+    <h2 class="entry__title"><a href="{{ p.url | relative_url }}">{{ p.title }}</a></h2>
+    <p class="entry__desc">{% if p.description %}{{ p.description }}{% else %}{{ p.excerpt | strip_html | truncatewords: 40 }}{% endif %}</p>
     {% if p.tags %}
-    <ul class="post-card__tags">
-      {% for tag in p.tags %}<li class="tag">#{{ tag }}</li>{% endfor %}
+    <ul class="tags">
+      {% for tag in p.tags limit: 5 %}<li class="tag">{{ tag | remove: "," }}</li>{% endfor %}
     </ul>
     {% endif %}
-
-    <a class="post-card__more" href="{{ p.url | relative_url }}">
-      Read more
-      <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-out"></use></svg>
-    </a>
   </div>
+
+  {% if p.image %}
+  <img class="entry__thumb" src="{{ p.image | relative_url }}" alt="" loading="lazy" decoding="async">
+  {% else %}
+  <span class="entry__thumb entry__thumb--none" aria-hidden="true">
+    <svg class="icon"><use href="#i-diamond"></use></svg>
+  </span>
+  {% endif %}
 </article>

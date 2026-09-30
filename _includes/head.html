@@ -20,9 +20,10 @@
   <link rel="icon" type="image/png" sizes="256x256" href="{{ '/favicon.png' | relative_url }}">
   <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ '/feed.xml' | relative_url }}">
 
-  <!-- Poppins 400 latin covers almost every glyph on the page; the other subsets
-       are fetched on demand through the unicode-range declared in screen.css. -->
-  <link rel="preload" href="{{ '/fonts/poppins-400-latin.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
+  <!-- Text (Geist) and headings (Newsreader 500) show above the fold; the other
+       files are fetched on demand through the unicode-range in screen.css. -->
+  <link rel="preload" href="{{ '/fonts/geist-latin.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="{{ '/fonts/newsreader-500-latin.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
 
   <!-- Theme must run before first paint, otherwise the wrong theme flashes. -->
   <script>

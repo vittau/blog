@@ -1,106 +1,114 @@
 // -----------------------------------------------------------------------------
-// Archive: the paginated post grid on the blog home.
+// Archive: the paginated feed on the blog home. The newest post of page 1 is a
+// feature (image + text side by side); every other post is a row in a list with
+// hairline dividers, like the Experience timeline on vitormach.dev.
 // -----------------------------------------------------------------------------
 
 @import "modules/archive/variables";
 
 @mixin blog-archive {
-  .feed {
-    padding-block: var(--section-pad-y);
-  }
+  .feed { padding-bottom: var(--sp-8); }
 
-  .feed__grid {
+  .feed__empty { color: var(--text-muted); }
+
+  // --- feature -----------------------------------------------------------------
+  .feature {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax($card-min-width, 1fr));
-    gap: var(--sp-6);
+    grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+    gap: var(--sp-7);
+    align-items: center;
+    margin-bottom: var(--sp-8);
   }
-
-  .feed__empty {
-    text-align: center;
-    color: var(--text-muted);
-  }
-
-  .post-card {
-    display: flex;
-    flex-direction: column;
+  .feature__media {
+    display: block;
     overflow: hidden;
-    transition: transform var(--dur-base) var(--ease),
-                border-color var(--dur-base) var(--ease),
-                box-shadow var(--dur-base) var(--ease);
+    border-radius: var(--r-lg);
+    background: var(--surface-2);
+    aspect-ratio: 16 / 10;
   }
-  .post-card:hover {
-    transform: translateY(-6px);
-    border-color: var(--accent);
-  }
-
-  .post-card__thumb {
+  .feature__media img {
     width: 100%;
-    aspect-ratio: 16 / 9;
+    height: 100%;
     object-fit: cover;
-    border-bottom: 1px solid var(--surface-border);
+    transition: transform 1s var(--ease-out);
   }
-  // fallback when a post declares no `image:`
-  .post-card__thumb--text {
-    display: grid;
-    place-items: center;
-    padding: var(--sp-5);
-    background:
-      radial-gradient(90% 120% at 20% 0%, rgba($c-secondary, .22), transparent 60%),
-      var(--surface-strong);
-    font-size: 1.375rem;
-    font-weight: 700;
-    letter-spacing: -.01em;
-    line-height: 1.3;
-    color: var(--accent-ink);
-    text-align: center;
+  .feature:hover .feature__media img { transform: scale(1.03); }
+  .feature__title {
+    margin-block: var(--sp-4);
+    font-family: var(--font-serif);
+    font-size: clamp(1.875rem, 3.6vw, 2.75rem);
+    line-height: 1.05;
+    letter-spacing: -.02em;
   }
+  .feature__title a { transition: color var(--dur-base) var(--ease); }
+  .feature__title a:hover { color: var(--accent-ink); }
+  .feature__desc { color: var(--text-muted); max-width: 46ch; }
+  .feature .link-arrow { margin-top: var(--sp-5); }
 
-  .post-card__body {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    gap: var(--sp-3);
-    padding: var(--sp-5);
+  // --- list --------------------------------------------------------------------
+  .entries { border-top: 1px solid var(--line); }
+  .entry {
+    position: relative;
+    display: grid;
+    grid-template-columns: 150px minmax(0, 1fr) $entry-thumb;
+    gap: var(--sp-6);
+    align-items: start;
+    padding-block: var(--sp-6);
+    border-bottom: 1px solid var(--line);
   }
-  .post-card__date {
-    font-size: var(--fs-eyebrow);
-    font-weight: 600;
-    letter-spacing: .08em;
-    text-transform: uppercase;
+  .entry__when {
+    padding-top: 6px;
+    font-family: var(--font-mono);
+    font-size: var(--fs-xs);
+    line-height: 1.7;
     color: var(--text-muted);
   }
-  .post-card__date .dot { color: var(--accent); }
-  .post-card__title { font-size: var(--fs-h3); }
-  .post-card__title a:hover { color: var(--accent-ink); }
-  .post-card__excerpt {
+  .entry__when strong { display: block; color: var(--text); font-weight: 500; }
+  .entry__title {
+    font-family: var(--font-serif);
+    font-size: var(--fs-h3);
+    line-height: 1.15;
+    letter-spacing: -.01em;
+  }
+  // the whole row is clickable through the title's link
+  .entry__title a::after { content: ''; position: absolute; inset: 0; }
+  .entry__title a { transition: color var(--dur-base) var(--ease); }
+  .entry:hover .entry__title a { color: var(--accent-ink); }
+  .entry__desc {
+    margin-top: var(--sp-2);
     font-size: var(--fs-sm);
     color: var(--text-muted);
-  }
-  .post-card__excerpt > * + * { margin-top: var(--sp-2); }
-  .post-card__excerpt a { color: var(--accent-ink); text-decoration: underline; text-underline-offset: 3px; }
-  // keep cards the same height: cap the excerpt at four lines
-  .post-card__excerpt p,
-  .post-card__excerpt {
     display: -webkit-box;
-    -webkit-line-clamp: 4;
+    -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
   }
-  .post-card__tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--sp-2);
+  .entry .tags { margin-top: var(--sp-3); }
+  .entry__thumb {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    border-radius: var(--r-md);
+    background: var(--surface-2);
+    transition: transform var(--dur-slow) var(--ease-out), filter var(--dur-slow) var(--ease);
   }
-  .post-card__more {
-    display: inline-flex;
-    align-items: center;
-    gap: var(--sp-1);
-    margin-top: auto;
-    padding-top: var(--sp-2);
-    font-size: var(--fs-sm);
-    font-weight: 600;
-    color: var(--accent-ink);
+  .entry:hover .entry__thumb { transform: scale(1.03); }
+  // fallback when a post declares no `image:`
+  .entry__thumb--none {
+    display: grid;
+    place-items: center;
+    color: var(--accent);
   }
-  .post-card__more .icon { width: .9rem; height: .9rem; transition: transform var(--dur-base) var(--ease); }
-  .post-card__more:hover .icon { transform: translate(2px, -2px); }
+  .entry__thumb--none .icon { width: 28px; height: 28px; }
+
+  @media (max-width: $bp-nav) {
+    .feature { grid-template-columns: 1fr; gap: var(--sp-5); }
+    .entry { grid-template-columns: 120px minmax(0, 1fr) 160px; gap: var(--sp-5); }
+  }
+  @media (max-width: $bp-sm) {
+    .entry { grid-template-columns: minmax(0, 1fr) 96px; gap: var(--sp-2) var(--sp-4); }
+    .entry__when { grid-column: 1 / -1; padding-top: 0; }
+    .entry__when strong { display: inline; margin-right: var(--sp-2); }
+    .entry .tags { display: none; }
+  }
 }

@@ -1,5 +1,5 @@
 // -----------------------------------------------------------------------------
-// Pagination: pill controls under the post feed.
+// Pagination: numbered pages under the feed, in mono.
 // -----------------------------------------------------------------------------
 
 @import "modules/pagination/variables";
@@ -9,9 +9,16 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: center;
     gap: var(--sp-2);
-    margin-top: var(--sp-8);
+    margin-top: var(--sp-7);
+  }
+  .pagination__label {
+    margin-right: var(--sp-3);
+    font-family: var(--font-mono);
+    font-size: var(--fs-xs);
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--text-muted);
   }
   .pagination-item { display: flex; }
 
@@ -19,25 +26,19 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    min-width: 42px;
-    height: 42px;
-    padding-inline: var(--sp-4);
+    min-width: 40px;
+    height: 40px;
+    padding-inline: var(--sp-3);
     border-radius: var(--r-pill);
-    border: 1px solid var(--surface-border);
-    background: var(--surface);
+    border: 1px solid var(--line-strong);
+    font-family: var(--font-mono);
     font-size: var(--fs-sm);
-    font-weight: 600;
     color: var(--text-muted);
-    transition: transform var(--dur-base) var(--ease),
-                border-color var(--dur-base) var(--ease),
+    transition: border-color var(--dur-base) var(--ease),
                 color var(--dur-base) var(--ease),
                 background-color var(--dur-base) var(--ease);
   }
-  .pagination-link:hover:not([disabled]) {
-    border-color: var(--accent);
-    color: var(--text);
-    transform: translateY(-2px);
-  }
+  .pagination-link:hover { border-color: var(--accent); color: var(--text); }
   .pagination-link--selected {
     background: var(--accent-solid);
     color: var(--on-accent);

@@ -6,16 +6,22 @@
 <div class="nav">
   <div class="container">
     <nav class="nav__inner" aria-label="Main">
-      <a class="brand" href="{{ site.home_url }}">
-        <span class="brand__mark">&lt;/&gt;</span>vitor<span class="brand__dot">.</span>
+      <a class="brand" href="{{ site.home_url }}" aria-label="Vitor Machado, home page">
+        <svg class="brand__mark" aria-hidden="true" focusable="false"><use href="#i-diamond"></use></svg>
+        <span>vitor machado</span>
+        <span class="brand__section" aria-hidden="true">/ blog</span>
       </a>
 
       {% assign blog_active = false %}
-      {% if page.url == '/' or page.layout == 'post' %}{% assign blog_active = true %}{% endif %}
+      {% if paginator or page.url == '/' or page.layout == 'post' %}{% assign blog_active = true %}{% endif %}
 
       <ul class="nav__links" id="nav-links">
         <li><a class="nav__link{% if blog_active %} is-active{% endif %}" href="{{ '/' | relative_url }}">Blog</a></li>
-        <li><a class="nav__link" href="{{ site.home_url }}">Portfolio</a></li>
+        <li>
+          <a class="nav__link" href="{{ site.home_url }}">
+            Portfolio<svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-out"></use></svg>
+          </a>
+        </li>
         <li><a class="nav__link" href="{{ '/feed.xml' | relative_url }}">RSS</a></li>
       </ul>
 

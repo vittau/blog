@@ -1,5 +1,6 @@
 // -----------------------------------------------------------------------------
-// Reset + base elements + shared components (buttons, chips, icons, surfaces).
+// Reset + base elements + shared components (buttons, tags, icons, brand).
+// Mirrors the components of vitormach.dev so the two read as one site.
 // -----------------------------------------------------------------------------
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -12,7 +13,7 @@ input, button, textarea, select { font: inherit; color: inherit; }
 button { background: none; border: 0; cursor: pointer; }
 ul, ol { list-style: none; padding: 0; }
 a { color: inherit; text-decoration: none; }
-h1, h2, h3, h4, h5, h6 { font-weight: 600; line-height: 1.25; text-wrap: balance; }
+h1, h2, h3, h4, h5, h6 { font-weight: 500; line-height: 1.15; text-wrap: balance; }
 p { text-wrap: pretty; }
 table { border-collapse: collapse; }
 
@@ -23,14 +24,15 @@ html {
 body {
   background: var(--bg);
   color: var(--text);
-  font-family: var(--font);
+  font-family: var(--font-sans);
   font-size: var(--fs-body);
-  line-height: 1.7;
+  line-height: 1.65;
   overflow-x: hidden;
+  transition: background-color var(--dur-slow) var(--ease), color var(--dur-slow) var(--ease);
 }
 body.is-locked { overflow: hidden; }
 
-::selection { background: rgba($c-primary, .3); }
+::selection { background: rgba($c-primary, .28); }
 
 :focus-visible {
   outline: 2px solid var(--accent);
@@ -79,30 +81,32 @@ body.is-locked { overflow: hidden; }
   margin-inline: auto;
   padding-inline: var(--gutter);
 }
-.container--reading { max-width: var(--reading); }
+.container--reading { max-width: calc(var(--reading) + var(--gutter) * 2); }
+.container--wide { max-width: calc(var(--wide) + var(--gutter) * 2); }
 
 .section { padding-block: var(--section-pad-y); position: relative; }
 
-.eyebrow {
-  font-size: var(--fs-eyebrow);
-  font-weight: 600;
+// label in mono: "THE BLOG", dates, categories
+.kicker {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0 var(--sp-2);
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  font-weight: 500;
   letter-spacing: .08em;
   text-transform: uppercase;
   color: var(--text-muted);
 }
-
-// gradient backdrop used by the masthead and the footer
-.grad-bg {
-  background:
-    radial-gradient(90% 70% at 78% 28%, rgba($c-secondary, .28), transparent 62%),
-    linear-gradient(135deg, var(--grad-from), var(--grad-to));
-}
+.kicker__accent { color: var(--accent-ink); }
+.kicker .dot { color: var(--accent); }
 
 // --- shared components -------------------------------------------------------
 
 .icon {
-  width: 1.25em;
-  height: 1.25em;
+  width: 1.2em;
+  height: 1.2em;
   flex: none;
   fill: currentColor;
 }
@@ -111,97 +115,93 @@ body.is-locked { overflow: hidden; }
   display: inline-flex;
   align-items: center;
   gap: var(--sp-2);
-  padding: var(--sp-3) var(--sp-6);
+  padding: 13px 22px;
   border-radius: var(--r-pill);
-  font-size: var(--fs-sm);
-  font-weight: 600;
-  letter-spacing: .02em;
+  border: 1px solid transparent;
+  font-size: .9375rem;
+  font-weight: 550;
   white-space: nowrap;
   transition: transform var(--dur-base) var(--ease),
               box-shadow var(--dur-base) var(--ease),
               background-color var(--dur-base) var(--ease),
               border-color var(--dur-base) var(--ease);
 }
+.btn .icon { width: 1.05rem; height: 1.05rem; transition: transform var(--dur-base) var(--ease-out); }
 .btn:hover { transform: translateY(-2px); }
+.btn:hover .icon { transform: translateX(3px); }
 .btn:active { transform: none; }
 .btn--primary {
   background: var(--accent-solid);
   color: var(--on-accent);
-  box-shadow: 0 6px 20px rgba($c-primary, .35);
+  box-shadow: 0 10px 24px -10px rgba($c-primary, .7);
 }
-.btn--primary:hover { box-shadow: 0 10px 28px rgba($c-primary, .45); }
-.btn--secondary {
-  background: var(--surface);
+.btn--ghost {
   color: var(--text);
-  border: 1px solid var(--surface-border);
-  backdrop-filter: blur(10px);
+  border-color: var(--line-strong);
 }
-.btn--secondary:hover { border-color: var(--accent); }
+.btn--ghost:hover { border-color: var(--accent); background: var(--surface-2); }
 
-.surface {
-  background: var(--surface);
-  border: 1px solid var(--surface-border);
-  border-radius: var(--r-lg);
-  box-shadow: var(--shadow-card);
-  backdrop-filter: blur(12px);
-}
-
-.chip {
+// short link with an arrow
+.link-arrow {
   display: inline-flex;
   align-items: center;
-  gap: var(--sp-2);
-  padding: var(--sp-2) var(--sp-4);
-  border-radius: var(--r-pill);
-  background: var(--surface);
-  border: 1px solid var(--surface-border);
-  font-size: var(--fs-eyebrow);
-  font-weight: 600;
-  letter-spacing: .04em;
-  backdrop-filter: blur(10px);
+  gap: 6px;
+  font-size: var(--fs-sm);
+  font-weight: 550;
+  color: var(--accent-ink);
 }
+.link-arrow .icon { width: .95rem; height: .95rem; transition: transform var(--dur-base) var(--ease-out); }
+.link-arrow:hover .icon { transform: translateX(3px); }
+.link-arrow--out:hover .icon { transform: translate(2px, -2px); }
+.link-arrow--back:hover .icon { transform: translateX(-3px); }
+
+.tags { display: flex; flex-wrap: wrap; gap: 6px; }
 .tag {
-  display: inline-block;
-  padding: 2px var(--sp-3);
+  padding: 3px 10px;
   border-radius: var(--r-pill);
-  background: var(--surface-strong);
-  border: 1px solid var(--surface-border);
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+  font-family: var(--font-mono);
   font-size: .6875rem;
-  font-weight: 600;
-  letter-spacing: .03em;
+  letter-spacing: .01em;
   color: var(--text-muted);
 }
 
 .icon-btn {
   display: grid;
   place-items: center;
-  width: 38px;
-  height: 38px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
-  background: var(--surface);
-  border: 1px solid var(--surface-border);
-  color: var(--text);
-  transition: background-color var(--dur-base) var(--ease),
-              color var(--dur-base) var(--ease),
-              transform var(--dur-base) var(--ease);
+  color: var(--text-muted);
+  transition: background-color var(--dur-base) var(--ease), color var(--dur-base) var(--ease);
 }
-.icon-btn:hover {
-  background: var(--accent-solid);
-  color: var(--on-accent);
-  border-color: transparent;
-  transform: translateY(-2px);
-}
+.icon-btn:hover { background: var(--surface-2); color: var(--accent-ink); }
 .icon-btn .icon { width: 1.05rem; height: 1.05rem; }
 
-// --- prose (excerpts and generic rich text) ----------------------------------
-
-.prose { color: var(--text-muted); }
-.prose > * + * { margin-top: var(--sp-4); }
-.prose a {
-  color: var(--accent-ink);
-  text-decoration: underline;
-  text-underline-offset: 3px;
-  text-decoration-thickness: 1px;
-  transition: opacity var(--dur-fast) var(--ease);
+// Brand: the diamond of the modal operator "possibly" (◇). On hover it turns 45
+// degrees into the square of "necessarily" (□). Same as vitormach.dev.
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-serif);
+  font-size: 1.1875rem;
+  font-weight: 500;
+  letter-spacing: -.01em;
+  white-space: nowrap;
 }
-.prose a:hover { opacity: .75; }
-.prose strong { color: var(--text); font-weight: 600; }
+.brand__mark {
+  width: 18px;
+  height: 18px;
+  color: var(--accent);
+  transition: transform var(--dur-slow) var(--ease-out);
+}
+.brand:hover .brand__mark { transform: rotate(45deg) scale(.86); }
+.brand__section {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}

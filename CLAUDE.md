@@ -6,7 +6,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 Blog pessoal de Vitor Machado, servido em `www.vitormach.dev/blog` pelo GitHub Pages a partir do branch `gh-pages` deste repo (build automático do Jekyll; não há `_site` versionado nem workflow em `.github/`). Não há Gemfile, testes, lint ou etapa de build local — qualquer push para `gh-pages` publica.
 
-O layout é um redesenho de 2026 baseado na linguagem visual do site principal (`vitormach.dev`, repo `vittau.github.io`). A especificação viva do design — tokens, componentes, princípios de interação e regras para edição assistida por IA — está em **`DESIGN.md`**. Leia antes de mexer no visual. Em caso de dúvida sobre um token ou padrão, o `DESIGN.md` do site principal é a fonte.
+O layout segue o segundo redesenho de 2026 do site principal (editorial, papel/carvão, Newsreader + Geist + Geist Mono, marca ◇) (`vitormach.dev`, repo `vittau.github.io`). A especificação viva do design — tokens, componentes, princípios de interação e regras para edição assistida por IA — está em **`DESIGN.md`**. Leia antes de mexer no visual. Em caso de dúvida sobre um token ou padrão, o `DESIGN.md` do site principal é a fonte.
 
 ## Comandos
 
@@ -16,18 +16,22 @@ Não há toolchain instalado localmente e **não dá para rodar o Jekyll nesta m
 # 1. Instalar um Ruby moderno e o Jekyll (rota oficial)
 gem install jekyll jekyll-paginate && jekyll serve      # http://localhost:4000/blog
 
-# 2. Renderizador Liquid mínimo + Sass avulso (rota usada no redesenho)
-gem install liquid -v 5.3.0 kramdown --user-install
-# - Liquid resolve _config.yml, includes e layouts e cospe HTML;
-# - o CSS precisa do Sass: substitua os `{{ site.* }}` de css/screen.scss pelos
-#   valores de _config.yml e compile com `npx sass --load-path=_sass`.
+# 2. Renderizador mínimo (rota usada nos redesenhos), fora do repo:
+# LiquidJS (jekyllInclude: true) + marked para os posts + paginação à mão,
+# servido com o prefixo /blog por python3 -m http.server.
+# CSS: rode o Liquid no corpo de css/screen.scss e compile com o dart-sass
+# (`npm i sass`) para a prévia. Para validar que o GitHub Pages compila, use o
+# motor dele, Ruby Sass 3.7.4 — instala no Ruby 2.6 do sistema com
+#   gem install sass -v 3.7.4 --user-install --ignore-dependencies
+# (as dependências de watch exigem Ruby 3) e rode pela API:
+#   ruby -I ~/.gem/ruby/2.6.0/gems/sass-3.7.4/lib -e 'require "sass"; puts Sass::Engine.new(File.read(ARGV[0]), syntax: :scss, load_paths: ["_sass"]).render' screen.scss
 ```
 
-Validação visual sem navegador interativo: o Chrome headless já instalado serve. Atenção: **`timeout` não existe no macOS**; use `perl -e 'alarm shift; exec @ARGV' 45 <cmd>`. O Chrome no macOS tem largura mínima de janela de ~500px — para testar 320/375px, carregue a página num `<iframe>` dessa largura. O blog vive sob `/blog`, então sirva a prévia com esse prefixo.
+Validação visual sem navegador interativo: o Chrome headless já instalado serve. Atenção: **`timeout` não existe no macOS**; use `perl -e 'alarm shift; exec @ARGV' 45 <cmd>`. O Chrome no macOS tem largura mínima de janela de ~500px — para testar 320/375px, use o Chrome headless via DevTools Protocol (`Emulation.setDeviceMetricsOverride`). O blog vive sob `/blog`, então sirva a prévia com esse prefixo.
 
 ## Arquitetura
 
-**Multi-página.** `index.html` (feed paginado) + `_posts/` (cada post gera uma URL por `permalink: /:year/:month/:day/:title`) + `feed.xml`. `_layouts/default.html` monta a página concatenando includes nesta ordem: `head` → `icons` → `header` → `main` (`masthead` + `content`) → `footer` → `scripts`. `_layouts/post.html` (com `layout: default`) envolve um post; `_layouts/page.html` serve páginas soltas. Edição de conteúdo acontece em `_posts/`, `_config.yml` e `_includes/*.html`.
+**Multi-página.** `index.html` (feed paginado) + `_posts/` (cada post gera uma URL por `permalink: /:year/:month/:day/:title`) + `feed.xml`. `_layouts/default.html` monta a página concatenando includes nesta ordem: `head` → `icons` → `header` → `main` (`masthead` + `content`) → `footer` → `scripts`. O índice usa `feature.html` (post mais novo, só na página 1) e `post.html` (uma linha da lista). `_layouts/post.html` (com `layout: default`) envolve um post; `_layouts/page.html` serve páginas soltas. Edição de conteúdo acontece em `_posts/`, `_config.yml` e `_includes/*.html`.
 
 **Paginação.** `jekyll-paginate` com `paginate: 5`; `index.html` itera `paginator.posts` e usa `site.paginate_path` (default `/page:num`). Os links de paginação usam `| prepend: site.baseurl` **de propósito**: os paths que o plugin devolve não incluem o baseurl — diferente dos filtros `relative_url`.
 
@@ -38,10 +42,11 @@ Validação visual sem navegador interativo: o Chrome headless já instalado ser
 - As cores do blog vêm de `_config.yml` → `color:`. Trocar a paleta é editar só esse arquivo.
 - Os campos `*-rgb` são o mesmo valor em decimal, usados nos `rgba()`. **Mantenha-os em sincronia com o hex ao lado.**
 - Há três variantes de coral com papéis distintos (`--accent` decorativo, `--accent-ink` para texto, `--accent-solid` para fundo). A tabela de contraste está em `DESIGN.md` §2.2. Não colapse as três em uma.
+- O tema escuro é um mixin (`dark-tokens`) incluído duas vezes; edite só ele.
 - **Em `rgba()` com alpha, use as variáveis Sass** (`rgba($c-primary, .3)`), não `rgba(var(--token), .3)`: o Sass do Jekyll não avalia `var()` dentro de `rgba()` e quebra o build.
 - Ordem dos partials em `css/screen.scss`: `vendor/normalize` → `variables` (breakpoints) → `tokens` → `base` → `layout` → `modules`. Os módulos (`_sass/modules/`) definem mixins `blog-*` que `_modules.scss` inclui.
 
-**Fontes.** Poppins auto-hospedada em `fonts/` — 3 pesos × 2 subsets (latin e latin-ext), `woff2`. O caminho é o `$font-dir` definido em `css/screen.scss` (`{{ site.baseurl }}/fonts`); o `@font-face` fica em `_sass/_tokens.scss` e o `unicode-range` faz o navegador baixar só o subset usado.
+**Fontes.** As mesmas do site principal, copiadas de lá para `fonts/`: Newsreader (500 e 400 itálica, estáticas), Geist e Geist Mono, subsets latin e latin-ext em `woff2`. O caminho é o `$font-dir` definido em `css/screen.scss` (`{{ site.baseurl }}/fonts`); o `@font-face` fica em `_sass/_tokens.scss` e o `unicode-range` faz o navegador baixar só o subset usado.
 
 **highlight.js auto-hospedado.** `js/highlight.min.js` (v9.13.1) é versionado no repo. O tema **não** é um CSS de terceiro: os tokens `.hljs-*` são estilizados com as custom properties do blog em `_sass/modules/post/_rules.scss`, então acompanham o tema. `_includes/scripts.html` carrega o script e chama `hljs.initHighlighting()` no `DOMContentLoaded`. Os posts usam `<pre><code class="...">` e `<code class="inline">`.
 
@@ -55,7 +60,7 @@ Validação visual sem navegador interativo: o Chrome headless já instalado ser
 
 **Analytics.** GA4 (`G-NSNV8ZR1NV`) inline em `_includes/head.html`.
 
-**Imagens.** `img/photo.webp` é o retrato quadrado usado no card About do rodapé (recortado em círculo); `img/posts/` guarda as imagens dos posts. O `og:image` vem de `site.image` (`_config.yml`). Sobra do tema antigo: `avatar.jpg`, `ribbon*`, `banner*`, `binary*`, `bulb*`, `noise*` e `icon-*`, tudo sem referência no código (ver débito em `DESIGN.md`).
+**Imagens.** `img/photo.webp` é o retrato usado no bloco do autor no rodapé (recortado em 4:5); `img/posts/` guarda as imagens dos posts. O `og:image` vem de `site.image` (`_config.yml`). Sobra do tema antigo: `avatar.jpg`, `ribbon*`, `banner*`, `binary*`, `bulb*`, `noise*` e `icon-*`, tudo sem referência no código (ver débito em `DESIGN.md`).
 
 **Conteúdo estático fora do Jekyll.** `other/` (arquivos de configuração de EQ) e `music/` (mp3) são copiados as-is pelo Jekyll; não compartilham nada com o tema.
 
