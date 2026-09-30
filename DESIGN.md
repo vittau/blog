@@ -79,6 +79,7 @@ Escala de espaçamento, raios, `--ease`/`--ease-out` e durações idênticos ao 
 
 | Componente | Especificação |
 |---|---|
+| **Favicon** | O do site invertido: o ◇ com um nó no centro em terracota `#AD4F38` sobre papel `#F4F0E8` (o do site é coral sobre carvão), para as duas abas se distinguirem sem sair da identidade. Mesmos arquivos e mesma regra do site: `favicon.svg` como fonte, `.ico` com 16/32/48 (16 desenhado à parte), `favicon.png` 256, `apple-touch-icon.png` 180, sem `<link>` para o SVG. |
 | **Navbar** | A do site: pill transparente sobre o topo, vidro (`--glass`) + borda + sombra ao rolar. Marca "◇ vitor machado / BLOG" (o "/ BLOG" some abaixo de 600px) apontando para `site.home_url`. Links: Blog (ativo no índice, em qualquer página da paginação e nos posts), Portfolio ↗, RSS. Abaixo de 900px vira painel deslizante com links em serifa grande. |
 | **Masthead do índice** | Kicker "THE BLOG · N POSTS SINCE AAAA" (e "PAGE N" nas páginas seguintes), título do `_config.yml` quebrado em " of ": primeira metade romana, segunda em itálico coral recuado. Lead = `site.subtitle`. Dois `.link-arrow`: vitormach.dev e RSS. Brilho coral no canto que se dissolve no fundo, sem emenda. |
 | **Masthead do post** | `container--reading`. Kicker com categoria em coral + tempo de leitura (`strip_html | number_of_words` ÷ 220). Título em serifa, lead = `page.description`, e uma linha em mono com data por extenso e local, separada por um fio. |

@@ -16,8 +16,12 @@
   <meta content="{% if page.image %}{{ page.image | absolute_url }}{% else %}{{ site.image | absolute_url }}{% endif %}" property="og:image">
   <meta name="twitter:card" content="summary">
 
-  <link rel="icon" sizes="16x16 32x32" href="{{ '/favicon.ico' | relative_url }}">
+  <!-- Favicon: the site mark (◇ with a node in the middle) on paper, the light
+       counterpart of vitormach.dev's charcoal one. The .ico holds 16/32/48 (the
+       16 px one drawn separately, with a heavier stroke); source in favicon.svg. -->
+  <link rel="icon" sizes="16x16 32x32 48x48" href="{{ '/favicon.ico' | relative_url }}">
   <link rel="icon" type="image/png" sizes="256x256" href="{{ '/favicon.png' | relative_url }}">
+  <link rel="apple-touch-icon" href="{{ '/apple-touch-icon.png' | relative_url }}">
   <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ '/feed.xml' | relative_url }}">
 
   <!-- Text (Geist) and headings (Newsreader 500) show above the fold; the other
