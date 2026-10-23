@@ -71,7 +71,7 @@ The visual direction is called Ember Cathedral, which explains the stained glass
     <p class="post-image-caption">Home, for getting back to whatever was killing you last time</p>
 </div>
 
-These images are off-screen renders of the real interface with sample state, rather than photographs or captures from a Deck. The embedded map imagery belongs to the respective map creators; the <a href="https://github.com/vittau/Doom-Deck-Launcher/blob/main/packaging/flatpak/site/credits.html" target="_blank">credits page in the repository</a> lists the sources. They show the implemented UI, but they don't prove how it feels in your hands, and published builds can lag the source used for the pictures.
+The images show the interface with sample data. Map imagery belongs to the respective map creators; the <a href="https://github.com/vittau/Doom-Deck-Launcher/blob/main/packaging/flatpak/site/credits.html" target="_blank">credits page in the repository</a> lists the sources.
 
 ##### The parts that were actually interesting
 
@@ -83,29 +83,15 @@ That gives the recipes something specific to target. Compatibility settings, oft
 
 It also gives the project a useful boundary: if a mod needs another engine, adding its files to DDL won't make it work. There is enough to get right with one engine already.
 
-###### Keeping settings without freezing them forever
+###### Sensible defaults, with room to make it yours
 
-A launcher can provide sensible defaults for the Deck. The less obvious problem is what happens after you change them.
-
-Suppose a new DDL version improves the default controller bindings or video settings. Replacing the whole config would also replace your preferences. Never touching it again would leave existing users stuck with every early mistake.
-
-The managed DSDA configuration uses a three-way migration: the old defaults, the new defaults, and your current settings. Values you left at their defaults can move forward; your edits are preserved. It is a lot of machinery for something that should be unremarkable, which is probably a good sign for a settings system.
+DDL provides a starting setup for the Deck, including video settings and controller bindings. You can change them to suit yourself, and launcher updates preserve those changes while bringing improvements to settings you left at their defaults. Getting a better starting point shouldn't mean having to redo your own setup.
 
 Steam Input and gyro configuration stay manual, with instructions in the guide. DDL configures its own DSDA setup; Steam's controller settings are still yours to arrange.
-
-###### A rectangle is not a controller test
-
-The interface can be rendered and exercised headlessly. That lets tests check things like navigation, clipped titles and what happens when a dialog closes, without needing a physical Deck for every change.
-
-But a screen can look correct in a PNG and still be annoying to use. Early Deck testing caught things like incorrect UI scaling and scrolling behavior that looked much less innocent on the actual device. Launching another application also means handing over focus and input, then getting them back when the game exits. That needs real hardware testing.
-
-DDL is still pre-alpha. Installation, upgrades, controller handoff and gameplay have outstanding Deck checks, and I don't want a nice screenshot to imply otherwise. The <a href="https://github.com/vittau/Doom-Deck-Launcher/blob/main/docs/deck-testing.md" target="_blank">test checklist</a> keeps track of that distinction.
 
 ##### On the robots, again
 
 As with the Dave project, AI coding agents have done a lot of the implementation, under my direction and review. I decide the scope and priorities, try the builds, and point out where the result doesn't match what I wanted. The repository is explicit about that arrangement.
-
-This project makes the limits of automated checking particularly visible. A test can check that a recipe produces the expected launch arguments. It can't tell me that browsing the library feels good from the couch. Keeping those two kinds of evidence separate has been an important part of the work.
 
 The map authors and DSDA-Doom maintainers are doing the work that makes all of this worth opening in the first place. DDL's contribution is making it easier to get from “that looks interesting” to playing it.
 
